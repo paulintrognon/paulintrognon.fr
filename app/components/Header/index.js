@@ -1,4 +1,5 @@
 import React from 'react';
+import NavBar from './NavBar';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 
@@ -11,6 +12,7 @@ export default function () {
       <h2>
         <FormattedMessage {...messages.h2} />
       </h2>
+      <NavBar />
     </header>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Li from './Li';
 import NavLink from './NavLink';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
@@ -7,21 +8,21 @@ export default function () {
   return (
     <nav>
       <ul>
-        <li>
+        <Li>
           <NavLink to="/skills">
             <FormattedMessage {...messages.skills} />
           </NavLink>
-        </li>
-        <li>
+        </Li>
+        <Li>
           <NavLink to="/experiences">
             <FormattedMessage {...messages.experiences} />
           </NavLink>
-        </li>
-        <li>
+        </Li>
+        <Li>
           <NavLink to="/projects">
             <FormattedMessage {...messages.projects} />
           </NavLink>
-        </li>
+        </Li>
       </ul>
     </nav>
   );

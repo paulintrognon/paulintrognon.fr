@@ -88,6 +88,7 @@ if (!window.Intl) {
   }))
     .then(() => Promise.all([
       System.import('intl/locale-data/jsonp/de.js'),
+      System.import('intl/locale-data/jsonp/fr.js'),
     ]))
     .then(() => render(translationMessages))
     .catch((err) => {

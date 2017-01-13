@@ -1,1 +1,8 @@
-[]
+{
+  "app.components.Header.experiences": "Experiences",
+  "app.components.Header.h1": "Paulin Trognon",
+  "app.components.Header.h2": "Web Developper",
+  "app.components.Header.projects": "Projects",
+  "app.components.Header.skills": "Skills",
+  "app.components.NotFoundPage.header": "This is NotFoundPage component !"
+}

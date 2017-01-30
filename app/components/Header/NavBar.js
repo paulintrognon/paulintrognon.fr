@@ -9,7 +9,7 @@ export default function () {
     <nav>
       <ul>
         <Li>
-          <NavLink to="/skills">
+          <NavLink to="/skills" className="active">
             <FormattedMessage {...messages.skills} />
           </NavLink>
         </Li>

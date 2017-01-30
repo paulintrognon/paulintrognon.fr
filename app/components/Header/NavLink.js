@@ -9,6 +9,7 @@ export default styled(Link)`
   transition: color .2s ease-out;
 
   &.active {
+    color: #000000;
     border-bottom: solid 3px #000000;
   }
 

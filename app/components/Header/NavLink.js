@@ -7,4 +7,8 @@ export default styled(Link)`
   font-size: 1.2em;
   padding-bottom: 2px;
   border-bottom: solid 3px #000000;
+
+  &:hover {
+    color: #000000;
+  }
 `;

@@ -6,6 +6,7 @@
 
 import React from 'react';
 import H1 from '../../components/H1';
+import H2 from '../../components/H2';
 import Article from '../../components/Article';
 import Img from '../../components/Img';
 import Paragraph from '../../components/Paragraph';
@@ -17,6 +18,7 @@ export default () => (
     </H1>
     <Paragraph>
       <Img alt="nodejslogo" width="100" src="https://camo.githubusercontent.com/5a56f1340aff9b46955547ea01083ce30eea203d/687474703a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f642f64392f4e6f64652e6a735f6c6f676f2e737667" />
+      <H2>NodeJS</H2>
       <p>
         I feel very confortable using NodeJS on the server side.
       </p>
@@ -26,6 +28,7 @@ export default () => (
     </Paragraph>
     <Paragraph>
       <Img alt="reactjslogo" width="100" src="https://cdn.worldvectorlogo.com/logos/react.svg" />
+      <H2>ReactJS</H2>
       <p>
         I am still learning ReactJS but I really like the feeling of developping a React App.
       </p>

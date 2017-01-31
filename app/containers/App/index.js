@@ -11,7 +11,7 @@ import Header from '../../components/Header';
 import styled from 'styled-components';
 
 const Body = styled.div`
-  margin-top: 120px;
+  margin-top: 150px;
 `;
 
 export default function App(props) {

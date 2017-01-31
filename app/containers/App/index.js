@@ -8,15 +8,19 @@
 
 import React from 'react';
 import Header from '../../components/Header';
-import Article from './Article';
+import styled from 'styled-components';
+
+const Body = styled.div`
+  margin-top: 120px;
+`;
 
 export default function App(props) {
   return (
     <div>
       <Header pathname={props.location.pathname}></Header>
-      <Article>
+      <Body>
         {React.Children.toArray(props.children)}
-      </Article>
+      </Body>
     </div>
   );
 }

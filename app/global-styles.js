@@ -22,8 +22,7 @@ injectGlobal`
     min-width: 100%;
   }
 
-  p,
-  label {
-    line-height: 1.5em;
+  ul {
+    margin-left: 30px;
   }
 `;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.div`
-  min-height: 100px;
+  min-height: 90px;
   margin-bottom: 10px;
 
   img {

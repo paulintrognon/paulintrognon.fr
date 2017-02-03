@@ -1,4 +1,6 @@
 import React from 'react';
+
+import A from 'components/A';
 import H1 from 'components/H1';
 import H2 from 'components/H2';
 import Article from 'components/Article';
@@ -20,8 +22,8 @@ export default () => (
       <p>
         I have followed those following training courses (by Search Solutions):
         <ul>
-          <li>Designing Search, by Tony Russell-Rose</li>
-          <li>Evaluating Search, by Paul Clough</li>
+          <li><A href="http://designingthesearchexperience.com/">Designing Search</A>, by Tony Russell-Rose</li>
+          <li><A href="http://irsg.bcs.org/SearchSolutions/2016/tutorials/EnterpriseEval-FINAL.pdf">Evaluating Search</A>, by Paul Clough</li>
         </ul>
       </p>
     </Section>

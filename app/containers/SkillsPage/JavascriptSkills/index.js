@@ -1,5 +1,6 @@
 import React from 'react';
 
+import A from 'components/A';
 import H1 from 'components/H1';
 import H2 from 'components/H2';
 import Article from 'components/Article';
@@ -20,7 +21,7 @@ export default () => (
         5 years experience developping node apps.
       </p>
       <p>
-        I am familiar with the microservices paradigm, and have been building APIs in NodeJS (with Restify, or Express) with this aim in mind.
+        I have mainly built APIs using NodeJS (with <A href="http://restify.com/">Restify</A>, or <A href="http://expressjs.com">Express</A>) but also some CLI tools.
       </p>
     </Section>
     <Section img={AngularLogo} alt="angular logo">
@@ -29,16 +30,17 @@ export default () => (
         3 years experience developping webapps using Angular 1.
       </p>
       <p>
-        I also know E2E testing for this framework using Protractor.
+        I also know E2E testing for this framework using <A href="http://www.protractortest.org/#/">Protractor</A>.
       </p>
     </Section>
     <Section img={ReactJsLogo} alt="reactjs logo">
       <H2>ReactJS</H2>
       <p>
-        Still learning ReactJS but I find it awesome. I am using Redux.
+        Still learning ReactJS but I find it awesome. I am using <A href="http://redux.js.org/">Redux</A>.
       </p>
       <p>
-        This very website has been developped using the React Boilerplate. Checkout the code: github.com/paulintrognon/paulintrognon.fr
+        This very website has been developped using the <A href="https://github.com/react-boilerplate/react-boilerplate">React Boilerplate</A>.
+        Checkout the code: <A href="https://github.com/paulintrognon/paulintrognon.fr">github.com/paulintrognon/paulintrognon.fr</A>
       </p>
     </Section>
   </Article>

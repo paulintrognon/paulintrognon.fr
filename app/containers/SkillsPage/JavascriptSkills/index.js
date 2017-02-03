@@ -1,9 +1,9 @@
 import React from 'react';
-import H1 from '../../../components/H1';
-import H2 from '../../../components/H2';
-import Article from '../../../components/Article';
-import Img from '../../../components/Img';
-import Paragraph from '../../../components/Paragraph';
+import H1 from 'components/H1';
+import H2 from 'components/H2';
+import Article from 'components/Article';
+import Img from 'components/Img';
+import Paragraph from 'components/Paragraph';
 
 import NodeJsLogo from './nodejs.svg';
 import ReactJsLogo from './reactjs.svg';

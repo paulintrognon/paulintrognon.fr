@@ -13,6 +13,8 @@ function List(props) {
 }
 
 List.propTypes = {
+  img: React.PropTypes.string,
+  alt: React.PropTypes.string,
   children: React.PropTypes.node,
 };
 

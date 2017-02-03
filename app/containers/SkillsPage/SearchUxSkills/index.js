@@ -21,11 +21,11 @@ export default () => (
       <H2>Designing Search</H2>
       <p>
         I have followed those following training courses (by Search Solutions):
-        <ul>
-          <li><A href="http://designingthesearchexperience.com/">Designing Search</A>, by Tony Russell-Rose</li>
-          <li><A href="http://irsg.bcs.org/SearchSolutions/2016/tutorials/EnterpriseEval-FINAL.pdf">Evaluating Search</A>, by Paul Clough</li>
-        </ul>
       </p>
+      <ul>
+        <li><A href="http://designingthesearchexperience.com/">Designing Search</A>, by Tony Russell-Rose</li>
+        <li><A href="http://irsg.bcs.org/SearchSolutions/2016/tutorials/EnterpriseEval-FINAL.pdf">Evaluating Search</A>, by Paul Clough</li>
+      </ul>
     </Section>
   </Article>
 );

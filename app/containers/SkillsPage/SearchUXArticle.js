@@ -17,21 +17,14 @@ export default () => (
       <div>
         <H2>ElasticSearch</H2>
         <p>
-          I am well experienced with full text searches, from ranking algorythms to the UI.
-        </p>
-        <p>
           I have used ElasticSearch for the last 3 years, and am very familiar with its request synthax, as well as its Javascript API.
         </p>
-      </div>
-    </Paragraph>
-    <Paragraph>
-      <div>
         <H2>Designing Search</H2>
         <p>
           I have followed those following training courses (by Search Solutions):
           <ul>
-            <li>Designing Search (UI and UX)</li>
-            <li>Evaluating Search (comparing ranking algorythms)</li>
+            <li>Designing Search, by Tony Russell-Rose</li>
+            <li>Evaluating Search, by Paul Clough</li>
           </ul>
         </p>
       </div>

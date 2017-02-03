@@ -43,5 +43,5 @@ function imgSuite() {
     const srcset = 'test-HD.png 2x';
     const renderedComponent = renderComponent({ srcset });
     expect(renderedComponent.prop('srcset')).toNotExist();
-  });  
+  });
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import H1 from 'components/H1';
 import H2 from 'components/H2';
 import Article from 'components/Article';
@@ -6,6 +7,7 @@ import Section from 'components/Section';
 
 import NodeJsLogo from './nodejs.svg';
 import ReactJsLogo from './reactjs.svg';
+import AngularLogo from './angular.svg';
 
 export default () => (
   <Article>
@@ -18,7 +20,16 @@ export default () => (
         5 years experience developping node apps.
       </p>
       <p>
-        I am familiar with the micro services paradigm, and have been using NodeJS (with Restify, or Express) for that purpose.
+        I am familiar with the microservices paradigm, and have been building APIs in NodeJS (with Restify, or Express) with this aim in mind.
+      </p>
+    </Section>
+    <Section img={AngularLogo} alt="angular logo">
+      <H2>Angular 1</H2>
+      <p>
+        3 years experience developping webapps using Angular 1.
+      </p>
+      <p>
+        I also know E2E testing for this framework using Protractor.
       </p>
     </Section>
     <Section img={ReactJsLogo} alt="reactjs logo">

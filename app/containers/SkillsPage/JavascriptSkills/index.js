@@ -24,7 +24,7 @@ export default () => (
     <Section img={ReactJsLogo} alt="reactjs logo">
       <H2>ReactJS</H2>
       <p>
-        Still learning ReactJS but really like the feeling.
+        Still learning ReactJS but I find it awesome. I am using Redux.
       </p>
       <p>
         This very website has been developped using the React Boilerplate. Checkout the code: github.com/paulintrognon/paulintrognon.fr

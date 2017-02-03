@@ -5,12 +5,12 @@
  */
 
 import React from 'react';
-import JavaScriptArticle from './JavaScriptArticle';
-import SearchUXArticle from './SearchUXArticle';
+import JavaScriptSkills from './JavascriptSkills';
+import SearchUxSkills from './SearchUxSkills';
 
 export default () => (
   <div>
-    <JavaScriptArticle />
-    <SearchUXArticle />
+    <JavaScriptSkills />
+    <SearchUxSkills />
   </div>
 );

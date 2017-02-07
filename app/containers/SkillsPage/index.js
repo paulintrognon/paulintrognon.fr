@@ -5,11 +5,18 @@
  */
 
 import React from 'react';
+import Helmet from 'react-helmet';
 import JavaScriptSkills from './JavascriptSkills';
 import SearchUxSkills from './SearchUxSkills';
 
 export default () => (
   <div>
+    <Helmet
+      title=""
+      meta={[
+        { name: 'description', content: 'Skills of Paulin Trognon, web developper in Lyon' },
+      ]}
+    />
     <JavaScriptSkills />
     <SearchUxSkills />
   </div>

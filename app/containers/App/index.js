@@ -7,6 +7,7 @@
  */
 
 import React from 'react';
+import Helmet from 'react-helmet';
 import Header from '../../components/Header';
 import styled from 'styled-components';
 
@@ -18,6 +19,10 @@ export default function App(props) {
   return (
     <div>
       <Header pathname={props.location.pathname}></Header>
+      <Helmet
+        title="Freelance Full Stack Developper, Lyon"
+        titleTemplate="Paulin Trognon – %s"
+      />
       <Body>
         {React.Children.toArray(props.children)}
       </Body>

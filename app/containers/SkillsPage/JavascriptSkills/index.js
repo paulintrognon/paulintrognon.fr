@@ -1,10 +1,9 @@
 import React from 'react';
 
 import A from 'components/A';
-import H1 from 'components/H1';
-import H2 from 'components/H2';
 import Article from 'components/Article';
 import Section from 'components/Section';
+import SectionHead from 'components/SectionHead';
 
 import NodeJsLogo from './nodejs.svg';
 import ReactJsLogo from './reactjs.svg';
@@ -12,11 +11,9 @@ import AngularLogo from './angular.svg';
 
 export default () => (
   <Article>
-    <H1>
-      Javascript Enthusiast
-    </H1>
+    <SectionHead title="Javascript Enthousiast" />
     <Section img={NodeJsLogo} alt="nodejs logo">
-      <H2>NodeJS</H2>
+      <h3>NodeJS</h3>
       <p>
         5 years experience developping node apps.
       </p>
@@ -25,7 +22,7 @@ export default () => (
       </p>
     </Section>
     <Section img={AngularLogo} alt="angular logo">
-      <H2>Angular 1</H2>
+      <h3>Angular 1</h3>
       <p>
         3 years experience developping webapps using Angular 1.
       </p>
@@ -34,7 +31,7 @@ export default () => (
       </p>
     </Section>
     <Section img={ReactJsLogo} alt="reactjs logo">
-      <H2>ReactJS</H2>
+      <h3>ReactJS</h3>
       <p>
         Still learning ReactJS but I find it awesome. I am using <A href="http://redux.js.org/">Redux</A>.
       </p>

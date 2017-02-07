@@ -14,7 +14,7 @@ export default () => (
     <Helmet
       title=""
       meta={[
-        { name: 'description', content: 'Skills of Paulin Trognon, web developper in Lyon' },
+        { name: 'description', content: 'Node JS, React, Angular, ElasticSearch' },
       ]}
     />
     <JavaScriptSkills />

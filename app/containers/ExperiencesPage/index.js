@@ -6,6 +6,7 @@ import Section from 'components/Section';
 import SectionHead from 'components/SectionHead';
 import JsLogo from './js.svg';
 import ElasticSearchLogo from './elasticsearch.svg';
+import RabbitMq from './rabbitmq.svg';
 
 export default () => (
   <div>
@@ -40,6 +41,15 @@ export default () => (
         </p>
         <p>
           I was a core member of that team, writting full text search algorythms using ElasticSearch, and working to improve the overall user experience with the UI.
+        </p>
+      </Section>
+      <Section img={RabbitMq} alt="RabbitMq logo">
+        <h3>Data processing</h3>
+        <p>
+          Our search corpus was more than 4 millions reports big. We applied a lot of meta tags to those documents to facilitate the search process.
+        </p>
+        <p>
+          To process the reports, we used RabbitMq as our messaging system. I introduced in the company the use of streams in node apps to easily process data.
         </p>
       </Section>
     </Article>

@@ -5,6 +5,7 @@ import Article from 'components/Article';
 import Section from 'components/Section';
 import SectionHead from 'components/SectionHead';
 import JsLogo from './js.svg';
+import ElasticSearchLogo from './elasticsearch.svg';
 
 export default () => (
   <div>
@@ -20,6 +21,8 @@ export default () => (
         <h3>Fullstack JavaScript Developper</h3>
         <p>
           I was one of the core developper of the webapp Findout, a keywords-based search engine.
+        </p>
+        <p>
           This webapp is a Angular frontend talking to many NodeJS APIs. They all had their dedicated database.
           Each API is hosted on a virtual debian server, contained into one big cluster.
         </p>
@@ -28,6 +31,15 @@ export default () => (
         </p>
         <p>
           I implemented several frontend pages, with E2E tests (using protractor), an essential tool for stablity.
+        </p>
+      </Section>
+      <Section img={ElasticSearchLogo} alt="ElasticSearch Logo">
+        <h3>Search UX Designer</h3>
+        <p>
+          Relevency is not an easy challenge for any search engine. Findout had a dedicated team making sure our search algorythm&rsquo;s restuls were as close as possible to our customers expectations.
+        </p>
+        <p>
+          I was a core member of that team, writting full text search algorythms using ElasticSearch, and working to improve the overall user experience with the UI.
         </p>
       </Section>
     </Article>

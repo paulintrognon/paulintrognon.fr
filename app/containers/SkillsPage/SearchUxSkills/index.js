@@ -13,7 +13,7 @@ export default () => (
     <Section img={ElasticsearchLogo} alt="elasticsearch logo">
       <h3>ElasticSearch</h3>
       <p>
-        I have used ElasticSearch for the last 3 years, and am very familiar with its request synthax, as well as its Javascript API.
+        I have used ElasticSearch for the last 3 years, and am very familiar with its request synthax, as well as its JavaScript API.
       </p>
       <h3>Designing Search</h3>
       <p>

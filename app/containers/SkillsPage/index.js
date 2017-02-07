@@ -6,7 +6,7 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
-import JavaScriptSkills from './JavascriptSkills';
+import JavaScriptSkills from './JavaScriptSkills';
 import SearchUxSkills from './SearchUxSkills';
 
 export default () => (

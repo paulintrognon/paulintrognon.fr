@@ -11,7 +11,7 @@ import AngularLogo from './angular.svg';
 
 export default () => (
   <Article>
-    <SectionHead title="Javascript Enthousiast" />
+    <SectionHead title="JavaScript Enthousiast" />
     <Section img={NodeJsLogo} alt="nodejs logo">
       <h3>NodeJS</h3>
       <p>

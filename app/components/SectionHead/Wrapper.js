@@ -2,10 +2,7 @@ import styled from 'styled-components';
 
 export default styled.div`
   h1 {
-    margin: 0;
-    margin-top: 50px;
     margin-bottom: -5px;
-    font-size: 1.5em;
   }
 
   h2 {

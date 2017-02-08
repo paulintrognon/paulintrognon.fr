@@ -31,9 +31,9 @@ export default () => (
         <p>
           Email me at <A href={`mailto:${email}`}>{email}</A>
         </p>
-        <IconLink img={GitHubLogo} alt="GitHub Logo" link="a">GitHub</IconLink>
-        <IconLink img={LinkedinLogo} alt="GitHub Logo" link="b">LinkedIn</IconLink>
-        <IconLink img={StackOverflowLogo} alt="GitHub Logo" link="c">Stack Overflow</IconLink>
+        <IconLink img={GitHubLogo} alt="GitHub Logo" link="https://github.com/paulintrognon/">GitHub</IconLink>
+        <IconLink img={LinkedinLogo} alt="LinkedIn Logo" link="https://www.linkedin.com/in/paulin-trognon-2ba51295/">LinkedIn</IconLink>
+        <IconLink img={StackOverflowLogo} alt="Stack Overflow Logo" link="http://stackoverflow.com/users/1822742/paulin-trognon">Stack Overflow</IconLink>
       </Wrapper>
     </Article>
   </div>

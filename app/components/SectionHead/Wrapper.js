@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export default styled.div`
   h1 {
     margin: 0;
-    font-size: 2em;
     margin-top: 50px;
     margin-bottom: -5px;
     font-size: 1.5em;

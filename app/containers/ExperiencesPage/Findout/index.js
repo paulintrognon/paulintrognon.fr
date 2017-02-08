@@ -32,7 +32,7 @@ export default () => (
         Relevency is not an easy challenge for any search engine. Findout had a dedicated team making sure our search algorythm&rsquo;s restuls were as close as possible to our customers expectations.
       </p>
       <p>
-        I was a core member of that team, writting full text search algorythms using ElasticSearch, and working to improve the overall user experience with the UI.
+        I was a core member of that team, writing full text search algorythms using ElasticSearch, and working to improve the overall user experience with the UI.
       </p>
     </Section>
     <Section img={RabbitMq} alt="RabbitMq logo">

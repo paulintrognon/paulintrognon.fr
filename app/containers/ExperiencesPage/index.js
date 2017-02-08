@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 
 import FindoutExperience from './Findout';
 import TDDuoExperience from './3DDuo';
+import LeonPaulExperience from './LeonPaul';
 
 export default () => (
   <div>
@@ -14,5 +15,6 @@ export default () => (
     />
     <FindoutExperience />
     <TDDuoExperience />
+    <LeonPaulExperience />
   </div>
 );

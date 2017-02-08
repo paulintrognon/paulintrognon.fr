@@ -7,7 +7,7 @@ import NormalImg from 'components/Img';
 
 describe('<Img />', () => {
   it('should render an <img> tag', () => {
-    const renderedComponent = shallow(<Img />);
+    const renderedComponent = shallow(<Img alt="alt" src="src" />);
     expect(renderedComponent.find(NormalImg).length).to.equal(1);
   });
 

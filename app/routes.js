@@ -42,6 +42,14 @@ export default function createRoutes(store) {
           .catch(errorLoading);
       },
     }, {
+      path: '/contact',
+      name: 'contactPage',
+      getComponent(location, cb) {
+        System.import('containers/ContactPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {

@@ -19,8 +19,8 @@ export default function NavBar(props) {
           </NavLink>
         </Li>
         <Li>
-          <NavLink to="/projects" className={props.pathname === '/projects' ? 'active' : ''}>
-            <FormattedMessage {...messages.projects} />
+          <NavLink to="/contact" className={props.pathname === '/contact' ? 'active' : ''}>
+            <FormattedMessage {...messages.contact} />
           </NavLink>
         </Li>
       </ul>

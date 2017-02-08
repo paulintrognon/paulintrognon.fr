@@ -17,8 +17,8 @@ export default defineMessages({
     id: 'app.components.Header.experiences',
     defaultMessage: 'Experiences',
   },
-  projects: {
-    id: 'app.components.Header.projects',
-    defaultMessage: 'Projects',
+  contact: {
+    id: 'app.components.Header.contact',
+    defaultMessage: 'Contact',
   },
 });

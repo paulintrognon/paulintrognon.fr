@@ -9,7 +9,7 @@ describe('<NavBar />', () => {
   it('should render a NavBar tag', headerTagTest);
   it('should select "skills" if location is /', selectSkillsTest);
   it('should select "experiences" if location is /experiences', selectExperiencesTest);
-  it('should select "projects" if location is /projects', selectProjectsTest);
+  it('should select "contact" if location is /contact', selectProjectsTest);
 });
 
 function headerTagTest() {
@@ -32,7 +32,7 @@ function selectExperiencesTest() {
 }
 
 function selectProjectsTest() {
-  const renderedComponent = shallow(<NavBar pathname="/projects" />);
+  const renderedComponent = shallow(<NavBar pathname="/contact" />);
   expect(renderedComponent.find(NavLink).at(0).hasClass('active')).toEqual(false);
   expect(renderedComponent.find(NavLink).at(1).hasClass('active')).toEqual(false);
   expect(renderedComponent.find(NavLink).at(2).hasClass('active')).toEqual(true);

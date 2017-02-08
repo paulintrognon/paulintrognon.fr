@@ -33,7 +33,7 @@ export default () => (
         </p>
         <IconLink img={GitHubLogo} alt="GitHub Logo" link="https://github.com/paulintrognon/">GitHub</IconLink>
         <IconLink img={LinkedinLogo} alt="LinkedIn Logo" link="https://www.linkedin.com/in/paulin-trognon-2ba51295/">LinkedIn</IconLink>
-        <IconLink img={StackOverflowLogo} alt="Stack Overflow Logo" link="http://stackoverflow.com/users/1822742/paulin-trognon">Stack Overflow</IconLink>
+        <IconLink img={StackOverflowLogo} alt="Stack Overflow Logo" link="http://stackoverflow.com/users/1822742/paulin-trognon?tab=profile">Stack Overflow</IconLink>
       </Wrapper>
     </Article>
   </div>

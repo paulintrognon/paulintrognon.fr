@@ -18,7 +18,7 @@ export default () => (
         5 years experience developping node apps.
       </p>
       <p>
-        I have mainly built APIs using NodeJS (with <A href="http://restify.com/">Restify</A>, or <A href="http://expressjs.com">Express</A>) but also some CLI tools.
+        I have mainly built APIs using <A href="http://restify.com/">Restify</A>, or <A href="http://expressjs.com">Express</A>. I also built some utility programs such as <A href="https://github.com/paulintrognon/la-bonne-alerte">crawlers</A>.
       </p>
     </Section>
     <Section img={AngularLogo} alt="angular logo">
@@ -33,7 +33,7 @@ export default () => (
     <Section img={ReactJsLogo} alt="reactjs logo">
       <h3>ReactJS</h3>
       <p>
-        Still learning ReactJS but I find it awesome. I am using <A href="http://redux.js.org/">Redux</A>.
+        Still learning ReactJS but I find it awesome.
       </p>
       <p>
         This very website has been developped using the <A href="https://github.com/react-boilerplate/react-boilerplate">React Boilerplate</A>.

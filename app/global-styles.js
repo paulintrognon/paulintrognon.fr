@@ -14,7 +14,7 @@ injectGlobal`
   }
 
   body {
-    font-family: GidoleRegular, Helvetica, Arial, sans-serif;
+    font-family: CarlitoRegular, Helvetica, Arial, sans-serif;
   }
 
   #app {

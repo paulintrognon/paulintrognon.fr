@@ -19,7 +19,7 @@ const Wrapper = styled(A)`
   }
 
   &:hover .icon-link-desc {
-    color: #105b7c;
+    color: #555555;
   }
 `;
 

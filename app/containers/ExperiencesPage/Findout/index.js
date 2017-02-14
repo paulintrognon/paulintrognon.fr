@@ -1,5 +1,6 @@
 import React from 'react';
 
+import A from 'components/A';
 import Article from 'components/Article';
 import Section from 'components/Section';
 import SectionHead from 'components/SectionHead';
@@ -13,35 +14,35 @@ export default () => (
     <Section img={JsLogo} alt="JavaScript logo">
       <h3>Fullstack JavaScript Developper</h3>
       <p>
-        I was one of the core developper of the webapp Findout, a keywords-based search engine.
+        I was one of the core developper of the webapp <A href="https://findout.com/">Findout</A>, a market reports search engine.
       </p>
       <p>
-        This webapp is a Angular frontend talking to many NodeJS APIs. They all had their dedicated database.
+        The webapp is a Angular frontend talking to many NodeJS APIs. They all have their dedicated database.
         Each API is hosted on a virtual debian server, contained into one big cluster.
       </p>
       <p>
-        I designed the architecture of the Node APIs, in order to have one reusable code base for all of our APIs.
+        I designed the architecture of the Node APIs, having in mind reusability of the code base for all of our APIs.
       </p>
       <p>
-        I implemented several frontend pages, with E2E tests (using protractor), an essential tool for stablity.
+        I implemented several frontend pages, with their E2E tests (using protractor), which improved stability a lot.
       </p>
     </Section>
     <Section img={ElasticSearchLogo} alt="ElasticSearch Logo">
       <h3>Search UX Designer</h3>
       <p>
-        Relevency is not an easy challenge for any search engine. Findout had a dedicated team making sure our search algorythm&rsquo;s restuls were as close as possible to our customers expectations.
+        Relevency is a great challenge for any search engine. Findout had a dedicated Search UX team making sure our search algorythm&rsquo;s results were as close as possible to our customers expectations.
       </p>
       <p>
-        I was a core member of that team, writing full text search algorythms using ElasticSearch, and working to improve the overall user experience with the UI.
       </p>
+      I was a core member of that team, writing full text search algorythms using <A href="https://www.elastic.co/products/elasticsearch">ElasticSearch</A>, and working on improving the overall user experience.
     </Section>
     <Section img={RabbitMq} alt="RabbitMq logo">
       <h3>Data processing</h3>
       <p>
-        Our search corpus was more than 4 millions reports big. We applied a lot of meta tags to those documents to facilitate the search process.
+        Our search corpus was more than 4 millions reports big. We added a lot of meta tags to those documents to facilitate the search process.
       </p>
       <p>
-        To process the reports, we used RabbitMq as our messaging system. I introduced in the company the use of streams in node apps to easily process data.
+        To process the reports, we used <A href="https://www.rabbitmq.com/">RabbitMQ</A> as our messaging system. I introduced in the company the use of streams in node apps to easily process data.
       </p>
     </Section>
   </Article>

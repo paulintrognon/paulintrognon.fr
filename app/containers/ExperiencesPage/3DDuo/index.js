@@ -12,7 +12,7 @@ export default () => (
     <Section img={Html5Logo} alt="html5 logo">
       <h3>HTML5 Developper</h3>
       <p>
-        I was one of the two developpers that built <A href="http://www.france3.fr/emissions/des-chiffres-et-des-lettres/jeu_263721">a full game in HTML and CSS, for the french TV France 3</A>. I was in charge of the frontend.
+        I was one of the two developpers that built <A href="http://www.france3.fr/emissions/des-chiffres-et-des-lettres/jeu_263721">a full game in HTML and CSS, for the french TV France 3</A>.
       </p>
       <p>
         The game was built using jQuery, talking to a remote PHP server. The game data was stored using <A href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB</A>.

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import A from 'components/A';
 import Article from 'components/Article';
 import Section from 'components/Section';
 import SectionHead from 'components/SectionHead';
@@ -16,7 +17,7 @@ export default () => (
       </p>
       <p>
         The old version was an incredibly messy spagetthi code, with tons of code duplication and dead code.
-        I rewrote the full system using an oriented object approach, inspired by the Symfony framework.
+        I rewrote the full system using an oriented object approach, inspired by the <A href="https://symfony.com/">Symfony framework</A>.
       </p>
     </Section>
     <Section img={RedHatLogo} alt="JavaScript logo">

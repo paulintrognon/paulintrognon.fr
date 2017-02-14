@@ -13,15 +13,15 @@ export default () => (
     <Section img={DevOpsLogo} alt="servers logo">
       <h3>Debian</h3>
       <p>
-        I use Debian Jessy as my main developpment platform, and am very familiar with the Linux environment.
+        I use Debian (Jessy) as my main developpment platform, and am very familiar with the Linux environment.
       </p>
       <h3>nginx</h3>
       <p>
         I have used both Apache & nginx through my developpments, I am far to be an expert but I can manage basic setups.
       </p>
-      <h3>VMs and orchestrations</h3>
+      <h3>Orchestrations</h3>
       <p>
-        I have used <A href="https://www.ansible.com/">Ansible</A> and <A href="http://www.ganeti.org/">Ganeti</A> for orchestrating our dev platforms while working with multiple APIs.
+        I have knowledge of <A href="https://www.ansible.com/">Ansible</A>, as I used for orchestrating my dev platforms while working with multiple APIs.
       </p>
     </Section>
   </Article>

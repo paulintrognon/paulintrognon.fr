@@ -19,4 +19,10 @@ export default styled.div`
     float: right;
     margin-top: 5px;
   }
+
+  @media (max-width: 600px) {
+    aside {
+      display: none;
+    }
+  }
 `;

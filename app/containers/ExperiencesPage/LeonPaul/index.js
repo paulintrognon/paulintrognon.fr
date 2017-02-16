@@ -16,7 +16,7 @@ export default () => (
         Full rewrite of the tracking system, a simplified CRM, in PHP 5.4
       </p>
       <p>
-        The old version was an incredibly messy spagetthi code, with tons of code duplication and dead code.
+        The old version was an incredibly messy spagetthi code, with tons of duplications and dead code.
         I rewrote the full system using an oriented object approach, inspired by the <AOut href="https://symfony.com/">Symfony framework</AOut>.
       </p>
     </Section>

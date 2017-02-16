@@ -15,7 +15,7 @@ const Wrapper = styled(AOut)`
   border-radius: 10px;
 
   img {
-    width: 50px;
+    width: 60px;
   }
 
   .icon-link-desc {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AOut from 'components/AOut';
+import AText from 'components/AText';
 import Article from 'components/Article';
 import Section from 'components/Section';
 import SectionHead from 'components/SectionHead';
@@ -14,7 +14,7 @@ export default () => (
     <Section img={JsLogo} alt="JavaScript logo">
       <h3>Fullstack JavaScript Developper</h3>
       <p>
-        I was one of the core developper of the webapp <AOut href="https://findout.com/">Findout</AOut>, a market reports search engine.
+        I was one of the core developper of the webapp <AText href="https://findout.com/">Findout</AText>, a market reports search engine.
       </p>
       <p>
         The webapp is a Angular frontend talking to many NodeJS APIs. They all have their dedicated database.
@@ -34,7 +34,7 @@ export default () => (
       </p>
       <p>
       </p>
-      I was a core member of that team, writing full text search algorythms using <AOut href="https://www.elastic.co/products/elasticsearch">ElasticSearch</AOut>, and working on improving the overall user experience.
+      I was a core member of that team, writing full text search algorythms using <AText href="https://www.elastic.co/products/elasticsearch">ElasticSearch</AText>, and working on improving the overall user experience.
     </Section>
     <Section img={RabbitMq} alt="RabbitMq logo">
       <h3>Data processing</h3>
@@ -42,7 +42,7 @@ export default () => (
         Our search corpus was more than 4 millions reports big. We added a lot of meta tags to those documents to facilitate the search process.
       </p>
       <p>
-        To process the reports, we used <AOut href="https://www.rabbitmq.com/">RabbitMQ</AOut> as our messaging system. I introduced in the company the use of streams in node apps to easily process data.
+        To process the reports, we used <AText href="https://www.rabbitmq.com/">RabbitMQ</AText> as our messaging system. I introduced in the company the use of streams in node apps to easily process data.
       </p>
     </Section>
   </Article>

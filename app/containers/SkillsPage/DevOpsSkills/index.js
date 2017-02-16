@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AOut from 'components/AOut';
+import AText from 'components/AText';
 import Article from 'components/Article';
 import Section from 'components/Section';
 import SectionHead from 'components/SectionHead';
@@ -21,7 +21,7 @@ export default () => (
       </p>
       <h3>Orchestrations</h3>
       <p>
-        I have knowledge of <AOut href="https://www.ansible.com/">Ansible</AOut>, as I used for orchestrating my dev platforms while working with multiple APIs.
+        I have knowledge of <AText href="https://www.ansible.com/">Ansible</AText>, as I used for orchestrating my dev platforms while working with multiple APIs.
       </p>
     </Section>
   </Article>

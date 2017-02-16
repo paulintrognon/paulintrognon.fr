@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AOut from 'components/AOut';
+import AText from 'components/AText';
 import Article from 'components/Article';
 import Section from 'components/Section';
 import SectionHead from 'components/SectionHead';
@@ -18,7 +18,7 @@ export default () => (
         5 years experience developping node apps.
       </p>
       <p>
-        I have mainly built APIs using <AOut href="http://restify.com/">Restify</AOut>, or <AOut href="http://expressjs.com">Express</AOut>. I also built some utility programs such as <AOut href="https://github.com/paulintrognon/la-bonne-alerte">crawlers</AOut>.
+        I have mainly built APIs using <AText href="http://restify.com/">Restify</AText>, or <AText href="http://expressjs.com">Express</AText>. I also built some utility programs such as <AText href="https://github.com/paulintrognon/la-bonne-alerte">crawlers</AText>.
       </p>
     </Section>
     <Section img={AngularLogo} alt="angular logo">
@@ -27,7 +27,7 @@ export default () => (
         3 years experience developping webapps using Angular 1.
       </p>
       <p>
-        I also know E2E testing for this framework using <AOut href="http://www.protractortest.org/#/">Protractor</AOut>.
+        I also know E2E testing for this framework using <AText href="http://www.protractortest.org/#/">Protractor</AText>.
       </p>
     </Section>
     <Section img={ReactJsLogo} alt="reactjs logo">
@@ -36,8 +36,8 @@ export default () => (
         Still learning ReactJS but I find it awesome.
       </p>
       <p>
-        This very website has been developped using the <AOut href="https://github.com/react-boilerplate/react-boilerplate">React Boilerplate</AOut>.
-        Checkout the code: <AOut href="https://github.com/paulintrognon/paulintrognon.fr">github.com/paulintrognon/paulintrognon.fr</AOut>
+        This very website has been developped using the <AText href="https://github.com/react-boilerplate/react-boilerplate">React Boilerplate</AText>.
+        Checkout the code: <AText href="https://github.com/paulintrognon/paulintrognon.fr">github.com/paulintrognon/paulintrognon.fr</AText>
       </p>
     </Section>
   </Article>

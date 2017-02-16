@@ -9,17 +9,17 @@ export default function NavBar(props) {
     <nav>
       <ul>
         <Li>
-          <NavLink to="/" className={props.pathname === '/' ? 'active' : ''}>
+          <NavLink to="/" className={classes(props.pathname, '/')}>
             <FormattedMessage {...messages.skills} />
           </NavLink>
         </Li>
         <Li>
-          <NavLink to="/experiences" className={props.pathname === '/experiences' ? 'active' : ''}>
+          <NavLink to="/experiences" className={classes(props.pathname, '/experiences')}>
             <FormattedMessage {...messages.experiences} />
           </NavLink>
         </Li>
         <Li>
-          <NavLink to="/contact" className={props.pathname === '/contact' ? 'active' : ''}>
+          <NavLink to="/contact" className={classes(props.pathname, '/contact')}>
             <FormattedMessage {...messages.contact} />
           </NavLink>
         </Li>
@@ -31,3 +31,7 @@ export default function NavBar(props) {
 NavBar.propTypes = {
   pathname: React.PropTypes.string,
 };
+
+function classes(pathname, path) {
+  return `yellow-link ${pathname === path ? 'active' : ''}`;
+}

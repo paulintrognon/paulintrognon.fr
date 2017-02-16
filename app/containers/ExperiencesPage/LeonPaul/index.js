@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AOut from 'components/AOut';
+import AText from 'components/AText';
 import Article from 'components/Article';
 import Section from 'components/Section';
 import SectionHead from 'components/SectionHead';
@@ -17,7 +17,7 @@ export default () => (
       </p>
       <p>
         The old version was an incredibly messy spagetthi code, with tons of duplications and dead code.
-        I rewrote the full system using an oriented object approach, inspired by the <AOut href="https://symfony.com/">Symfony framework</AOut>.
+        I rewrote the full system using an oriented object approach, inspired by the <AText href="https://symfony.com/">Symfony framework</AText>.
       </p>
     </Section>
     <Section img={RedHatLogo} alt="JavaScript logo">

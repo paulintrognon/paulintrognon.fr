@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AOut from 'components/AOut';
+import AText from 'components/AText';
 import Article from 'components/Article';
 import Section from 'components/Section';
 import SectionHead from 'components/SectionHead';
@@ -20,8 +20,8 @@ export default () => (
         I have followed those following training courses (by Search Solutions):
       </p>
       <ul>
-        <li><AOut href="http://designingthesearchexperience.com/">Designing Search</AOut>, by Tony Russell-Rose</li>
-        <li><AOut href="http://irsg.bcs.org/SearchSolutions/2016/tutorials/EnterpriseEval-FINAL.pdf">Evaluating Search</AOut>, by Paul Clough</li>
+        <li><AText href="http://designingthesearchexperience.com/">Designing Search</AText>, by Tony Russell-Rose</li>
+        <li><AText href="http://irsg.bcs.org/SearchSolutions/2016/tutorials/EnterpriseEval-FINAL.pdf">Evaluating Search</AText>, by Paul Clough</li>
       </ul>
     </Section>
   </Article>

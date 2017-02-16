@@ -25,4 +25,14 @@ injectGlobal`
   ul {
     margin-left: 15px;
   }
+
+  .yellow-link {
+    background-image: linear-gradient(to bottom, transparent 0%, transparent 15%, #fefe00 0%, #fefe00 85%, transparent 85%, transparent 100%);
+    background-size: 0% 100%;
+    transition: background-size 225ms ease;
+  }
+
+  .yellow-link:hover {
+    background-size: 100% 100%;
+  }
 `;

@@ -10,7 +10,6 @@ function AOut(props) {
   );
 }
 
-// We require the use of src and alt, only enforced by react in dev mode
 AOut.propTypes = {
   children: React.PropTypes.node,
   className: PropTypes.string,

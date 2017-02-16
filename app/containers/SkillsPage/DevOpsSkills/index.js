@@ -17,7 +17,7 @@ export default () => (
       </p>
       <h3>nginx</h3>
       <p>
-        I have used both Apache & nginx through my developpments, I am far to be an expert but I can manage basic setups.
+        I have used both Apache & nginx through my developpments, I am not an expert but I can manage basic setups.
       </p>
       <h3>Orchestrations</h3>
       <p>

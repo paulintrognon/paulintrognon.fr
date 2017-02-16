@@ -28,7 +28,7 @@ export default () => (
         <p>
           <Img src={PaulinTrognonPortrait} alt="Paulin Trognon Portrait" />
         </p>
-        <p>
+        <p className="email">
           Email me at <AText href={`mailto:${email}`}>{email}</AText>
         </p>
         <IconLink img={GitHubLogo} alt="GitHub Logo" link="https://github.com/paulintrognon/">GitHub</IconLink>

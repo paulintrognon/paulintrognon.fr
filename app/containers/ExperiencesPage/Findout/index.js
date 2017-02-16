@@ -17,7 +17,7 @@ export default () => (
         I was one of the core developper of the webapp <AText href="https://findout.com/">Findout</AText>, a market reports search engine.
       </p>
       <p>
-        The webapp is a Angular frontend talking to many NodeJS APIs. They all have their dedicated database.
+        The webapp is an Angular frontend talking to many NodeJS APIs. They all have their dedicated database.
         Each API is hosted on a virtual debian server, contained into one big cluster.
       </p>
       <p>

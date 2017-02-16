@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import A from 'components/A';
+import AOut from 'components/AOut';
 
-const Wrapper = styled(A)`
+const Wrapper = styled(AOut)`
   display: inline-block;
   width: 150px;
   margin-right: 25px;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import A from 'components/A';
+import AOut from 'components/AOut';
 import Article from 'components/Article';
 import IconLink from 'components/IconLink';
 import Wrapper from './Wrapper';
@@ -29,7 +29,7 @@ export default () => (
           <Img src={PaulinTrognonPortrait} alt="Paulin Trognon Portrait" />
         </p>
         <p>
-          Email me at <A href={`mailto:${email}`}>{email}</A>
+          Email me at <AOut href={`mailto:${email}`}>{email}</AOut>
         </p>
         <IconLink img={GitHubLogo} alt="GitHub Logo" link="https://github.com/paulintrognon/">GitHub</IconLink>
         <IconLink img={LinkedinLogo} alt="LinkedIn Logo" link="https://www.linkedin.com/in/paulin-trognon-2ba51295/">LinkedIn</IconLink>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import A from 'components/A';
+import AOut from 'components/AOut';
 import Article from 'components/Article';
 import Section from 'components/Section';
 import SectionHead from 'components/SectionHead';
@@ -18,7 +18,7 @@ export default () => (
         5 years experience developping node apps.
       </p>
       <p>
-        I have mainly built APIs using <A href="http://restify.com/">Restify</A>, or <A href="http://expressjs.com">Express</A>. I also built some utility programs such as <A href="https://github.com/paulintrognon/la-bonne-alerte">crawlers</A>.
+        I have mainly built APIs using <AOut href="http://restify.com/">Restify</AOut>, or <AOut href="http://expressjs.com">Express</AOut>. I also built some utility programs such as <AOut href="https://github.com/paulintrognon/la-bonne-alerte">crawlers</AOut>.
       </p>
     </Section>
     <Section img={AngularLogo} alt="angular logo">
@@ -27,7 +27,7 @@ export default () => (
         3 years experience developping webapps using Angular 1.
       </p>
       <p>
-        I also know E2E testing for this framework using <A href="http://www.protractortest.org/#/">Protractor</A>.
+        I also know E2E testing for this framework using <AOut href="http://www.protractortest.org/#/">Protractor</AOut>.
       </p>
     </Section>
     <Section img={ReactJsLogo} alt="reactjs logo">
@@ -36,8 +36,8 @@ export default () => (
         Still learning ReactJS but I find it awesome.
       </p>
       <p>
-        This very website has been developped using the <A href="https://github.com/react-boilerplate/react-boilerplate">React Boilerplate</A>.
-        Checkout the code: <A href="https://github.com/paulintrognon/paulintrognon.fr">github.com/paulintrognon/paulintrognon.fr</A>
+        This very website has been developped using the <AOut href="https://github.com/react-boilerplate/react-boilerplate">React Boilerplate</AOut>.
+        Checkout the code: <AOut href="https://github.com/paulintrognon/paulintrognon.fr">github.com/paulintrognon/paulintrognon.fr</AOut>
       </p>
     </Section>
   </Article>

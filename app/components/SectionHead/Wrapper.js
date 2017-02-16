@@ -13,7 +13,8 @@ export default styled.div`
   }
 
   aside {
-    color: #555555;
+    background-color: #fefe00;
+    color: black;
     font-size: 1em;
     text-align: right;
     float: right;

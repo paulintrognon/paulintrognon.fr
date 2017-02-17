@@ -7,7 +7,7 @@ import H2 from './H2';
 import Titles from './Titles';
 import messages from './messages';
 
-export default function () {
+export default function Header(props) {
   return (
     <Wrapper>
       <Titles>
@@ -18,7 +18,11 @@ export default function () {
           <FormattedMessage {...messages.h2} />
         </H2>
       </Titles>
-      <NavBar />
+      <NavBar pathname={props.pathname} />
     </Wrapper>
   );
 }
+
+Header.propTypes = {
+  pathname: React.PropTypes.string,
+};

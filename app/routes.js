@@ -19,10 +19,10 @@ export default function createRoutes(store) {
   return [
     {
       path: '/',
-      name: 'home',
+      name: 'skills',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          System.import('containers/HomePage'),
+          System.import('containers/SkillsPage'),
         ]);
 
         const renderRoute = loadModule(cb);
@@ -32,6 +32,22 @@ export default function createRoutes(store) {
         });
 
         importModules.catch(errorLoading);
+      },
+    }, {
+      path: '/experiences',
+      name: 'experiencesPage',
+      getComponent(location, cb) {
+        System.import('containers/ExperiencesPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
+      path: '/contact',
+      name: 'contactPage',
+      getComponent(location, cb) {
+        System.import('containers/ContactPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
       },
     }, {
       path: '*',

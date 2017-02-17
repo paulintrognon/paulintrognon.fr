@@ -7,7 +7,7 @@ export default defineMessages({
   },
   h2: {
     id: 'app.components.Header.h2',
-    defaultMessage: 'Web Developper',
+    defaultMessage: 'Freelance Full Stack Developper, Lyon',
   },
   skills: {
     id: 'app.components.Header.skills',

@@ -10,7 +10,7 @@ export default () => (
     <Helmet
       title="Work Experiences"
       meta={[
-        { name: 'description', content: 'JavaScript Fullstack Developper, Game Developper, Software Developper' },
+        { name: 'description', content: 'After 3 years working as a full stack web developper for a data technology / search engine company, I am embracing the freelance experience.' },
       ]}
     />
     <FindoutExperience />

@@ -11,8 +11,8 @@ import enLocaleData from 'react-intl/locale-data/en';
 import frLocaleData from 'react-intl/locale-data/fr';
 
 export const appLocales = [
-  'en',
   'fr',
+  'en',
 ];
 
 import enTranslationMessages from './translations/en.json';

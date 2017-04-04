@@ -28,7 +28,7 @@ describe('<LocaleToggle />', () => {
     expect(renderedComponent.contains(<LocaleToggle />)).toEqual(true);
   });
 
-  it('should present the default `en` english language option', () => {
+  it('should present all language options', () => {
     const renderedComponent = mount(
       <Provider store={store}>
         <LanguageProvider messages={translationMessages}>
@@ -36,7 +36,8 @@ describe('<LocaleToggle />', () => {
         </LanguageProvider>
       </Provider>
     );
-    expect(renderedComponent.contains(<option value="en">en</option>)).toEqual(true);
+    expect(renderedComponent.contains(<option value="fr">Français</option>)).toEqual(true);
+    expect(renderedComponent.contains(<option value="en">English</option>)).toEqual(true);
   });
 
   describe('mapDispatchToProps', () => {

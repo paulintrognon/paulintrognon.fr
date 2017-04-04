@@ -7,9 +7,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import FrontendSkills from './Frontend';
-import JavaScriptSkills from './JavaScriptSkills';
-import SearchUxSkills from './SearchUxSkills';
-import DevOpsSkills from './DevOpsSkills';
+import BackendSkills from './Backend';
+import SearchUxSkills from './SearchUx';
+import OtherSkills from './Other';
 
 export default () => (
   <div>
@@ -20,8 +20,8 @@ export default () => (
       ]}
     />
     <FrontendSkills />
-    <JavaScriptSkills />
+    <BackendSkills />
     <SearchUxSkills />
-    <DevOpsSkills />
+    <OtherSkills />
   </div>
 );

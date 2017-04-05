@@ -9,11 +9,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Header from '../../components/Header';
-import styled from 'styled-components';
-
-const Body = styled.div`
-  margin-top: 150px;
-`;
+import Body from './Body';
 
 export default function App(props) {
   return (

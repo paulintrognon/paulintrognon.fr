@@ -8,7 +8,8 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
-import Header from '../../components/Header';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 import styled from 'styled-components';
 
 const Body = styled.div`
@@ -26,6 +27,7 @@ export default function App(props) {
       <Body>
         {React.Children.toArray(props.children)}
       </Body>
+      <Footer></Footer>
     </div>
   );
 }

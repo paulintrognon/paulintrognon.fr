@@ -1,3 +1,7 @@
+#v1.0.2
+
+ - Add footer with copyright
+
 #v1.0.1
 
  - Add robots.txt

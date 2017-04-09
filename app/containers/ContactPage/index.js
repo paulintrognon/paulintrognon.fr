@@ -23,12 +23,12 @@ export default () => (
       ]}
     />
     <Wrapper>
-      <h1>Let&rsquo;s get in touch!</h1>
+      <h1>Entrons en contact !</h1>
       <p>
         <Img src={PaulinTrognonPortrait} alt="Paulin Trognon Portrait" />
       </p>
       <p className="email">
-        Email me at <AText href={`mailto:${email}`}>{email}</AText>
+        Vous pouvez me contacter à l&#8217;adresse : <AText href={`mailto:${email}`}>{email}</AText>
       </p>
       <IconLink img={GitHubLogo} alt="GitHub Logo" link="https://github.com/paulintrognon/">GitHub</IconLink>
       <IconLink img={LinkedinLogo} alt="LinkedIn Logo" link="https://www.linkedin.com/in/paulin-trognon-2ba51295/">LinkedIn</IconLink>

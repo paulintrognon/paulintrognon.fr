@@ -1,3 +1,9 @@
+#v1.0.3
+
+ - Fix bug: header tag used instead of div tag
+ - Fix footer floating bug
+ - Add CV link in contact page
+
 #v1.0.2
 
  - Add footer with copyright

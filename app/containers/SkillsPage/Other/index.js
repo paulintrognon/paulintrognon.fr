@@ -18,7 +18,7 @@ export default () => (
         Utilisation de la méthode agile
       </p>
       <p>
-        3 ans de fonctionnement en scrum de 3 semaines
+        3 ans de fonctionnement en Scrums (sprints de 3 semaines)
       </p>
     </Section>
     <Section img={GitLogo} alt="git logo">

@@ -18,7 +18,10 @@ export default () => (
         8 ans d&#8217;éxperience en entreprise
       </p>
       <p>
-        Développement complet d&#8217;un CRM, connaissances sur Symfony
+        Maitrise PHP orienté objet, maitrise du framework MVC
+      </p>
+      <p>
+        Bonnes connaissances Symfony 2
       </p>
     </Section>
     <Section img={NodeJsLogo} alt="nodejs logo">
@@ -27,10 +30,10 @@ export default () => (
         5 ans d&#8217;éxperience en NodeJs (Node 6, ES2015)
       </p>
       <p>
-        Développement d&#8217;APIs REST, de serveurs (<AText href="http://expressjs.com">Express</AText>)
+        Développement d&#8217;APIs REST, de serveurs (avec <AText href="http://expressjs.com">Express</AText>)
       </p>
       <p>
-        Création d&#8217;utilisatires en ligne de commande (crons, traitement de données)
+        Création d&#8217;utilitaires en ligne de commande (crons, traitement de données)
       </p>
     </Section>
     <Section img={NginxLogo} alt="nginx logo">
@@ -39,7 +42,7 @@ export default () => (
         Utilisation d&#8217;Apache & Nginx pour l&#8217;hébergement
       </p>
       <p>
-        Bonne connaissance des serveurs Linux : en particulier la distrib debian
+        Bonne connaissance des serveurs Linux, en particulier la distribution Debian (que j&#8217;utilise au quotidien pour développer)
       </p>
     </Section>
   </Article>

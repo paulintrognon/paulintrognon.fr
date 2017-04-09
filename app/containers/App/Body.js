@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Body = styled.div`
-  margin: 30px 5% 0 4%;
+  margin: 30px 5% 50px 4%;
   margin-top: 150px;
 
   h1 {

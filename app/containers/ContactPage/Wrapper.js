@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.header`
+const Wrapper = styled.div`
   text-align: center;
 
   .email {

@@ -34,10 +34,18 @@ export default function createRoutes(store) {
         importModules.catch(errorLoading);
       },
     }, {
-      path: '/works',
-      name: 'worksPage',
+      path: '/experiences',
+      name: 'experiencesPage',
       getComponent(location, cb) {
-        System.import('containers/WorksPage')
+        System.import('containers/ExperiencesPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
+      path: '/experiences-old',
+      name: 'experiencesPage',
+      getComponent(location, cb) {
+        System.import('containers/OldExperiencesPage')
           .then(loadModule(cb))
           .catch(errorLoading);
       },

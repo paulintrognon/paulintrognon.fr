@@ -9,7 +9,7 @@ import findoutImg from './dcdl.jpg';
 
 export default () => (
   <Experience>
-    <Image src={findoutImg} href="http://dcdl.france3.fr/" alt="Des chiffres et des Lettres" />
+    <Image src={findoutImg} href="http://www.france3.fr/emissions/des-chiffres-et-des-lettres/jeu_263721" alt="Des chiffres et des Lettres" />
     <H1>Version web du jeu Des Chiffres et Des Lettres</H1>
     <div>
       <div className="technology-container">

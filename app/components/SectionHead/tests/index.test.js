@@ -15,7 +15,7 @@ function wrapperTest() {
   const renderedComponent = shallow(<SectionHead title="title" />);
   expect(renderedComponent.find(Wrapper).length).toEqual(1);
   expect(renderedComponent.find('aside').length).toEqual(0);
-  expect(renderedComponent.contains(<h2><span>&nbsp;</span></h2>)).toEqual(true);
+  expect(renderedComponent.contains(<h2 style={{ fontSize: '5px' }}>&nbsp;</h2>)).toEqual(true);
 }
 
 function renderAsideTest() {

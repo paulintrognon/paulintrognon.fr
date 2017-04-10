@@ -3,6 +3,8 @@
   "app.components.Header.h1": "Paulin Trognon",
   "app.components.Header.h2": "Développeur full stack Freelance, Lyon",
   "app.components.Header.projects": "Projets",
-  "app.components.Header.skills": "Compétances",
-  "app.components.NotFoundPage.header": "Page non trouvée !"
+  "app.components.Header.skills": "Compétences",
+  "app.components.NotFoundPage.header": "Page non trouvée !",
+  "app.components.LocaleToggle.en": "English",
+  "app.components.LocaleToggle.fr": "Français"
 }

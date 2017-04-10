@@ -5,6 +5,9 @@ const Wrapper = styled.footer`
   color: #EEE;
   text-align: center;
   padding: 20px;
+  position: absolute;
+  bottom: -150px;
+  width: 100%;
 
   img {
     width: 25px;

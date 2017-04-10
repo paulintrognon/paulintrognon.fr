@@ -6,7 +6,6 @@ export default styled.div`
 
   h1 {
     margin-top: -5px;
-    margin-left: 415px;
   }
 
   h2 {
@@ -17,19 +16,32 @@ export default styled.div`
     float: left;
     border: 1px solid #888;
     width: 400px;
+    max-width: 50%;
+    margin-right: 20px;
   }
 
   .technology-container {
-    margin-left: 415px;
   }
 
   ul {
     margin-top: 10px;
-    margin-left: 422px;
+    margin-left: 7px;
   }
 
   ul li {
     list-style-type: '-';
     padding-left: 5px;
+  }
+
+  @media (max-width: 480px) {
+    img.side-image {
+      width: 100%;
+      max-width: 100%;
+      float: none;
+    }
+
+    h1 {
+      margin-top: 10px;
+    }
   }
 `;

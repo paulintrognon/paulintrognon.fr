@@ -9,6 +9,10 @@ const Wrapper = styled.p`
     width: 30px;
     margin-right: 10px;
   }
+
+  @media (max-width: 480px) {
+    min-width: 125px;
+  }
 `;
 
 export default Wrapper;

@@ -1,3 +1,7 @@
+#v1.1.3
+
+ - Translate page descriptions into french
+
 #v1.1.2
 
  - Unifying routes declaration in order to try to fix firefox load bug

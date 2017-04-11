@@ -19,7 +19,7 @@ export default () => (
     <Helmet
       title="Contact"
       meta={[
-        { name: 'description', content: 'Entrez en contact avec moi !' },
+        { name: 'description', content: 'Information de contact' },
       ]}
     />
     <Wrapper>

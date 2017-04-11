@@ -14,9 +14,9 @@ import OtherSkills from './Other';
 export default () => (
   <div>
     <Helmet
-      title=""
+      title="Compétences"
       meta={[
-        { name: 'description', content: 'Paulin Trognon is a web developper who loves JavaScript, and the new ways of building the web.' },
+        { name: 'description', content: 'Développeur web depuis 5 ans, j\'ai acquis une expérience solide dans le développement d\'applications Angular et React. Je suis également spécialiste de NodeJS.' },
       ]}
     />
     <FrontendSkills />

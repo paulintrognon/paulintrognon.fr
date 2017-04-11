@@ -10,7 +10,7 @@ export default () => (
     <Helmet
       title="Réalisations et expériences professionnelles"
       meta={[
-        { name: 'description', content: 'Voir mes travaux et expériences précedentes, réalisés en javascript, en PHP, etc.' },
+        { name: 'description', content: 'Liste de mes travaux et expériences JavaScript, Node, PHP, etc.' },
       ]}
     />
     <Findout />

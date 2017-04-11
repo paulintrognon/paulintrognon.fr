@@ -6,7 +6,7 @@ const Wrapper = styled.p`
   margin-bottom: 5px;
 
   img {
-    width: 30px;
+    width: 25px;
     margin-right: 10px;
   }
 

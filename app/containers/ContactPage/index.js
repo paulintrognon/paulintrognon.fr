@@ -23,7 +23,6 @@ export default () => (
       ]}
     />
     <Wrapper>
-      <h1>Entrons en contact !</h1>
       <p>
         <Img src={PaulinTrognonPortrait} alt="Paulin Trognon Portrait" />
       </p>

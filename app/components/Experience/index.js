@@ -21,6 +21,8 @@ export default styled.div`
   }
 
   .technology-container {
+    margin-top: 5px;
+    margin-bottom: 15px;
   }
 
   ul {

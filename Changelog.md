@@ -1,3 +1,7 @@
+#v1.1.1
+
+ - Fix <li> bullet display for google chrome
+
 #v1.1.0
 
  - Rewrite Skills page

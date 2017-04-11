@@ -19,19 +19,11 @@ export default function createRoutes(store) {
   return [
     {
       path: '/',
-      name: 'skills',
+      name: 'skillsPage',
       getComponent(nextState, cb) {
-        const importModules = Promise.all([
-          System.import('containers/SkillsPage'),
-        ]);
-
-        const renderRoute = loadModule(cb);
-
-        importModules.then(([component]) => {
-          renderRoute(component);
-        });
-
-        importModules.catch(errorLoading);
+        System.import('containers/SkillsPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
       },
     }, {
       path: '/experiences',

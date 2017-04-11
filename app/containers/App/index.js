@@ -8,13 +8,9 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
+import Body from './Body';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import styled from 'styled-components';
-
-const Body = styled.div`
-  margin-top: 150px;
-`;
 
 export default function App(props) {
   return (

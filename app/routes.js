@@ -42,6 +42,14 @@ export default function createRoutes(store) {
           .catch(errorLoading);
       },
     }, {
+      path: '/experiences-old',
+      name: 'experiencesPage',
+      getComponent(location, cb) {
+        System.import('containers/OldExperiencesPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
       path: '/contact',
       name: 'contactPage',
       getComponent(location, cb) {

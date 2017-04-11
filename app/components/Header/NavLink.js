@@ -16,4 +16,8 @@ export default styled(Link)`
     color: #000000;
     background-size: 100% 100%;
   }
+
+  @media (max-width: 360px) {
+    font-size: 1em;
+  }
 `;

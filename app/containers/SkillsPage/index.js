@@ -6,9 +6,10 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
-import JavaScriptSkills from './JavaScriptSkills';
-import SearchUxSkills from './SearchUxSkills';
-import DevOpsSkills from './DevOpsSkills';
+import FrontendSkills from './Frontend';
+import BackendSkills from './Backend';
+import SearchUxSkills from './SearchUx';
+import OtherSkills from './Other';
 
 export default () => (
   <div>
@@ -18,8 +19,9 @@ export default () => (
         { name: 'description', content: 'Paulin Trognon is a web developper who loves JavaScript, and the new ways of building the web.' },
       ]}
     />
-    <JavaScriptSkills />
+    <FrontendSkills />
+    <BackendSkills />
     <SearchUxSkills />
-    <DevOpsSkills />
+    <OtherSkills />
   </div>
 );

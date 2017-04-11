@@ -31,9 +31,13 @@ export default styled.div`
   }
 
   ul li {
-    list-style-type: '-';
-    padding-left: 5px;
+    list-style-type: none;
   }
+
+ul li:before {
+  content: "-";
+  margin-right: 5px;
+}
 
   @media (max-width: 480px) {
     img.side-image {

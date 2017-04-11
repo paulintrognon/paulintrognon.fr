@@ -1,3 +1,7 @@
+#v1.1.2
+
+ - Unifying routes declaration in order to try to fix firefox load bug
+
 #v1.1.1
 
  - Fix <li> bullet display for google chrome

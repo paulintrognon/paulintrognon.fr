@@ -1,3 +1,9 @@
+#v1.1.0
+
+ - Rewrite Skills page
+ - New Experience page
+ - Translate into french
+
 #v1.0.3
 
  - Fix bug: header tag used instead of div tag

@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Wrapper from './Wrapper';
 
-import { AngularLogo, DebianLogo, DynamoDbLogo, ElasticSearchLogo, Html5Logo, JQueryLogo, NodeJsLogo, PhpLogo, RedHatLogo } from 'images';
+import { AngularLogo, DebianLogo, DynamoDbLogo, ElasticSearchLogo, Html5Logo, JQueryLogo, NodeJsLogo, PhpLogo, RedHatLogo, TypeScriptLogo } from 'images';
 
-export function AngularBadge() {
+export function AngularBadge(props) {
+  const version = props.version || 1;
   return (
     <Wrapper className="technology">
       <AngularLogo />
-      Angular 1
+      Angular {version}
     </Wrapper>
   );
 }
+AngularBadge.propTypes = {
+  version: PropTypes.string,
+};
 
 export function ElasticSearchBadge() {
   return (
@@ -80,6 +84,15 @@ export function RedHatBadge() {
     <Wrapper className="technology">
       <RedHatLogo />
       RedHat Server
+    </Wrapper>
+  );
+}
+
+export function TypeScriptBadge() {
+  return (
+    <Wrapper className="technology">
+      <TypeScriptLogo />
+      TypeScript
     </Wrapper>
   );
 }

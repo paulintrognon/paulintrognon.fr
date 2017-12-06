@@ -9,6 +9,7 @@ import JQueryImg from './jquery.svg';
 import NodeJsImg from './nodejs.svg';
 import PhpImg from './php.svg';
 import RedHatImg from './redhat.svg';
+import TypeScriptImg from './typescript.svg';
 
 export function AngularLogo() {
   return <img alt="angular logo" src={AngularImg} />;
@@ -44,4 +45,8 @@ export function PhpLogo() {
 
 export function RedHatLogo() {
   return <img alt="RedHat logo" src={RedHatImg} />;
+}
+
+export function TypeScriptLogo() {
+  return <img alt="TypeScript logo" src={TypeScriptImg} />;
 }

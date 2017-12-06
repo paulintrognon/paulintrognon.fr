@@ -12,18 +12,6 @@ import NginxLogo from './servers.svg';
 export default () => (
   <Article>
     <SectionHead title="Développeur Backend" />
-    <Section img={PhpLogo} alt="php logo">
-      <h3>PHP</h3>
-      <p>
-        8 ans d&#8217;éxperience en entreprise
-      </p>
-      <p>
-        Maitrise PHP orienté objet, maitrise du framework MVC
-      </p>
-      <p>
-        Bonnes connaissances Symfony 2
-      </p>
-    </Section>
     <Section img={NodeJsLogo} alt="nodejs logo">
       <h3>NodeJs</h3>
       <p>
@@ -34,6 +22,18 @@ export default () => (
       </p>
       <p>
         Création d&#8217;utilitaires en ligne de commande (crons, traitement de données)
+      </p>
+    </Section>
+    <Section img={PhpLogo} alt="php logo">
+      <h3>PHP</h3>
+      <p>
+        8 ans d&#8217;éxperience en entreprise
+      </p>
+      <p>
+        Maitrise PHP orienté objet, maitrise du framework MVC
+      </p>
+      <p>
+        Expertise Laravel 5.5
       </p>
     </Section>
     <Section img={NginxLogo} alt="nginx logo">

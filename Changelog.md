@@ -1,3 +1,7 @@
+#v1.2.0
+
+- Update skills & experiences
+
 #v1.1.3
 
  - Translate page descriptions into french

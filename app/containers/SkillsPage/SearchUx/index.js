@@ -9,7 +9,7 @@ import ElasticsearchLogo from './elasticsearch.svg';
 
 export default () => (
   <Article>
-    <SectionHead title="Guru Search UX" />
+    <SectionHead title="Gourou Search UX" />
     <Section img={ElasticsearchLogo} alt="elasticsearch logo">
       <h3>ElasticSearch</h3>
       <p>

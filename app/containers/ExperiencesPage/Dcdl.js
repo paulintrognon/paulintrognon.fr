@@ -20,7 +20,7 @@ export default () => (
       </div>
       <ul>
         <li>Implémentation du frontend du jeu entièrement en HTML et JavaScript</li>
-        <li>Architecture du match-making (stockage Amazon DynamoDB, une base NoSQL), designé afin de faire jouer les joueurs les uns contre les autres de manière asynchrone en stockant leur partie.</li>
+        <li>Architecture du match-making (stockage Amazon DynamoDB, une base NoSQL), designé afin de faire jouer les joueurs les uns contre les autres de manière asynchrone en stockant leur partie</li>
         <li>Développement du backend en PHP</li>
       </ul>
     </div>

@@ -1,3 +1,7 @@
+#v1.2.1
+
+- Fix typo
+
 #v1.2.0
 
 - Update skills & experiences

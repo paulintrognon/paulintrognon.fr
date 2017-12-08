@@ -15,7 +15,7 @@ export default () => (
     <Section img={NodeJsLogo} alt="nodejs logo">
       <h3>NodeJs</h3>
       <p>
-        5 ans d&#8217;éxperience en NodeJs (Node 6, ES2015)
+        5 ans d&#8217;expérience en NodeJs (Node 6, ES2015)
       </p>
       <p>
         Développement d&#8217;APIs REST, de serveurs (avec <AText href="http://expressjs.com">Express</AText>)
@@ -27,7 +27,7 @@ export default () => (
     <Section img={PhpLogo} alt="php logo">
       <h3>PHP</h3>
       <p>
-        8 ans d&#8217;éxperience en entreprise
+        8 ans d&#8217;expérience en entreprise
       </p>
       <p>
         Maitrise PHP orienté objet, maitrise du framework MVC

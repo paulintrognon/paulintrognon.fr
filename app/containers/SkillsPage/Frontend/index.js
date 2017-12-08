@@ -15,7 +15,7 @@ export default () => (
     <Section img={AngularLogo} alt="angular logo">
       <h3>Angular 1 à 4</h3>
       <p>
-        3 ans d&#8217;éxperience au sein de l&#8217;entreprise <AText href="https://findout.com">Findout</AText>
+        3 ans d&#8217;expérience au sein de l&#8217;entreprise <AText href="https://findout.com">Findout</AText>
       </p>
       <p>
         Développement d&#8217;interfaces, avec tests unitaires et tests E2E

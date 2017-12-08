@@ -15,7 +15,7 @@ export default () => (
     <Section img={NodeJsLogo} alt="nodejs logo">
       <h3>NodeJs</h3>
       <p>
-        5 ans d&#8217;expérience en NodeJs (Node 6, ES2015)
+        5 ans d&#8217;expérience en développement NodeJs (Node 7+, ES2015)
       </p>
       <p>
         Développement d&#8217;APIs REST, de serveurs (avec <AText href="http://expressjs.com">Express</AText>)

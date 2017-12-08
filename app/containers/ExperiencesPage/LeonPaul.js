@@ -19,7 +19,7 @@ export default () => (
         <RedHatBadge />
       </div>
       <ul>
-        <li>Refonte complète du CRM de l&#8217;entreprise en PHP orienté objet, avec une architecture inspirée par le framework Symfony.</li>
+        <li>Refonte complète du CRM de l&#8217;entreprise en PHP orienté objet, avec une architecture inspirée par le framework Symfony</li>
         <li>Hébergement et maintenance du site e-commerce sur un serveur dédié RedHat</li>
         <li>Mise en place d&#8217;outils internes (wiki, gestionnaire de mots de passe) hébergés sur un serveur interne</li>
       </ul>

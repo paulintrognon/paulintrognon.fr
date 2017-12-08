@@ -9,14 +9,14 @@ import ElasticsearchLogo from './elasticsearch.svg';
 
 export default () => (
   <Article>
-    <SectionHead title="Guru Search UX" />
+    <SectionHead title="Gourou Search UX" />
     <Section img={ElasticsearchLogo} alt="elasticsearch logo">
       <h3>ElasticSearch</h3>
       <p>
         3 ans d&#8217;expertise ElasticSearch au sein de l&#8217;entreprise <AText href="https://findout.com">Findout</AText>
       </p>
       <p>
-        Bonne maitrise du moteur de recherche, et de son language de requête
+        Bonne maîtrise du moteur de recherche, et de son language de requête
       </p>
       <h3>Architecture de la recherche</h3>
       <p>

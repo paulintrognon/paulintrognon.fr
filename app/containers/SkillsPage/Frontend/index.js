@@ -21,7 +21,7 @@ export default () => (
         Développement d&#8217;interfaces, avec tests unitaires et tests E2E
       </p>
       <p>
-        Développement d&#8217;une de type back-office en Angular 4
+        Développement d&#8217;un back-office en Angular 4
       </p>
     </Section>
     <Section img={ReactJsLogo} alt="reactjs logo">
@@ -37,10 +37,10 @@ export default () => (
     <Section img={JQueryLogo} alt="jquery logo">
       <h3>Technologies traditionnelles</h3>
       <p>
-        Je suis très à l&#8217;aise avec jQuery, pour l&#8217;avoir utilisé dans plusieurs projets pro ; Je maitrise de manière générale le JavaScript côté Frontend
+        Je suis très à l&#8217;aise avec jQuery, pour l&#8217;avoir utilisé dans plusieurs projets pro ; Je maîtrise de manière générale le JavaScript côté Frontend
       </p>
       <p>
-        Bonnes connaissances en CSS3, maitrise des medias queries (possibilité de rendre un site responsive)
+        Bonnes connaissances en CSS3, maîtrise des medias queries (possibilité de rendre un site responsive)
       </p>
     </Section>
   </Article>

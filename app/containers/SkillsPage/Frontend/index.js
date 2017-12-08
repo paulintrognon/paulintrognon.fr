@@ -21,7 +21,7 @@ export default () => (
         Développement d&#8217;interfaces, avec tests unitaires et tests E2E
       </p>
       <p>
-        Développement d&#8217;une de type back-office en Angular 4
+        Développement d&#8217;un back-office en Angular 4
       </p>
     </Section>
     <Section img={ReactJsLogo} alt="reactjs logo">

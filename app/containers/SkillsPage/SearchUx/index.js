@@ -16,7 +16,7 @@ export default () => (
         3 ans d&#8217;expertise ElasticSearch au sein de l&#8217;entreprise <AText href="https://findout.com">Findout</AText>
       </p>
       <p>
-        Bonne maitrise du moteur de recherche, et de son language de requête
+        Bonne maîtrise du moteur de recherche, et de son language de requête
       </p>
       <h3>Architecture de la recherche</h3>
       <p>

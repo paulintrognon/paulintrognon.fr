@@ -30,7 +30,7 @@ export default () => (
         8 ans d&#8217;expérience en entreprise
       </p>
       <p>
-        Maitrise PHP orienté objet, maitrise du framework MVC
+        maîtrise PHP orienté objet, maîtrise du framework MVC
       </p>
       <p>
         Expertise Laravel 5.5

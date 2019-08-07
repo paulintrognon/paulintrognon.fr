@@ -1,6 +1,15 @@
-html {
-  font-size: 100%;
+.layout {
+	font-family: Carlito, Helvetica, Arial, sans-serif;
 }
-body {
-  font-family: Carlito, Helvetica, Arial, sans-serif;
+
+.content {
+  max-width: 90rem;
+  padding: 0 1rem;
+  margin: auto;
+  margin-top: 10rem;
+}
+@media (min-width: 40rem) {
+  .content {
+    width: 80%;
+  }
 }

@@ -2,7 +2,22 @@ import Link from 'next/link';
 
 import css from './header.css';
 
-export default () => (
+const nav = [
+  {
+    url: '/',
+    label: 'Compétences',
+  },
+  {
+    url: '/experiences',
+    label: 'Expériences',
+  },
+  {
+    url: '/contact',
+    label: 'Contact',
+  },
+];
+
+export default ({ currentPage }) => (
   <header className={css.header}>
     <div className={css.titles}>
       <h1 className={css.mainTitle}>
@@ -14,21 +29,19 @@ export default () => (
     </div>
     <nav>
       <ul className={css.nav}>
-        <li className={css.navItem}>
-          <Link href="/">
-            <a className={css.activeNavLink}>Compétences</a>
-          </Link>
-        </li>
-        <li className={css.navItem}>
-          <Link href="/experiences">
-            <a className={css.navLink}>Éxperiences</a>
-          </Link>
-        </li>
-        <li className={css.navItem}>
-          <Link href="/contact">
-            <a className={css.navLink}>Contact</a>
-          </Link>
-        </li>
+        {nav.map(navItem => (
+          <li className={css.navItem} key={navItem.url}>
+            <Link href={navItem.url}>
+              <a
+                className={
+                  currentPage === navItem.url ? css.activeNavLink : css.navItem
+                }
+              >
+                {navItem.label}
+              </a>
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   </header>

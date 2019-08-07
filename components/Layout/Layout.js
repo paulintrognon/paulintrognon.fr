@@ -1,13 +1,14 @@
 import Header from './Header/Header';
 
 import './reset.css';
-import './layout.css';
 import './fonts.css';
 
-const Layout = props => (
-  <div>
-    <Header />
-    {props.children}
+import css from './layout.css';
+
+const Layout = ({ currentPage, children }) => (
+  <div className={css.layout}>
+    <Header currentPage={currentPage} />
+    <div className={css.content}>{children}</div>
   </div>
 );
 

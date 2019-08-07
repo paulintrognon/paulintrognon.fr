@@ -10,12 +10,12 @@
 
 .titles {
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.3rem;
 }
 .mainTitle {
   font-family: 'Alegreya';
-  font-size: 2.2rem;
-  margin-bottom: 0.3rem;
+  font-size: 2.1rem;
+  margin-bottom: 0.1rem;
 }
 .subtitle {
   font-weight: normal;
@@ -24,16 +24,16 @@
 
 .nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 1.2rem;
   color: #555555;
   padding-bottom: 4px;
-  max-width: 1400px;
+  max-width: 70rem;
   margin: auto;
   margin-top: 1rem;
 }
 .navItem {
-  min-width: 110px;
+  width: 30%;
 }
 .navLink {
   padding-bottom: 3px;

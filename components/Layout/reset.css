@@ -50,3 +50,6 @@ a {
 	color: inherit;
 	text-decoration: none;
 }
+html {
+  font-size: 100%;
+}

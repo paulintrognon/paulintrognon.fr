@@ -1,8 +1,9 @@
 import Layout from '../components/Layout/Layout';
+import Skills from '../components/Skills/Skills';
 
 const Index = () => (
-  <Layout>
-    <p>Hello Next.js</p>
+  <Layout currentPage="/">
+    <Skills />
   </Layout>
 );
 

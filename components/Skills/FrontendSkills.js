@@ -8,8 +8,8 @@ export default () => (
     <Skill logo="react.svg">
       <Subtitle>React.js</Subtitle>
       <P>
-        Bonne expérience acquise au long de mes projets professionnels et
-        personnels (guess-the-game.com, music-genres.com).
+        Solides connaissances acquisent au long de mes projets professionnels et
+        personnels (guess-the-game.com, music-genres.com)
       </P>
       <P>
         Conception et développement d&apos;interfaces utilisateurs ou de

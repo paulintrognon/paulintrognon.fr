@@ -18,7 +18,7 @@ export default () => (
       <Subtitle>PHP&nbsp;: Symfony &amp; Laravel</Subtitle>
       <P>
         Solides connaissances du framework Laravel et connaissances de base du
-        framework Symfony
+        framework Symfony.
       </P>
       <P>
         À l&apos;aise manière générale avec le PHP, que j&apos;utilise depuis

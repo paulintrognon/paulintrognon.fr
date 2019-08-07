@@ -1,9 +1,8 @@
 import Layout from '../components/Layout/Layout';
+import Experiences from '../components/Experiences/Experiences';
 
-export default function Experiences() {
-  return (
-    <Layout currentPage="/experiences">
-      <p>This is the experiences page</p>
-    </Layout>
-  );
-}
+export default () => (
+  <Layout currentPage="/experiences">
+    <Experiences />
+  </Layout>
+);

@@ -1,0 +1,35 @@
+.contact {
+  text-align: center;
+}
+
+.contactPhrase {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.iconLink {
+  width: 9rem;
+  padding: 1rem 0;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+  transition: background-color .2s ease-out;
+}
+.iconLink:hover {
+  background-color: #fefe00;
+}
+@media (min-width: 50rem) {
+  .iconLink {
+    display: inline-block;
+    margin: 0 1.5rem;
+  }
+}
+
+.iconLinkText {
+  color: white;
+  transition: color .2s ease-out;
+}
+
+.iconLink:hover .iconLinkText {
+  color: black;
+}

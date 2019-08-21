@@ -4,7 +4,7 @@ import css from './Experiences.css';
 export default () => (
   <Experience img="iolab.jpg" alt="io-lab">
     <Title>
-      Développement de webapps et d'application mobiles
+      Développement de webapps et d&apos;application mobiles
       <Subtitle>2018</Subtitle>
     </Title>
     <Tags

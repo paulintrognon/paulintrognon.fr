@@ -1,4 +1,5 @@
 import { Skill, Title, Subtitle, P } from './_components';
+import Link from '../Link/Link';
 
 import css from './skills.css';
 
@@ -9,7 +10,15 @@ export default () => (
       <Subtitle>React.js</Subtitle>
       <P>
         Solides connaissances acquisent au long de mes projets professionnels et
-        personnels (guess-the-game.com, music-genres.com)
+        personnels (
+        <Link openInNewWindow href="https://guess-the-game.com">
+          guess-the-game.com
+        </Link>
+        ,{' '}
+        <Link openInNewWindow href="https://www.music-genres.com">
+          music-genres.com
+        </Link>
+        )
       </P>
       <P>
         Conception et développement d&apos;interfaces utilisateurs ou de

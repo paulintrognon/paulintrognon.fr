@@ -3,7 +3,7 @@ import Layout from '../components/Layout/Layout';
 import Contact from '../components/Contact/Contact';
 
 export default () => (
-  <Layout currentPage="/experiences">
+  <Layout currentPage="/contact">
     <Head>
       <title>
         Contactez Paulin Trognon - Développeur Fullstack Freelance à Lyon

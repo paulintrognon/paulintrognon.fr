@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '../../Link/Link';
 
 import css from './header.css';
 
@@ -31,14 +31,13 @@ export default ({ currentPage }) => (
       <ul className={css.nav}>
         {nav.map(navItem => (
           <li className={css.navItem} key={navItem.url}>
-            <Link href={navItem.url}>
-              <a
-                className={
-                  currentPage === navItem.url ? css.activeNavLink : css.navItem
-                }
-              >
-                {navItem.label}
-              </a>
+            <Link
+              href={navItem.url}
+              className={
+                currentPage === navItem.url ? css.activeNavLink : css.navItem
+              }
+            >
+              {navItem.label}
             </Link>
           </li>
         ))}

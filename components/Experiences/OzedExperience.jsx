@@ -4,8 +4,10 @@ import css from './Experiences.css';
 export default () => (
   <Experience img="ozed.jpg" alt="Ozed">
     <Title>
-      Développement d’un back-office fullstack JavaScript
-      <Subtitle>2017</Subtitle>
+      Interface de gestion de points de fidélités pour optitien-lunetiers
+      <Subtitle>
+        2017 <small>(3 mois)</small>
+      </Subtitle>
     </Title>
     <Tags
       tags={[
@@ -15,7 +17,8 @@ export default () => (
       ]}
     />
     <ul className={css.list}>
-      <li>Elaboration des interfaces frontend en Angular 4</li>
+      <li>Architecture de l’application</li>
+      <li>Conception et développement des interfaces frontend en Angular 4</li>
       <li>Implémentation des APIs en NodeJS</li>
       <li>Déploiement sur un VPS ovh</li>
     </ul>

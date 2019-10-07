@@ -5,7 +5,9 @@ export default () => (
   <Experience img="dcdl.jpg" alt="DCDL">
     <Title>
       Version web du jeu Des Chiffres et Des Lettres
-      <Subtitle>2013</Subtitle>
+      <Subtitle>
+        2013 <small>(4 mois)</small>
+      </Subtitle>
     </Title>
     <Tags
       tags={[

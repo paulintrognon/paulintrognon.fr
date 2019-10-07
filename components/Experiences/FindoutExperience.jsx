@@ -5,7 +5,9 @@ export default () => (
   <Experience img="findout.jpg" alt="Findout">
     <Title>
       Développement d’un moteur de recherche
-      <Subtitle>2014-2016</Subtitle>
+      <Subtitle>
+        2014-2016 <small>(3 ans)</small>
+      </Subtitle>
     </Title>
     <Tags
       tags={[

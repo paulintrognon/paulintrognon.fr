@@ -36,12 +36,15 @@
 
 .subtitle {
   font-size: 1.7rem;
-  text-transform: uppercase;
   color: #E5E5E5;
   font-style: italic;
 }
 .subtitle:before {
   content: ' · ';
+}
+
+.subtitle small {
+  font-size: 1.2rem;
 }
 
 .tags {

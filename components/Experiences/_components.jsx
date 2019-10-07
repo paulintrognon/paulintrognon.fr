@@ -27,16 +27,29 @@ export function Subtitle({ children }) {
 export function Tags({ tags }) {
   return (
     <div className={css.tags}>
-      {tags.map(({ img, label }) => (
-        <div key={label} className={css.tag}>
-          <img
-            className={css.tagImage}
-            src={`/static/images/${img}`}
-            alt={`${label} logo`}
-          />
-          {label}
-        </div>
+      {tags.map(({ img, label, url }) => (
+        <TagWrapper url={url}>
+          <div key={label} className={css.tag}>
+            <img
+              className={css.tagImage}
+              src={`/static/images/${img}`}
+              alt={`${label} logo`}
+            />
+            {label}
+          </div>
+        </TagWrapper>
       ))}
     </div>
+  );
+}
+
+function TagWrapper({ url, children }) {
+  if (!url) {
+    return children;
+  }
+  return (
+    <a href={url} target="_blank" rel="noopener noreferrer">
+      {children}
+    </a>
   );
 }

@@ -5,7 +5,9 @@ export default () => (
   <Experience img="leonpaul.jpg" alt="Leon Paul">
     <Title>
       Développement d’un back-office fullstack JavaScript
-      <Subtitle>2011 - 2012</Subtitle>
+      <Subtitle>
+        2011 - 2012 <small>(18 mois)</small>
+      </Subtitle>
     </Title>
     <Tags
       tags={[

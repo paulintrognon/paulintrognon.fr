@@ -1,3 +1,7 @@
+# v2.0
+
+- Full rewrite using Next.js
+
 ###v1.2.2
 
 - Text improvements

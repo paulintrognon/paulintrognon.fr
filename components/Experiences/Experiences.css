@@ -1,0 +1,82 @@
+.experience {
+  display: flex;
+  margin-bottom: 4rem;
+}
+@media (max-width: 50rem) {
+  .experience {
+    display: block;
+  }
+}
+
+.experiencePicture {
+  max-width: 40%;
+  width: 25rem;
+  margin-right: 1rem;
+  flex: 0 0 auto;
+}
+
+.experienceImage {
+  border: 1px solid #888;
+  max-width: 100%;
+  object-fit: cover;
+}
+@media (max-width: 50rem) {
+  .experienceImage {
+    float: none;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.7rem;
+  color: #E5E5E5;
+  font-style: italic;
+}
+.subtitle:before {
+  content: ' · ';
+}
+
+.subtitle small {
+  font-size: 1.2rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.tag {
+  display: flex;
+  align-items: center;
+  margin-right: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tagImage {
+  width: 26px;
+  height: 26px;
+  margin-right: 0.5rem;
+}
+
+.list {
+  margin-top: 1rem;
+}
+@media (min-width: 100rem) {
+  .list {
+    width: 80%;
+  }
+}
+.list li {
+  margin-bottom: 0.5rem;
+}
+.list li:before {
+  content: "-";
+  margin-right: 0.5rem;
+}

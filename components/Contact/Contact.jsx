@@ -20,7 +20,7 @@ export default () => (
       <IconLink
         img="/static/images/contact/cv.svg"
         alt="CV Logo"
-        link="/cv_paulin_trognon_developpeur_web.pdf"
+        link="/static/cv_paulin_trognon_developpeur_web.pdf"
       >
         Curriculum Vitae
       </IconLink>

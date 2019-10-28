@@ -8,11 +8,11 @@ export default () => (
     <Skill logo="nodejs.svg">
       <Subtitle>Node.js</Subtitle>
       <P>
-        6 ans d&apos;expérience de développement de backends et d&apos;API REST
+        6 ans d&apos;expérience en développement de backends et d&apos;API REST
         en Node.js
       </P>
       <P>Connaissances des grands frameworks Node.js : Express, Koa, Meteor.</P>
-      <P>Développement d&apos;API Temps réel avec Socket.io</P>
+      <P>Connaissances de base d&apos;API Temps réel avec Socket.io</P>
     </Skill>
     <Skill logo="php.svg">
       <Subtitle>PHP&nbsp;: Symfony &amp; Laravel</Subtitle>
@@ -28,8 +28,8 @@ export default () => (
     <Skill logo="servers.svg">
       <Subtitle>Hébergement&nbsp;: Nginx &amp; Apache</Subtitle>
       <P>
-        Connaissances de base des serveurs Nginx et Apache (j&apos;utilise Nginx
-        pour l&apos;hébergement de mes projets personnels)
+        Familier des serveurs Nginx et Apache (j&apos;utilise Nginx pour
+        l&apos;hébergement de mes projets personnels)
       </P>
       <P>
         Utilisation quotidienne de Linux (Debian), qui est l&apos;OS que

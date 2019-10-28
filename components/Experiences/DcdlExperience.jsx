@@ -6,7 +6,7 @@ export default () => (
     <Title>
       Version web du jeu Des Chiffres et Des Lettres
       <Subtitle>
-        2013 <small>(4 mois)</small>
+        2013 <small>(Stage, 4 mois)</small>
       </Subtitle>
     </Title>
     <Tags

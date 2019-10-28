@@ -24,7 +24,7 @@ export default ({ currentPage }) => (
         <span>Paulin Trognon</span>
       </h1>
       <h2 className={css.subtitle}>
-        <span>Développeur full stack Freelance, Lyon</span>
+        <span>Développeur full stack Freelance, Annecy</span>
       </h2>
     </div>
     <nav>

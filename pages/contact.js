@@ -6,11 +6,11 @@ export default () => (
   <Layout currentPage="/contact">
     <Head>
       <title>
-        Contactez Paulin Trognon - Développeur Fullstack Freelance à Lyon
+        Contactez Paulin Trognon - Développeur Fullstack Freelance à Annecy
       </title>
       <meta
         name="description"
-        content="Contacter Paulin Trognon, expert JavaScript (Angular, React, React Native) et PHP (Symfony, Laravel), développeur web fullstack depuis 2013, basé à Lyon."
+        content="Contacter Paulin Trognon, expert JavaScript (Angular, React, React Native) et PHP (Symfony, Laravel), développeur web fullstack depuis 2013, basé à Annecy."
       />
     </Head>
     <Contact />

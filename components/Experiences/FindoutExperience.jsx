@@ -6,7 +6,7 @@ export default () => (
     <Title>
       Développement d’un moteur de recherche
       <Subtitle>
-        2014-2016 <small>(3 ans)</small>
+        2014-2016 <small>(CDI, 3 ans)</small>
       </Subtitle>
     </Title>
     <Tags

@@ -1,3 +1,4 @@
+import FadeIn from '../FadeIn/FadeIn';
 import FindoutExperience from './FindoutExperience';
 import OzedExperience from './OzedExperience';
 import DcdlExperience from './DcdlExperience';
@@ -7,11 +8,13 @@ import IoLabExperience from './IoLabExperience';
 
 export default () => (
   <div>
-    <IoLabExperience />
-    <OzedExperience />
-    <CkcNetExperience />
-    <FindoutExperience />
-    <DcdlExperience />
-    <LeonPaulExperience />
+    <FadeIn>
+      <IoLabExperience />
+      <OzedExperience />
+      <CkcNetExperience />
+      <FindoutExperience />
+      <DcdlExperience />
+      <LeonPaulExperience />
+    </FadeIn>
   </div>
 );

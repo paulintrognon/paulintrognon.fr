@@ -34,7 +34,8 @@ export default () => (
         ) en React
       </li>
       <li>
-        Développement d&apos;applications mobiles en React Native et en Ionic
+        Développement d&apos;applications mobiles en React Native (pour Danone)
+        et en Ionic
       </li>
       <li>
         Développement d&apos;APIs pour des applications mobiles en Symfony

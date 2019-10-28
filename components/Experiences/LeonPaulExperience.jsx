@@ -6,7 +6,7 @@ export default () => (
     <Title>
       Développement d’un back-office fullstack JavaScript
       <Subtitle>
-        2011 - 2012 <small>(18 mois)</small>
+        2011 - 2012 <small>(Alternance, 1 an)</small>
       </Subtitle>
     </Title>
     <Tags

@@ -1,26 +1,16 @@
-import { CSSTransitionGroup } from 'react-transition-group';
+import FadeIn from '../FadeIn/FadeIn';
 import FrontendSkills from './FrontendSkills';
 import BackendSkills from './BackendSkills';
 import OtherSkills from './OtherSkills';
-import css from './skills.css';
 
 export default () => (
   <div>
-    <CSSTransitionGroup
-      transitionName={{
-        appear: css.appear,
-        appearActive: css.appearActive,
-      }}
-      transitionAppear
-      transitionAppearTimeout={500}
-      transitionEnter={false}
-      transitionLeave={false}
-    >
+    <FadeIn>
       <div>
         <FrontendSkills />
         <BackendSkills />
         <OtherSkills />
       </div>
-    </CSSTransitionGroup>
+    </FadeIn>
   </div>
 );

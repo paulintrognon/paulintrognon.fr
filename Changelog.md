@@ -1,3 +1,8 @@
+## v2.1.0
+
+- Add fade in animation component on each page
+- Fix typos
+
 ### v2.0.1
 
 - Add missing Resume

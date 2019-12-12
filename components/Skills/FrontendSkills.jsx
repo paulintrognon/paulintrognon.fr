@@ -1,5 +1,4 @@
 import { Skill, Title, Subtitle, P } from './_components';
-import Link from '../Link/Link';
 
 import css from './skills.css';
 
@@ -7,51 +6,32 @@ export default () => (
   <div className={css.skillsGroup}>
     <Title>Développeur Frontend</Title>
     <Skill logo="react.svg">
-      <Subtitle>React.js</Subtitle>
+      <Subtitle>
+        Conception d&apos;applications web (PWA, back-offices...)
+      </Subtitle>
       <P>
-        Solides connaissances acquises lors de projets professionnels (Appli
-        Danone) et personnels (
-        <Link openInNewWindow href="https://guess-the-game.com">
-          guess-the-game.com
-        </Link>
-        ,{' '}
-        <Link openInNewWindow href="https://www.music-genres.com">
-          music-genres.com
-        </Link>
-        )
+        Maitrise des principaux frameworks front : React.js (Redux, Next.js),
+        Angular (TypeScript, RxJs), Vue.js
       </P>
-      <P>
-        Conception et développement d&apos;interfaces utilisateurs ou de
-        dashboards
-      </P>
-      <P>
-        Développement d&apos;applications mobiles avec la technologie React
-        Native (Android & iOS)
-      </P>
+      <P>Dataviz&nbsp;: D3.js, Chart.js</P>
     </Skill>
     <Skill logo="angular.svg">
-      <Subtitle>Angular</Subtitle>
+      <Subtitle>Applications mobiles</Subtitle>
+      <P>Utilisation de la technologie React Native, Ionic</P>
       <P>
-        3 ans d&apos;expérience au sein de l&apos;entreprise Findout, lors du
-        développement d&apos;un moteur de recherche.
-      </P>
-      <P>
-        Courte expérience de développement d&apos;une application mobile à
-        l&apos;aide du framework Ionic chez io-lab.
+        Intégration de Headless CMS&nbsp;: Contentful, Prismic.io, DatoCMS,
+        GraphQL
       </P>
     </Skill>
     <Skill logo="css.svg">
       <Subtitle>Expertise Frontend</Subtitle>
       <P>
-        Bonnes connaissances de l&apos;ensemble des technologies et des bonnes
-        pratiques du front.
+        Bonnes connaissances des outils du front : ES6, Webpack, NPM, Jest,
+        Enzyme...
       </P>
       <P>
-        Bonnes pratiques CSS : BEM, Mobile First, accessibilité, animations...
-      </P>
-      <P>
-        Au courant des dernières technologies : Webpack, PWA, Next.js
-        (technologie utilisée pour ce site)
+        Avocat des bonnes pratiques : CI, Tests unitaires et E2E, outils de
+        lintage, BEM, Mobile First...
       </P>
     </Skill>
   </div>

@@ -1,3 +1,9 @@
+## v2.2.0
+
+- Update CV
+- Rewrite frontend skills
+- Remove Leon Paul experience
+
 ## v2.1.0
 
 - Add fade in animation component on each page

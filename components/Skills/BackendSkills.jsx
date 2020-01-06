@@ -11,11 +11,11 @@ export default () => (
         6 ans d&apos;expérience en développement de backends et d&apos;API REST
         en Node.js
       </P>
-      <P>Expert des frameworks Node.js : Express, Koa, Meteor.</P>
+      <P>Expert du framework Express</P>
       <P>Initié aux APIs temps réel avec Socket.io</P>
     </Skill>
     <Skill logo="php.svg">
-      <Subtitle>PHP&nbsp;: Symfony &amp; Laravel</Subtitle>
+      <Subtitle>PHP&nbsp;: Laravel &amp; Symfony</Subtitle>
       <P>Solides connaissances des framework Laravel et Symfony.</P>
       <P>
         À l&apos;aise manière générale avec le PHP, que j&apos;utilise depuis

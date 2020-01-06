@@ -1,3 +1,7 @@
+### v2.3.1
+
+- Fix CV
+
 ## v2.3.0
 
 - Update CV

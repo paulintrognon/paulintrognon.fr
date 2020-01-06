@@ -4,11 +4,7 @@ export function Experience({ img, alt, children }) {
   return (
     <div className={css.experience}>
       <picture className={css.experiencePicture}>
-        <img
-          className={css.experienceImage}
-          src={`/static/images/${img}`}
-          alt={alt}
-        />
+        <img className={css.experienceImage} src={`/static/images/${img}`} alt={alt} />
       </picture>
 
       <div style={{ flex: 1 }}>{children}</div>
@@ -30,11 +26,7 @@ export function Tags({ tags }) {
       {tags.map(({ img, label, url }) => (
         <TagWrapper url={url}>
           <div key={label} className={css.tag}>
-            <img
-              className={css.tagImage}
-              src={`/static/images/${img}`}
-              alt={`${label} logo`}
-            />
+            <img className={css.tagImage} src={`/static/images/${img}`} alt={`${label} logo`} />
             {label}
           </div>
         </TagWrapper>

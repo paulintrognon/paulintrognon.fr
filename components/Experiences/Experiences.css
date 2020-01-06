@@ -1,6 +1,6 @@
 .experience {
   display: flex;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 @media (max-width: 50rem) {
   .experience {
@@ -16,7 +16,7 @@
 }
 
 .experienceImage {
-  border: 1px solid #888;
+  /* border: 1px solid #888; */
   max-width: 100%;
   object-fit: cover;
 }

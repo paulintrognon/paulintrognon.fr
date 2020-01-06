@@ -1,3 +1,8 @@
+## v2.3.0
+
+- Update CV
+- Rewrite experiences
+
 ## v2.2.0
 
 - Update CV

@@ -13,7 +13,7 @@ export default () => (
     <ul className={css.list}>
       <li>Créations d&apos;API pour application mobiles</li>
       <li>Développement de back-offices pour applications mobile et web</li>
-      <li>Intégration du front (Blade & Vue.js)</li>
+      <li>Intégration du front (Blade &amp; Vue.js)</li>
       <li>Intégration de divers services tiers (Stripe, Cordial...)</li>
     </ul>
   </Experience>

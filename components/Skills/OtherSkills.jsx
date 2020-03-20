@@ -17,7 +17,9 @@ export default () => (
     <Skill logo="git.svg">
       <Subtitle>Git&nbsp;: Github, BitBucket, Gitlab</Subtitle>
       <P>Utilisation quotidienne de Git depuis 6 ans.</P>
-      <P>Bonnes connaissances des plateformes d&apos;hébergement et de l&apos;intégration continue.</P>
+      <P>
+        Bonnes connaissances des plateformes d&apos;hébergement et de l&apos;intégration continue.
+      </P>
     </Skill>
   </div>
 );

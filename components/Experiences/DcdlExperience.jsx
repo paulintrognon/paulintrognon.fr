@@ -20,8 +20,8 @@ export default () => (
     <ul className={css.list}>
       <li>Implémentation du jeu entièrement en HTML et JavaScript</li>
       <li>
-        Architecture du match-making (stockage Amazon DynamoDB, une base NoSQL), le but étant de faire jouer les joueurs
-        les uns contre les autres de manière asynchrone
+        Architecture du match-making (stockage Amazon DynamoDB, une base NoSQL), le but étant de
+        faire jouer les joueurs les uns contre les autres de manière asynchrone
       </li>
       <li>Développement du backend en PHP</li>
     </ul>

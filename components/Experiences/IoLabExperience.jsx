@@ -12,7 +12,11 @@ export default () => [
     </Title>
     <Tags
       tags={[
-        { img: 'react.svg', label: 'React Native', url: 'https://facebook.github.io/react-native/' },
+        {
+          img: 'react.svg',
+          label: 'React Native',
+          url: 'https://facebook.github.io/react-native/',
+        },
         { img: 'prismic.png', label: 'Prismic.io', url: 'https://prismic.io' },
       ]}
     />
@@ -55,7 +59,9 @@ export default () => [
         2018 <small>(1 mois)</small>
       </Subtitle>
     </Title>
-    <Tags tags={[{ img: 'react.svg', label: 'React.js' }, { img: 'nodejs.svg', label: 'Node.js' }]} />
+    <Tags
+      tags={[{ img: 'react.svg', label: 'React.js' }, { img: 'nodejs.svg', label: 'Node.js' }]}
+    />
     <ul className={css.list}>
       <li>Intégration des écrans du jeu concours avec la technologie React</li>
       <li>Back-end de tirage du gagnant et d&apos;anti-triche en Node.js</li>

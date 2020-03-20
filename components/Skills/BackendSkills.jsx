@@ -14,12 +14,18 @@ export default () => (
     <Skill logo="php.svg">
       <Subtitle>PHP&nbsp;: Laravel &amp; Symfony</Subtitle>
       <P>Solides connaissances des framework Laravel et Symfony.</P>
-      <P>À l&apos;aise manière générale avec le PHP, que j&apos;utilise depuis près de 10 ans maintenant.</P>
+      <P>
+        À l&apos;aise manière générale avec le PHP, que j&apos;utilise depuis près de 10 ans
+        maintenant.
+      </P>
     </Skill>
     <Skill logo="servers.svg">
       <Subtitle>DevOps</Subtitle>
       <P>Familier avec Docker, Nginx et Apache</P>
-      <P>Utilisation quotidienne de Linux (Debian), qui est l&apos;OS que j&apos;utilise pour développer.</P>
+      <P>
+        Utilisation quotidienne de Linux (Debian), qui est l&apos;OS que j&apos;utilise pour
+        développer.
+      </P>
     </Skill>
   </div>
 );

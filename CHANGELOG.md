@@ -1,3 +1,8 @@
+## v2.4.0
+
+- Now using Docker
+- Eslint setting change of max line length to 100
+
 ### v2.3.1
 
 - Fix CV

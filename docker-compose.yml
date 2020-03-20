@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+    dev:
+        container_name: paulintrognon.fr-dev
+        image: paulintrognon/paulintrognon.fr-dev
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        environment:
+          - NODE_ENV=development
+        ports:
+            - ${DEV_PORT:-3000}:3000
+            - 35729:35729
+        volumes:
+          - .:/usr/src/app
+    prod:
+        container_name: paulintrognon.fr
+        image: paulintrognon/paulintrognon.fr
+        build:
+            context: .
+            dockerfile: Dockerfile
+        environment:
+          - NODE_ENV=production
+        ports:
+            - ${PORT:-80}:3000

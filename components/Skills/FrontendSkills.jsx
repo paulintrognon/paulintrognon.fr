@@ -7,7 +7,7 @@ export default () => (
     <Title>Développeur Frontend</Title>
     <Skill logo="react.svg">
       <Subtitle>Applications web (PWA, back-offices...)</Subtitle>
-      <P>Expertise de la technologie React.js, que je privilégie pour les PWA (Progressive Web Apps)</P>
+      <P>Expertise de la technologie React.js (Redux, Saga, Redux-observables)</P>
       <P>Bonnes connaissances de la technologie Angular, et de TypeScript</P>
       <P>Connaissances de base en dataviz (D3.js, Chart.js) et de Vue.js</P>
     </Skill>
@@ -18,11 +18,11 @@ export default () => (
       <P>Branchement de Headless CMS&nbsp;: Contentful, Prismic.io, DatoCMS, GraphQL</P>
     </Skill>
     <Skill logo="css.svg">
-      <Subtitle>Expertise Frontend</Subtitle>
+      <Subtitle>Expertise des technologies du front</Subtitle>
       <P>Bonnes connaissances des outils du front : ES2019, Webpack, yarn, Jest, Enzyme...</P>
       <P>
-        Avocat des bonnes pratiques : CI, Tests unitaires et E2E, outils de lintage (ESLint, Prettier), BEM, Mobile
-        First...
+        Avocat des bonnes pratiques : CI, Tests unitaires et E2E, outils de lintage (ESLint,
+        Prettier), BEM, Mobile First...
       </P>
     </Skill>
   </div>

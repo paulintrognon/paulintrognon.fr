@@ -33,9 +33,7 @@ export default ({ currentPage }) => (
           <li className={css.navItem} key={navItem.url}>
             <Link
               href={navItem.url}
-              className={
-                currentPage === navItem.url ? css.activeNavLink : css.navItem
-              }
+              className={currentPage === navItem.url ? css.activeNavLink : css.navItem}
             >
               {navItem.label}
             </Link>

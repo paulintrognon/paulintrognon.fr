@@ -13,7 +13,7 @@
     "prettier/prettier": [
       "error",
       {
-        "printWidth": 120,
+        "printWidth": 100,
         "trailingComma": "es5",
         "singleQuote": true
       }

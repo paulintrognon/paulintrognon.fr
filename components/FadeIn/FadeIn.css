@@ -1,8 +1,8 @@
-.appear {
-  opacity: 0.01;
+.main {
+  opacity: 0;
 }
 
-.appearActive {
+.enterDone {
   opacity: 1;
   transition: opacity 200ms ease-in;
 }

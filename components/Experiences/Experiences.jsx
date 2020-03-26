@@ -6,13 +6,11 @@ import CkcNetExperience from './CkcNetExperience';
 import IoLabExperience from './IoLabExperience';
 
 export default () => (
-  <div>
-    <FadeIn>
-      <IoLabExperience />
-      <OzedExperience />
-      <CkcNetExperience />
-      <FindoutExperience />
-      <DcdlExperience />
-    </FadeIn>
-  </div>
+  <FadeIn>
+    <IoLabExperience />
+    <OzedExperience />
+    <CkcNetExperience />
+    <FindoutExperience />
+    <DcdlExperience />
+  </FadeIn>
 );

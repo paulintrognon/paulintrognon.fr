@@ -6,11 +6,9 @@ import OtherSkills from './OtherSkills';
 export default () => (
   <div>
     <FadeIn>
-      <div>
-        <FrontendSkills />
-        <BackendSkills />
-        <OtherSkills />
-      </div>
+      <FrontendSkills />
+      <BackendSkills />
+      <OtherSkills />
     </FadeIn>
   </div>
 );

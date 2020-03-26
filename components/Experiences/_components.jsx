@@ -24,7 +24,7 @@ export function Tags({ tags }) {
   return (
     <div className={css.tags}>
       {tags.map(({ img, label, url }) => (
-        <TagWrapper url={url}>
+        <TagWrapper url={url} key={label}>
           <div key={label} className={css.tag}>
             <img className={css.tagImage} src={`/static/images/${img}`} alt={`${label} logo`} />
             {label}

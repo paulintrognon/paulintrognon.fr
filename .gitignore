@@ -1,11 +1,12 @@
 # Don't check auto-generated stuff into git
 node_modules
+out
 .next
 
 # dev
 .DS_Store
-npm-debug.log
 .idea
+npm-debug.log
 
 # Env & config
 .env

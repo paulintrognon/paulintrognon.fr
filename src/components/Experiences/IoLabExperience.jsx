@@ -1,7 +1,7 @@
 import React from 'react';
 import { Experience, Title, Subtitle, Tags } from './_components';
 import Link from '../Link/Link';
-import css from './Experiences.css';
+import css from './Experiences.module.css';
 
 export default () => (
   <React.Fragment>

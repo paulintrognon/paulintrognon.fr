@@ -1,6 +1,6 @@
 import { Skill, Title, Subtitle, P } from './_components';
 
-import css from './skills.css';
+import css from './skills.module.css';
 
 export default () => (
   <div className={css.skillsGroup}>

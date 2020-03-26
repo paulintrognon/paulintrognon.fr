@@ -1,4 +1,4 @@
-import css from './Contact.css';
+import css from './Contact.module.css';
 
 export default ({ link, img, alt, children }) => (
   <a href={link} className={css.iconLink}>

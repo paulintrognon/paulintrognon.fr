@@ -1,5 +1,5 @@
 import { Experience, Title, Subtitle, Tags } from './_components';
-import css from './Experiences.css';
+import css from './Experiences.module.css';
 
 export default () => (
   <Experience img="dcdl.jpg" alt="DCDL">

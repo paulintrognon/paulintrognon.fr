@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import css from './Link.css';
+import css from './Link.module.css';
 
 export default ({ className, children, openInNewWindow, ...props }) => (
   <Link {...props}>

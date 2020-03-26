@@ -1,9 +1,6 @@
 import Header from './Header/Header';
 
-import './reset.css';
-import './fonts.css';
-
-import css from './layout.css';
+import css from './layout.module.css';
 
 const Layout = ({ currentPage, children }) => (
   <div className={css.layout}>

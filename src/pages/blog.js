@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { attributes, react as HomeContent } from '../content/blog.md';
+import { attributes, react as BlogPostContent } from '../content/blog.md';
 
 export default () => {
   const { title, cats } = attributes;
@@ -10,7 +10,7 @@ export default () => {
       </Head>
       <article>
         <h1>{title}</h1>
-        <HomeContent />
+        <BlogPostContent />
         <ul>
           {cats.map((cat, k) => (
             <li key={k}>

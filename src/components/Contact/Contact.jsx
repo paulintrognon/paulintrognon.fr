@@ -1,33 +1,33 @@
 import FadeIn from '../FadeIn/FadeIn';
-import css from './Contact.css';
+import css from './Contact.module.css';
 import IconLink from './IconLink';
 
 export default () => (
   <div className={css.contact}>
     <FadeIn>
       <p>
-        <img src="/static/images/contact/portrait.jpg" alt="Portrait" />
+        <img src="/images/contact/portrait.jpg" alt="Portrait" />
       </p>
       <p className={css.contactPhrase}>
         Vous pouvez me contacter à l’adresse : contact@paulintrognon.fr
       </p>
       <div>
         <IconLink
-          img="/static/images/contact/github.svg"
+          img="/images/contact/github.svg"
           alt="GitHub Logo"
           link="https://github.com/paulintrognon/"
         >
           GitHub
         </IconLink>
         <IconLink
-          img="/static/images/contact/cv.svg"
+          img="/images/contact/cv.svg"
           alt="CV Logo"
-          link="/static/cv_paulin_trognon_developpeur_web.pdf"
+          link="/cv_paulin_trognon_developpeur_web.pdf"
         >
           Curriculum Vitae
         </IconLink>
         <IconLink
-          img="/static/images/contact/linkedin.svg"
+          img="/images/contact/linkedin.svg"
           alt="LinkedIn Logo"
           link="https://www.linkedin.com/in/paulin-trognon-2ba51295/"
         >

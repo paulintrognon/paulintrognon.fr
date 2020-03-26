@@ -3,7 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 import throttle from 'throttleit';
 import Link from '../../Link/Link';
 
-import css from './header.css';
+import css from './header.module.css';
 
 const nav = [
   {

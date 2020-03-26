@@ -1,10 +1,10 @@
-import css from './skills.css';
+import css from './skills.module.css';
 
 export function Skill({ logo, alt, children }) {
   return (
     <div className={css.skill}>
       {logo ? (
-        <img src={`/static/images/${logo}`} alt={alt} className={css.logo} />
+        <img src={`/images/${logo}`} alt={alt} className={css.logo} />
       ) : (
         <span className={css.logo} />
       )}

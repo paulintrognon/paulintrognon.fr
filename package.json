@@ -15,9 +15,8 @@
     "export": "next build && next export"
   },
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
     "classnames": "^2.2.6",
-    "next": "^9.0.3",
+    "next": "^9.3.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-transition-group": "^4.3.0",

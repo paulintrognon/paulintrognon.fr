@@ -15,6 +15,10 @@ const nav = [
     label: 'Expériences',
   },
   {
+    url: '/blog',
+    label: 'Blog',
+  },
+  {
     url: '/contact',
     label: 'Contact',
   },

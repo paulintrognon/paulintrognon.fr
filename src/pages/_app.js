@@ -2,6 +2,7 @@ import React from 'react';
 import Router from 'next/router';
 import '../reset.css';
 import '../fonts.css';
+import 'highlight.js/styles/agate.css';
 
 Router.events.on('routeChangeComplete', () => {
   window.scrollTo(0, 0);

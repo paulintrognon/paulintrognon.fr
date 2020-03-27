@@ -1,0 +1,23 @@
+.main {
+  margin: 2rem 0;
+}
+
+.main p,
+.main h2,
+.main h3,
+.main ul,
+.main ol,
+.main blockquote {
+    margin: 1rem 0
+}
+
+.main h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.main h3 {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+}
+  

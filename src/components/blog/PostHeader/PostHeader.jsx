@@ -6,12 +6,12 @@ export default ({ title, date }) => (
   <div className={css.main}>
     <div className={css.backLink}>
       <Link href="/blog">
-        <a>← Liste des articles</a>
+        <a>← All articles</a>
       </Link>
     </div>
     <h1 className={css.title}>{title}</h1>
     <p>
-      <Date dateString={date} />
+      Last updated: <Date dateString={date} />
     </p>
   </div>
 );

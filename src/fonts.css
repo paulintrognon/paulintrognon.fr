@@ -29,6 +29,14 @@
 /* DroidSans */
 
 @font-face {
+  font-family: 'DroidSansMono';
+  src: url('/fonts/DroidSansMono.woff2') format('woff2'),
+      url('/fonts/DroidSansMono.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'DroidSans';
   src: url('/fonts/DroidSans.woff') format('woff');
   font-weight: normal;

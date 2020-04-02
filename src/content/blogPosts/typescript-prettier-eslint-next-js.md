@@ -1,5 +1,6 @@
 ---
 title: Start a Next.js project with TypeScript, Eslint and Prettier
+excerpt: How to add TypeScript to your Next.js app, and how to configure eslint to make it work with prettier, and finally how to integrate this tooling with Visual Studio Code.
 date: '2020-03-28T10:00:00.000Z'
 ---
 

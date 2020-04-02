@@ -9,7 +9,7 @@ export default ({ title, date }) => (
         <a>← All articles</a>
       </Link>
     </div>
-    <h1 className={css.title}>{title}</h1>
+    <h2 className={css.title}>{title}</h2>
     <p>
       Last updated: <Date dateString={date} />
     </p>

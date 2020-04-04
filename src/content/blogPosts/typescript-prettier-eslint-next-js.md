@@ -1,7 +1,7 @@
 ---
 title: Start a Next.js project with TypeScript, Eslint and Prettier
 excerpt: How to add TypeScript to your Next.js app, and how to configure eslint to make it work with prettier, and finally how to integrate this tooling with Visual Studio Code.
-date: '2020-03-28T10:00:00.000Z'
+date: '2020-04-04T10:00:00.000Z'
 ---
 
 
@@ -35,7 +35,7 @@ yarn add --dev typescript @types/react @types/node
 Now, let's replace the default **pages/index.js** by this new **pages/index.tsx** file:
 
 ```jsx
-import React from 'react'
+// pages/index.tsx
 
 /*
  * Will display "Hello World!" unless we specify a name in the url
@@ -61,9 +61,9 @@ export const getServerSideProps = async ({ query }) => {
 }
 ```
 
-This new `Home` component will display "**Hello world!**" unless we specify a name in the url. For example, http://localhost:3000?name=Margot will display "Hello Margot!"
-
 We can now start the server using **yarn dev**.
+
+The app will display **Hello world!** unless we specify a name in the url. For example, http://localhost:3000?name=Margot will display "Hello Margot!"
 
 ```sh
 # Start the dev web server
@@ -75,7 +75,7 @@ Next.js will detect that we are now using TypeScript and will automatically crea
 Let's change the strict field in the tsconfig.json file from **false** to **true**:
 
 ```javascript
-// Change "strict" to true in tsconfig.json
+// tsconfig.json => Change "strict" to true 
 "strict": true,
 ```
 
@@ -109,10 +109,10 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) =
 
 Annnd... We get another error!
 
-The `Props` Type does not seem to mach the Type returned by the `getServerSideProps()` function.
+The `Props` type does not seem to mach the type returned by the `getServerSideProps()` function.
 
-This is because `query.name`, which we assumed would be a string, can also be an array of string.  
-For example, url http://localhost:3000?name=Margot&name=Paulin would mean `query.name = ['Margot', 'Paulin']`.
+This is because `query.name`, which we assumed would be a string, can also be an array of strings.  
+For example, url http://localhost:3000?name=Margot&name=Paulin would imply `query.name = ['Margot', 'Paulin']`.
 
 &nbsp;
 
@@ -128,6 +128,8 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) =
   }
 }
 ```
+
+Now, http://localhost:3000?name=Margot&name=Paulin will display **Hello Margot and Paulin!**
 
 As you can see, TypeScript helped us catch a bug at compile time, thanks to types! Awesome!
 

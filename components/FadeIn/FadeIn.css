@@ -1,8 +1,0 @@
-.appear {
-  opacity: 0.01;
-}
-
-.appearActive {
-  opacity: 1;
-  transition: opacity 200ms ease-in;
-}

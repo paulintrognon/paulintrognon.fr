@@ -1,0 +1,16 @@
+.layout {
+	font-family: Carlito, Helvetica, Arial, sans-serif;
+	min-width: 320px;
+}
+
+.content {
+  max-width: 70rem;
+  padding: 0 1rem;
+  margin: auto;
+  margin-top: 12rem;
+}
+@media (min-width: 40rem) {
+  .content {
+    width: 80%;
+  }
+}

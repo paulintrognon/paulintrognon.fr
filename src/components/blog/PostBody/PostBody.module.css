@@ -1,0 +1,60 @@
+.main {
+  margin: 2rem 0;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+}
+
+.main p,
+.main h2,
+.main h3,
+.main ul,
+.main ol,
+.main blockquote {
+    margin: 1rem 0
+}
+
+.main h2 {
+    font-size: 1.7rem;
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.main h3 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.main code {
+    font-family: DroidSans, Consolas, Liberation Mono, Menlo, monospace;
+    font-size: 1rem;
+    background: #333;
+    color: white;
+    padding: 0 0.3rem;
+    padding-bottom: 0.1rem;
+}
+.main pre>code {
+    padding: 1rem;
+    line-height: 1.5rem;
+    font-size: 1.15rem;
+}
+
+.main a {
+    text-decoration: underline;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, transparent 0%, transparent 15%, #fefe00 0%, #fefe00 85%, transparent 85%, transparent 100%);
+    background-size: 0% 100%;
+    transition: background-size 225ms ease;
+}
+
+.main a:hover {
+    background-size: 100% 100%;
+}
+
+.main strong {
+    font-weight: bold;
+}
+
+.main em {
+    font-style: italic;
+}

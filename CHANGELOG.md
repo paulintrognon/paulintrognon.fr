@@ -1,3 +1,7 @@
+# v3.0.0
+
+- Add Blog section!
+
 ## v2.4.0
 
 - Now using Docker

@@ -25,7 +25,7 @@ cd my-app
 
 ## Adding TypeScript
 
-Then, let's add TypeScript. First, we need to install TypeScript's dependencies.
+First, we need to install TypeScript's dependencies.
 
 ```sh
 # Install TypeScript
@@ -53,13 +53,15 @@ export default Home
  * https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering
  */
 export const getServerSideProps = async ({ query }) => {
-  {
+  return {
     props: {
       name: query.name || 'World',
     }
   }
 }
 ```
+
+This new `Home` component will display "**Hello world!**" unless we specify a name in the url. For example, http://localhost:3000?name=Margot will display "Hello Margot!"
 
 We can now start the server using **yarn dev**.
 
@@ -68,16 +70,16 @@ We can now start the server using **yarn dev**.
 yarn dev
 ```
 
-Next will detect that we are now using TypeScript and will automatically create of us a **tsconfig.json** and a **next-env.d.ts** file.
+Next.js will detect that we are now using TypeScript and will automatically create of us a **tsconfig.json** and a **next-env.d.ts** file.
 
 Let's change the strict field in the tsconfig.json file from **false** to **true**:
 
 ```javascript
-// Edit in tsconfig.json
+// Change "strict" to true in tsconfig.json
 "strict": true,
 ```
 
-Now, if we try to start and access our app, Next.js will through an error, because we have to specify the types (that make sense, that's why we want to use TypeScript in the first place!)
+Now, if we go back to our app, we would see an error, because we have to specify the types (that make sense, that's why we want to use TypeScript in the first place!)
 
 Here is the updated code with types:
 
@@ -105,11 +107,16 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) =
 }
 ```
 
-The same code with Type immediatly throughs an error: the `Props` Type does not mach the Type returned by the `getServerSideProps()` function.
+Annnd... We get another error!
 
-This is because `query.name` can be an array of string. For example, for localhost:3000?name=Margot&name=Paulin, `query.name` would be equal to `['Margot', 'Paulin']`.
+The `Props` Type does not seem to mach the Type returned by the `getServerSideProps()` function.
 
-We have to tweak `getServerSideProps()` to make it match `Props`.
+This is because `query.name`, which we assumed would be a string, can also be an array of string.  
+For example, url http://localhost:3000?name=Margot&name=Paulin would mean `query.name = ['Margot', 'Paulin']`.
+
+&nbsp;
+
+We have to tweak `getServerSideProps()` to fix this issue.
 
 ```jsx
 export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) => {
@@ -117,16 +124,14 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) =
   return {
     props: {
       name: name || 'World',
-    },
+    }
   }
 }
 ```
 
-As you can see, TypeScript helped us catch a bug before it happened, thanks to types! Awesome!
+As you can see, TypeScript helped us catch a bug at compile time, thanks to types! Awesome!
 
-## Add Eslint and Prettier
-
-### Eslint
+## Add Eslint
 
 Eslint will make sure we are following all good practices of TypeScript and React.
 
@@ -137,20 +142,7 @@ Let's install eslint:
 yarn add --dev eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y
 ```
 
-### Prettier
-
-Prettier is a tool that handles code formating for us, and saves us lots of time.
-
-Let's install Prettier:
-
-```sh
-# Add Prettier, and eslint plugin and config for prettier
-yarn add --dev prettier eslint-plugin-prettier eslint-config-prettier
-```
-
-### Configuration
-
-Now, we need to create an **.eslintrc.js** file to configure eslint and prettier. In this file, you can choose the coding styles you prefer: indentation size, tabs or spaces, semi columns or not, etc.
+Now, we need to create an **.eslintrc.js** file to configure eslint.
 
 ```javascript
 // .eslintrc.js
@@ -166,50 +158,102 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended', // eslint react rules (github.com/yannickcr/eslint-plugin-react)
     "plugin:jsx-a11y/recommended", // accessibility plugin
-    'prettier/@typescript-eslint', // Prettier rules
-    'plugin:prettier/recommended'
   ],
   rules: {
-    // Configure your prettier rules here
-    'prettier/prettier': [
-      'error',
-      {
-        // Change your rules accordingly to your coding style preferencies. https://prettier.io/docs/en/options.html
-        semi: false,
-        trailingComma: 'es5',
-        singleQuote: true,
-        printWidth: 100,
-        tabWidth: 2,
-        useTabs: false,
-      },
-    ],
     'react/prop-types': 'off', // We turn off prop-types rule, as we will use TypeScript's types instead.
   },
 };
 ```
 
-Great! Now, if you are using VSCode, you might want to install [the eslint plugin for vscode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), which will enable you to view eslint errors directly in your editor.
+If you are using VSCode, I strongly suggest you install [the eslint plugin for vscode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), which will enable you to view eslint errors directly in your editor.
 
-To enable the true powers of eslint and prettier, let's configure vscode.  
-You can either create a .vscode/settings.json file, or put those settings globally on your vscode settings.json file.
+## Add Prettier
+
+Prettier is a tool that handles code formating for us, saving us a lot of time.
+
+Let's install Prettier:
+
+```sh
+# Add Prettier, and eslint plugin and config for prettier
+yarn add --dev prettier eslint-plugin-prettier eslint-config-prettier
+```
+
+You now need to configure Prettier by creating a **.prettierrc.js**
+
+```JavaScript
+// .prettierrc.js
+module.exports = {
+  // Change your rules accordingly to your coding style preferencies.
+  // https://prettier.io/docs/en/options.html
+  semi: false,
+  trailingComma: 'es5',
+  singleQuote: true,
+  printWidth: 100,
+  tabWidth: 2,
+  useTabs: false,
+}
+```
+
+&nbsp;
+
+**You do not need to install any Prettier plugin to VSCode to make Prettier work**. A much better option is to include Prettier rules into eslint.
+
+Let's edit our **.eslintrc.js** file to do so:
+
+```javascript
+// .eslintrc.js
+module.exports = {
+  root: true,
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: { jsx: true }
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    "plugin:jsx-a11y/recommended",
+    
+    // Prettier plugin and recommended rules
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended'
+  ],
+  rules: {
+    
+    // Include .prettierrc.js rules
+    'prettier/prettier': [ 
+      "error", {}, { "usePrettierrc": true }
+    ],
+
+    'react/prop-types': 'off',
+  },
+};
+```
+
+&nbsp;
+
+To unleash the true powers of eslint and prettier, we can configure vscode so that it autocorrects eslint errors.  
+You should tell vscode not to formatOnSave, but instead fix eslint errors on save.
 
 ```js
 // .vscode/settings.json
 {
-  // This should match your .eslintrc.js config file. Usefull when you create a new file.
-  "editor.tabSize": 2,
-
-  // Tell vscode enable autocorrect eslint errors on save.
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   }
 }
 ```
 
-Now, if you open the pages/index.tsx page, you should see eslint errors. Try saving the file: you will see all those errors corrected automatically. **I can't tell you enough how much time this will save.**
+If you open **pages/index.tsx**, you should see eslint errors. Try saving the file: you will see all those errors corrected automatically. **I can't tell you enough how much time this will save.**
 
-&nbsp;
+See prettier in action:
 
-You can give me feedback on this article on github: 
+![Prettier example](/images/blog/prettier-example.gif)
+
+## That's all folk!
+
+You can give me feedback on this article on github: https://github.com/paulintrognon/paulintrognon.fr/issues
 
 Happy coding!

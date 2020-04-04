@@ -5,7 +5,7 @@ import css from './PostItem.module.css';
 export default ({ blogPosts }) => (
   <div>
     {blogPosts.map((post) => (
-      <div>
+      <div key={post.slug}>
         <Link href={`blog/post/${post.slug}`} key={post.slug}>
           <a className={css.item}>
             <h2 className={css.title}>{post.title}</h2>

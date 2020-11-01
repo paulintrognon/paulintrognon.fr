@@ -358,7 +358,7 @@ module.exports = {
 
 Let's now add a test file for our `index.tsx` component. I like to add my test files next to my components, but you can also create a dedicated `tests` folder.
 
-```tsx
+```js
 // pages/index.test.tsx
 
 import renderer from 'react-test-renderer'

@@ -11,11 +11,11 @@ In this post, I will show you how to create a clean Next.js app with TypeScript 
 
 Let's do it!
 
-_Note: you have have a look at the end result here: https://github.com/paulintrognon/next-typescript_
-  
-## Initiating the project
+_Note: you can have a look at the end result here: https://github.com/paulintrognon/next-typescript_
 
 _Note: we will use [yarn](https://yarnpkg.com/) instead of npm throughout this post._
+  
+## Initiating the project
 
 Please first create a new project folder, with the following package.json file:
 

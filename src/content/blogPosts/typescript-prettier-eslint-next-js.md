@@ -32,7 +32,7 @@ Please first create a new project folder, with the following package.json file:
 
 You can also add this `.gitignore` file:
 
-```
+```sh
 /node_modules
 .DS_Store
 .idea
@@ -319,7 +319,7 @@ _**Note:** If you want to skip the check (for example when you are just commitin
 
 You are now ready to write beautiful TypeScript code without having to worry about commiting wrong code! :)
 
-## Bonus: Add unit testing with Jest
+## Bonus - Add unit testing with Jest
 
 A good quality code usually implies unit testing. In this section, we will go a bit further in our bootstraping by adding the bases for Jest tests.
 

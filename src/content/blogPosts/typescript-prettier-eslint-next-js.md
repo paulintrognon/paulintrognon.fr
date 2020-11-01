@@ -10,6 +10,8 @@ date: '2020-11-01T16:00:00.000Z'
 In this post, I will show you how to create a clean Next.js app with TypeScript from scratch, and how to configure eslint to make it work with prettier, and finally how to integrate this tooling with Visual Studio Code.
 
 Let's do it!
+
+_Note: you have have a look at the end result here: https://github.com/paulintrognon/next-typescript_
   
 ## Initiating the project
 
@@ -53,6 +55,8 @@ yarn-debug.log*
 yarn-error.log*
 
 ```
+
+Run `git init` to initiate git.  
 
 Then, let's install next.js and its dependencies, alongside with TypeScript
 
@@ -254,7 +258,9 @@ See prettier in action:
 
 ## Husky: Linting on commit
 
-On way to make sure that the code will stay clean is to check for ESLint and TypeScript errors before each commit. One way of achieving this is to use Husky, a little program that will run scripts on a given Git command. 
+On way to make sure that the code will stay clean is to check for ESLint and TypeScript errors before each commit. One way of achieving this is to use Husky, a little program that will run scripts on a given Git command.
+
+**Note: Make sure you have initiated git with `git init` before you continue.**
 
 First, let's add scripts in our package.json that will check our code:
 
@@ -263,16 +269,16 @@ First, let's add scripts in our package.json that will check our code:
 {
   // ...
   "scripts": {
-    // ...
-    "check:type": "tsc --project tsconfig.json --pretty --noEmit",
-    "check:lint": "eslint . --ext ts --ext tsx --fix"
+    // ...,
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    "lint": "eslint . --ext ts --ext tsx --fix"
   },
   // ...
 }
 ```
 
-  - **"check:type"** will look for TypeScript errors
-  - **"check:lint"** will look for ESLint errors (if there are fixable errors, will fix them)
+  - **type-check** will look for TypeScript errors
+  - **lint** will look for ESLint errors (if there are fixable errors, it will fix them)
 
 Next, we need to install Husky
 
@@ -288,9 +294,9 @@ Let's now use the `yarn lint` script to prevent us from commiting if there are T
   // ...
   "husky": {
     "hooks": {
-      "pre-commit": "yarn check:type && yarn check:lint"
+      "pre-commit": "yarn type-check && yarn lint"
     }
-  }
+  },
   // ...
 }
 ```
@@ -312,6 +318,8 @@ error Command failed with exit code 2.
 info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
 husky > pre-commit hook failed (add --no-verify to bypass)
 ```
+
+If husky did not start on commit, try reinstalling it: `yarn add --dev husky`
 
 _**Note:** If you want to skip the check (for example when you are just commiting changes to your README.md file), you can add a `--no-verify` flag to your commit command. For example: `git commit --no-verify -m "Update README.md"`_
 
@@ -338,6 +346,8 @@ You then need to create the following config files:
 }
 ```
 
+&nbsp;
+
 ```js
 // jest.config.js
 module.exports = {
@@ -356,7 +366,7 @@ module.exports = {
 }
 ```
 
-Let's now add a test file for our `index.tsx` component. I like to add my test files next to my components, but you can also create a dedicated `tests` folder.
+Let's now add a test file for our `index.tsx` component. I like to add my test files next to my components, but you can also create a dedicated `tests` folder for your tests.
 
 ```js
 // pages/index.test.tsx
@@ -372,7 +382,23 @@ describe('Index page', () => {
 })
 ```
 
-Now you can run `npm run test` to start your jest tests!
+In order to run tests, you need to add the following script to your package.json:
+
+```json
+// package.json
+{
+  // ...
+  "scripts": {
+    // ...,
+    "test": "jest"
+  },
+  // ...
+}
+```
+
+Now you can run `yarn test` to start your jest tests!
+
+_Note: You can run jest in watch mode by using `yarn test --watch`. Very usefull!_
 
 ## That's all folk!
 

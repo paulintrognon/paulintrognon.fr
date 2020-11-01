@@ -1,69 +1,84 @@
 ---
-title: Start a Next.js project with TypeScript, Eslint and Prettier
-excerpt: How to add TypeScript to your Next.js app, and how to configure eslint to make it work with prettier, and finally how to integrate this tooling with Visual Studio Code.
-date: '2020-04-04T10:00:00.000Z'
+title: Start a clean Next.js project with TypeScript, Eslint and Prettier from scratch
+excerpt: How to create a Next.js app with TypeScript from scratch, and how to configure eslint to make it work with prettier, and finally how to integrate this tooling with Visual Studio Code.
+date: '2020-11-01T16:00:00.000Z'
 ---
 
 
 **TypeScript** is awesome. So is **Prettier**.
 
-In this post, I will show you how to add TypeScript to your Next.js app, and how to configure eslint to make it work with prettier, and finally how to integrate this tooling with Visual Studio Code.
+In this post, I will show you how to create a clean Next.js app with TypeScript from scratch, and how to configure eslint to make it work with prettier, and finally how to integrate this tooling with Visual Studio Code.
 
 Let's do it!
   
 ## Initiating the project
 
-Let's start by creating a new next.js project.
+_Note: we will use [yarn](https://yarnpkg.com/) instead of npm throughout this post._
 
-```sh
-# Create a new next.js app using the official starter
-yarn create next-app my-app
+Please first create a new project folder, with the following package.json file:
 
-# Jump in the app's folder
-cd my-app
+```json
+// package.json
+{
+  "name": "nextjs-typescript",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  }  
+}
 ```
 
-## Adding TypeScript
+You can also add this `.gitignore` file:
 
-First, we need to install TypeScript's dependencies.
+```
+/node_modules
+.DS_Store
+.idea
+
+# Next.js
+/.next
+/build
+/out
+.vercel
+.env.*
+
+# test
+/coverage
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+```
+
+Then, let's install next.js and its dependencies, alongside with TypeScript
 
 ```sh
+# Install Next.js dependencies
+yarn add next react react-dom
+
 # Install TypeScript
 yarn add --dev typescript @types/react @types/node
 ```
 
-Now, let's replace the default **pages/index.js** by this new **pages/index.tsx** file:
+Now, let's create a simple **pages/index.tsx** file:
 
 ```jsx
 // pages/index.tsx
 
-/*
- * Will display "Hello World!" unless we specify a name in the url
- * http://localhost:3000?name=Margot will display "Hello Margot!"
- */ 
-const Home = ({ name }) => (
-  <div>
-    <p>Hello {name}!</p>
-  </div>
+const IndexPage: React.FC = () => (
+  <main>
+    <h1>Hello World!</h1>
+  </main>
 )
-export default Home
+export default IndexPage
 
-/*
- * More information about getServerSideProps:
- * https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering
- */
-export const getServerSideProps = async ({ query }) => {
-  return {
-    props: {
-      name: query.name || 'World',
-    }
-  }
-}
 ```
 
 We can now start the server using **yarn dev**.
-
-The app will display **Hello world!** unless we specify a name in the url. For example, http://localhost:3000?name=Margot will display "Hello Margot!"
 
 ```sh
 # Start the dev web server
@@ -72,66 +87,16 @@ yarn dev
 
 Next.js will detect that we are now using TypeScript and will automatically create of us a **tsconfig.json** and a **next-env.d.ts** file.
 
-Let's change the strict field in the tsconfig.json file from **false** to **true**:
+I recommend you change the strict field in the tsconfig.json file from **false** to **true**. This will prevent you from not specifing types, and from using `any`. [More info here.](https://www.typescriptlang.org/docs/handbook/2/basic-types.html#strictness)
 
-```javascript
+```json
 // tsconfig.json => Change "strict" to true 
-"strict": true,
-```
-
-Now, if we go back to our app, we would see an error, because we have to specify the types (that make sense, that's why we want to use TypeScript in the first place!)
-
-Here is the updated code with types:
-
-```jsx
-import React from 'react'
-import { GetServerSideProps } from 'next'
-
-type Props = {
-  name: string
-}
-
-const Home: React.FunctionComponent<Props> = ({ name }) => (
-  <div>
-    <p>Hello {name}!</p>
-  </div>
-)
-export default Home
-
-export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) => {
-  return {
-    props: {
-      name: query.name || 'World',
-    }
-  }
+{
+  // ...
+  "strict": true,
+  // ...
 }
 ```
-
-Annnd... We get another error!
-
-The `Props` type does not seem to mach the type returned by the `getServerSideProps()` function.
-
-This is because `query.name`, which we assumed would be a string, can also be an array of strings.  
-For example, url http://localhost:3000?name=Margot&name=Paulin would imply `query.name = ['Margot', 'Paulin']`.
-
-&nbsp;
-
-We have to tweak `getServerSideProps()` to fix this issue.
-
-```jsx
-export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) => {
-  const name = query.name instanceof Array ? query.name.join(', ') : query.name
-  return {
-    props: {
-      name: name || 'World',
-    }
-  }
-}
-```
-
-Now, http://localhost:3000?name=Margot&name=Paulin will display **Hello Margot and Paulin!**
-
-As you can see, TypeScript helped us catch a bug at compile time, thanks to types! Awesome!
 
 ## Add Eslint
 
@@ -141,30 +106,54 @@ Let's install eslint:
 
 ```sh
 # Add Eslint, and a TypeScript parser for Eslint, and a react eslint plugin
-yarn add --dev eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y
+yarn add --dev eslint @typescript-eslint/parser  @typescript-eslint/eslint-plugin eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y
 ```
 
-Now, we need to create an **.eslintrc.js** file to configure eslint.
+If we break it down:
+
+  - `Eslint` is the main eslint package.
+  - `@typescript-eslint/parser` will allow ESLint to parse TypeScript files.
+  - `@typescript-eslint/eslint-plugin` will add TypeScript specific lint rules.
+  - `eslint-plugin-react` will add React specific lint rules.
+  - `eslint-plugin-react-hooks` will extend `eslint-plugin-react` to add React Hooks rules.
+  - `eslint-plugin-jsx-a11y` will add accessibility related rules.
+
+
+
+To enable and configure ESLint, we need to create a **.eslintrc.js** file.
 
 ```javascript
 // .eslintrc.js
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser', // the TypeScript parser we installed earlier
-  parserOptions: {
-    ecmaFeatures: { jsx: true } // Allows for the parsing of JSX
+  parser: '@typescript-eslint/parser',
+  settings: { react: { version: 'detect' } },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
   },
   extends: [
-    'eslint:recommended', // eslint default rules
-    'plugin:@typescript-eslint/eslint-recommended', // eslint TypeScript rules (github.com/typescript-eslint/typescript-eslint)
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended', // eslint react rules (github.com/yannickcr/eslint-plugin-react)
-    "plugin:jsx-a11y/recommended", // accessibility plugin
+    'eslint:recommended', // Default rules
+    'plugin:@typescript-eslint/recommended', // TypeScript rules
+    'plugin:react/recommended', // React rules
+    'plugin:react-hooks/recommended', // React hooks rules
+    'plugin:jsx-a11y/recommended', // Accessibility rules
   ],
   rules: {
-    'react/prop-types': 'off', // We turn off prop-types rule, as we will use TypeScript's types instead.
+    'react/prop-types': 'off', // We will use TypeScript's types for component props instead.
+    'react/react-in-jsx-scope': 'off', // No need to import React with Next.js
+    'jsx-a11y/anchor-is-valid': 'off', // This rule is not compatible with how Next.js's <Link />
+    // I suggest this setting for requiring return types on functions only where usefull
+    '@typescript-eslint/explicit-function-return-type': [
+      'warn', {
+        allowExpressions: true,
+        allowConciseArrowFunctionExpressionsStartingWithVoid: true
+      }
+    ],
   },
 };
+
 ```
 
 If you are using VSCode, I strongly suggest you install [the eslint plugin for vscode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), which will enable you to view eslint errors directly in your editor.
@@ -194,11 +183,12 @@ module.exports = {
   tabWidth: 2,
   useTabs: false,
 }
+
 ```
 
 &nbsp;
 
-**You do not need to install any Prettier plugin to VSCode to make Prettier work**. A much better option is to include Prettier rules into eslint.
+**You do NOT need to install any Prettier plugin to VSCode to make Prettier work**. A much better option is to include Prettier rules into eslint.
 
 Let's edit our **.eslintrc.js** file to do so:
 
@@ -207,30 +197,37 @@ Let's edit our **.eslintrc.js** file to do so:
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: { jsx: true }
+  settings: { react: { version: 'detect' } },
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
   },
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
-    "plugin:jsx-a11y/recommended",
-    
-    // Prettier plugin and recommended rules
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended'
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
+    'prettier/@typescript-eslint', // Prettier plugin
+    'plugin:prettier/recommended', // Prettier recommended rules 
   ],
   rules: {
-    
-    // Include .prettierrc.js rules
-    'prettier/prettier': [ 
-      "error", {}, { "usePrettierrc": true }
-    ],
-
     'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
+    '@typescript-eslint/explicit-function-return-type': [
+      'warn',
+      {
+        allowExpressions: true,
+        allowConciseArrowFunctionExpressionsStartingWithVoid: true,
+      },
+    ],
+    // Includes .prettierrc.js rules
+    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
   },
-};
+}
+
 ```
 
 &nbsp;
@@ -248,11 +245,134 @@ You should tell vscode not to formatOnSave, but instead fix eslint errors on sav
 }
 ```
 
-If you open **pages/index.tsx**, you should see eslint errors. Try saving the file: you will see all those errors corrected automatically. **I can't tell you enough how much time this will save.**
+If you open **pages/index.tsx**, you may see eslint errors. Try saving the file: you will see all those errors corrected automatically. **I can't tell you enough how much time this will save.**
 
 See prettier in action:
 
 ![Prettier example](/images/blog/prettier-example.gif)
+
+
+## Husky: Linting on commit
+
+On way to make sure that the code will stay clean is to check for ESLint and TypeScript errors before each commit. One way of achieving this is to use Husky, a little program that will run scripts on a given Git command. 
+
+First, let's add scripts in our package.json that will check our code:
+
+```json
+// package.json
+{
+  // ...
+  "scripts": {
+    // ...
+    "check:type": "tsc --project tsconfig.json --pretty --noEmit",
+    "check:lint": "eslint . --ext ts --ext tsx --fix"
+  },
+  // ...
+}
+```
+
+  - **"check:type"** will look for TypeScript errors
+  - **"check:lint"** will look for ESLint errors (if there are fixable errors, will fix them)
+
+Next, we need to install Husky
+
+```sh
+yarn add --dev husky
+```
+
+Let's now use the `yarn lint` script to prevent us from commiting if there are TypeScript or ESLint errors, by adding this configuration in package.json:
+
+```json
+// package.json
+{
+  // ...
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn check:type && yarn check:lint"
+    }
+  }
+  // ...
+}
+```
+
+Now, if we commit our changes, our code will be checked. You can try to mess up with the code (for example, replace `React.FC` with `string` in pages/index.tsx) and try to commit. This should happen:
+
+```sh
+$ git commit -m "commit with error"
+husky > pre-commit (node v12.18.3)
+tsc --project tsconfig.json --pretty --noEmit && eslint . --ext ts --ext tsx --fix
+pages/index.tsx:1:7 - error TS2322: Type '() => JSX.Element' is not assignable to type 'string'.
+
+1 const IndexPage: string = () => {
+        ~~~~~~~~~
+
+Found 1 error.
+
+error Command failed with exit code 2.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+husky > pre-commit hook failed (add --no-verify to bypass)
+```
+
+_**Note:** If you want to skip the check (for example when you are just commiting changes to your README.md file), you can add a `--no-verify` flag to your commit command. For example: `git commit --no-verify -m "Update README.md"`_
+
+### Good job reading this far!
+
+You are now ready to write beautiful TypeScript code without having to worry about commiting wrong code! :)
+
+## Bonus: Add unit testing with Jest
+
+A good quality code usually implies unit testing. In this section, we will go a bit further in our bootstraping by adding the bases for Jest tests.
+
+First, we need to insall testing-related packages:
+
+```sh
+yarn add --dev jest @types/jest babel-jest jest-watch-typeahead react-test-renderer @types/react-test-renderer
+```
+
+You then need to create the following config files:
+
+```json
+// .babelrc
+{
+  "presets": ["next/babel"]
+}
+```
+
+```js
+// jest.config.js
+module.exports = {
+  roots: ['<rootDir>'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
+  testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
+  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
+  transform: {
+    '^.+\\.(ts|tsx)$': 'babel-jest',
+  },
+  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
+  moduleNameMapper: {
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js',
+  },
+}
+```
+
+Let's now add a test file for our `index.tsx` component. I like to add my test files next to my components, but you can also create a dedicated `tests` folder.
+
+```tsx
+// pages/index.test.tsx
+
+import renderer from 'react-test-renderer'
+import IndexPage from '.'
+
+describe('Index page', () => {
+  it('should match the snapshot', () => {
+    const tree = renderer.create(<IndexPage />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})
+```
+
+Now you can run `npm run test` to start your jest tests!
 
 ## That's all folk!
 

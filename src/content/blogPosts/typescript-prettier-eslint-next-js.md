@@ -466,6 +466,6 @@ _Note: You can run jest in watch mode by using `yarn test --watch`. Very usefull
 
 ## That's all folks!
 
-You can give me feedback on this article on github: https://github.com/paulintrognon/paulintrognon.fr/issues
+You can give me feedback on this article on github: https://github.com/paulintrognon/paulintrognon.fr/issues/8
 
 Happy coding!

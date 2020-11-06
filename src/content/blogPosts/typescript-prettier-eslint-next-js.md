@@ -1,5 +1,5 @@
 ---
-title: Start a clean Next.js project with TypeScript, Eslint and Prettier from scratch
+title: Start a clean Next.js project with TypeScript, ESLint and Prettier from scratch
 excerpt: How to create a Next.js app with TypeScript from scratch, and how to configure ESLint to make it work with prettier, and finally how to integrate this tooling with Visual Studio Code.
 date: '2020-11-06T16:00:00.000Z'
 ---
@@ -364,7 +364,7 @@ git commit -m "test"
 
 Only the `pages/index.tsx` file will be checked for ESLint errors.
 
-```
+```sh
 husky > pre-commit (node v12.18.3)
 ✔ Preparing...
 ⚠ Running tasks...

@@ -14,6 +14,12 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap"
         />
+        <script
+          async
+          defer
+          data-domain="paulintrognon.fr"
+          src="https://analytiques.paulintrognon.fr/js/plausible.js"
+        />
       </Head>
       <Layout>
         <Component {...pageProps} />

@@ -1,12 +1,10 @@
 import { NextPage } from 'next'
-import Head from 'next/head'
+import Seo from '../components/Layout/Seo/Seo'
 import Skills from '../components/Skills/Skills'
 
 const IndexPage: NextPage = () => (
   <>
-    <Head>
-      <title>Développeur TypeScript Fullstack (React/NodeJS) - Paulin Trognon, Annecy</title>
-    </Head>
+    <Seo description="Site de Paulin Trognon, expert JavaScript/TypeScript (React / Node.js), Lead Dev front et développeur web freelance fullstack, basé à Annecy." />
     <Skills />
   </>
 )

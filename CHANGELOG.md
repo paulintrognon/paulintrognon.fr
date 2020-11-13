@@ -1,3 +1,8 @@
+# v4.0.2
+
+- Add Seo metadata (title & description)
+- Add Plausible script
+
 # v4.0.1
 
 - Fix `yarn build`

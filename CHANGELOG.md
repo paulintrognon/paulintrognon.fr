@@ -1,3 +1,9 @@
+# v4.0.1
+
+- Fix `yarn build`
+- Blog: Automatically parse url from markdown files
+- Remove useless svgr dependency
+
 # v4.0.0
 
 - Complete rewrite in TypeScript

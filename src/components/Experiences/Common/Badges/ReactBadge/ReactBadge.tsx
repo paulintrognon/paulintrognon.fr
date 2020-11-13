@@ -6,8 +6,18 @@ interface Props {
 }
 const ReactBadge: React.FC<Props> = ({ native }) => {
   if (native) {
-    return <Badge icon={<ReactIcon />}>React Native</Badge>
+    return (
+      <Badge>
+        <ReactIcon />
+        React Native
+      </Badge>
+    )
   }
-  return <Badge icon={<ReactIcon />}>React.js</Badge>
+  return (
+    <Badge>
+      <ReactIcon />
+      React.js
+    </Badge>
+  )
 }
 export default ReactBadge

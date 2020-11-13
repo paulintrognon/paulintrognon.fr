@@ -1,0 +1,37 @@
+/**
+ * Mobile
+ */
+@media (max-width: 60rem) {
+  .container {
+    margin: 2rem 0;
+  }
+  
+  .left {
+    float: left;
+  }
+  
+  .left svg {
+    margin-right: 2rem;
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+/**
+ * Tablet and up
+ */
+@media (min-width: 60rem) {
+  .container {
+    display: flex;
+    margin: 4rem 0 6rem;
+  }
+
+  .left svg {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .right {
+    margin-left: 4rem;
+  }
+}

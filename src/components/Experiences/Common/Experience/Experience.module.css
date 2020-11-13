@@ -1,0 +1,50 @@
+.container {
+  margin-bottom: 6.4rem;
+}
+
+.left img {
+  max-width: 100%;
+}
+
+.title {
+  margin-bottom: 1.6rem;
+}
+
+.subtitle {
+  color: var(--color-primary)
+}
+/**
+ * Mobile
+ */
+@media (max-width: 60rem) {
+  .left {
+    width: 70%;
+    max-width: 30rem;
+    margin: auto;
+    margin-bottom: 4rem;
+  }
+}
+
+
+/**
+ * Tablet and up
+ */
+@media (min-width: 60rem) {
+  .container {
+    display: flex;
+  }
+
+  .left {
+    width: 32.4rem;
+    max-width: 25%;
+  }
+
+  .left img {
+    width: 25.6rem;
+  }
+  
+  .right {
+    flex: 1;
+    margin-left: 6rem;
+  }
+}

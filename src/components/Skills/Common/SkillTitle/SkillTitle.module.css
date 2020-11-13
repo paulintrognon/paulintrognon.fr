@@ -1,0 +1,14 @@
+.container {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--color-primary-dark);
+}
+
+@media (max-width: 60rem) {
+  .container {
+    padding-top: 1rem;
+    margin-bottom: 3rem;
+  }
+}

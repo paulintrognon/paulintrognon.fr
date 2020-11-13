@@ -1,0 +1,12 @@
+.container {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 3.2rem;
+  overflow: hidden; /* To prevent mobile jumping during transition animation */
+}
+
+.main {
+  max-width: 96rem;
+  margin: 4.8rem auto;
+  padding: 0 1.6rem; /* Mobile padding */
+}

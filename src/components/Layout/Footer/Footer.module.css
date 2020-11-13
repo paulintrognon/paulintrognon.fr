@@ -1,0 +1,33 @@
+.container {
+  background-color: #ffffff;
+  --footer-text-color: var(--color-black);
+  box-shadow: 0 0 2px rgba(0,0,0,.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  padding: 1rem;
+  color: var(--footer-text-color);
+  font-size: 1.4rem;
+}
+
+.sourceLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sourceLink:hover {
+  text-decoration: underline;
+}
+
+.sourceLogo path {
+  fill: var(--footer-text-color);
+}
+
+.sourceText {
+  margin-left: 0.25rem;
+  position: relative;
+  top: 1px;
+}

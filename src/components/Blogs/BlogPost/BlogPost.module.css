@@ -1,0 +1,69 @@
+.title {
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 4rem;
+  color: var(--color-primary-dark);
+}
+
+.date {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+}
+
+.content {
+  margin: 3rem 0;
+}
+
+.content p,
+.content h2,
+.content h3,
+.content ul,
+.content ol,
+.content blockquote {
+  margin: 1.8rem 0
+}
+
+.content h2 {
+  color: var(--color-primary-dark);
+  font-size: 2.4rem;
+  margin-top: 4rem;
+  font-weight: bold;
+}
+
+.content h3 {
+  color: var(--color-primary-dark);
+  font-size: 2rem;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.content code {
+  border-radius: 3px;
+  font-family: DroidSans, Consolas, Liberation Mono, Menlo, monospace;
+  background: #333;
+  color: white;
+  padding: 0.2rem 0.6rem 0.1rem;
+  font-size: 1.6rem;
+}
+.content pre>code {
+  padding: 1rem;
+}
+
+.content a {
+  transition: color 200ms;
+  text-decoration: underline;
+  color: var(--color-secondary);
+}
+
+.content a:hover {
+  color: var(--color-secondary-dark);
+}
+
+.content strong {
+  font-weight: bold;
+}
+
+.content em {
+  color: unset;
+  font-style: italic;
+}

@@ -1,0 +1,15 @@
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  min-width: 320px;
+}
+
+em {
+  color: var(--color-secondary);
+}

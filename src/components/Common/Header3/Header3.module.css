@@ -1,0 +1,7 @@
+.container {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--color-primary-dark);
+  line-height: 2.2rem;
+}

@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: space-around; /* space-around and not space-between because of mobile display */
+  max-width: 96rem;
+  padding: 4.8rem 0 0.4rem;
+  margin: auto;
+  font-size: 1.7rem;
+  color: var(--color-primary-dark);
+}
+
+.link {
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -0.7rem;
+  height: 0.3rem;
+  transition: right 300ms;
+  background-color: var(--color-secondary);
+}
+
+.link:not(.active):hover::after, .link:not(.active):focus::after {
+  right: calc(100% - 1.6rem);
+}
+
+.active::after {
+  right: 0%;
+}

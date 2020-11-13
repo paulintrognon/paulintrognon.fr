@@ -1,0 +1,8 @@
+.container {
+  transition: color 200ms;
+  text-decoration: underline;
+  color: var(--color-secondary);
+}
+.container:hover {
+  color: var(--color-secondary-dark);
+}

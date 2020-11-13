@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary-dark);
+  margin-right: 3.5rem;
+  margin-bottom: 1.6rem;
+  white-space: nowrap;
+}
+
+.container svg {
+  width: 2.8rem;
+  height: 2.8rem;
+  margin-right: 1rem;
+}
+
+.text {
+  flex: 1;
+}

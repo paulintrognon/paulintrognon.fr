@@ -1,43 +1,51 @@
 {
   "name": "paulintrognon.fr",
-  "version": "3.0.0",
+  "version": "4.0.0",
+  "private": false,
+  "license": "MPL-2.0",
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export"
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    "lint": "eslint --ext ts --ext tsx"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
-    "classnames": "2.2.6",
-    "date-fns": "2.10.0",
-    "gray-matter": "4.0.2",
-    "highlight.js": "^9.18.1",
-    "next": "latest",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-transition-group": "^4.3.0",
-    "rehype-stringify": "^6.0.1",
-    "remark": "11.0.2",
-    "remark-highlight.js": "^6.0.0",
-    "remark-html": "^11.0.1",
-    "remark-parse": "^7.0.2",
-    "remark-rehype": "^6.0.0",
-    "throttleit": "^1.0.0",
-    "unified": "^8.4.2"
+    "@svgr/webpack": "^5.4.0",
+    "@types/classnames": "^2.2.11",
+    "@types/node": "^14.14.6",
+    "@types/react": "^16.9.56",
+    "@types/showdown": "^1.9.3",
+    "babel-plugin-inline-react-svg": "^1.1.2",
+    "classnames": "^2.2.6",
+    "gray-matter": "^4.0.2",
+    "install": "^0.13.0",
+    "next": "^10.0.1",
+    "npm": "^6.14.8",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-spring": "^8.0.27",
+    "remove": "^0.1.5",
+    "showdown": "^1.9.1",
+    "showdown-highlight": "^2.1.5",
+    "typescript": "^4.0.5"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.1.0",
-    "babel-eslint": "^10.1.0",
-    "dotenv": "8.2.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.19.0",
-    "postcss-preset-env": "^6.7.0",
-    "prettier": "^2.0.2",
-    "tailwindcss": "^1.2.0"
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
+    "prettier": "^2.1.2"
   }
 }

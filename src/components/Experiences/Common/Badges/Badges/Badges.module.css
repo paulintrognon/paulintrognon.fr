@@ -1,0 +1,5 @@
+.container {
+  margin-top: 1.6rem;
+  display: inline-flex;
+  flex-wrap: wrap;
+}

@@ -1,8 +1,0 @@
-.main {
-  opacity: 0;
-}
-
-.enterDone {
-  opacity: 1;
-  transition: opacity 200ms ease-in;
-}

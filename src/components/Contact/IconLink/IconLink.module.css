@@ -1,0 +1,29 @@
+.container {
+  display: block;
+  width: 8rem;
+  margin: 0 6rem;
+  margin-top: 3rem;
+  margin-bottom: 6rem;
+  transition: border-bottom 300ms ease-out;
+  padding-bottom: 1rem;
+  border-bottom: 0.3rem solid white;
+}
+.container:hover {
+  color: #ffffff;
+  border-bottom: 0.3rem solid var(--color-secondary);
+}
+@media (max-width: 60rem) {
+  .container {
+    display: inline-block;
+    margin: 0 1.5rem;
+  }
+}
+
+.container svg path {
+  fill: var(--color-primary-dark);
+}
+
+.text {
+  color: white;
+  transition: color 300ms ease-out;
+}

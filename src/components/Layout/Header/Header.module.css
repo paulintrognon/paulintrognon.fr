@@ -1,0 +1,17 @@
+.container {
+  text-align: center;
+  padding-top: 2.4rem;
+  box-shadow: 0 0 2px rgba(0,0,0,.5);
+}
+
+.title {
+  color: var(--color-primary-dark);
+  font-weight: 900;
+  font-size: 3.2rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin-top: 1.6rem;
+  color: var(--color-primary-dark);
+}

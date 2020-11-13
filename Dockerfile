@@ -1,4 +1,4 @@
-FROM node:13
+FROM node:14
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -15,4 +15,4 @@ COPY . .
 RUN yarn build
 
 # Running the app
-CMD [ "npm", "start" ]
+CMD [ "yarn", "start" ]

@@ -1,12 +1,18 @@
-# Don't check auto-generated stuff into git
-node_modules
-out
-.next
-
-# dev
+/node_modules
 .DS_Store
 .idea
-npm-debug.log
 
-# Env & config
-.env
+# Next.js
+/.next
+/build
+/out
+.vercel
+.env.*
+
+# test
+/coverage
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

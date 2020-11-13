@@ -1,0 +1,22 @@
+.title {
+  text-transform: capitalize;
+}
+
+.post {
+  padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.post:not(:last-child) {
+  border-bottom: 1px solid #bbb;
+}
+
+.date {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.more {
+  margin-top: 1.5rem;
+}

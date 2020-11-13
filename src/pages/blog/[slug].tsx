@@ -1,9 +1,8 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
-import { getAllPosts, getPostBySlug } from '../../blog/blog'
 import { BlogPostType } from '../../blog/types/BlogPostType'
-import { Converter } from 'showdown'
-import showdownHighlight from 'showdown-highlight'
 import BlogPost from '../../components/Blogs/BlogPost/BlogPost'
+import { getPosts } from '../../blog/services/getPosts'
+import { getPostDetails } from '../../blog/services/getPostDetails'
 
 interface Props {
   post: BlogPostType
@@ -11,34 +10,26 @@ interface Props {
 const BlogPostPage: NextPage<Props> = ({ post }) => <BlogPost post={post} />
 export default BlogPostPage
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const post = getPostBySlug(params?.slug as string)
-  const converter = new Converter({
-    extensions: [showdownHighlight],
-  })
-  const content = converter.makeHtml(post?.content as string)
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+  const post = getPostDetails(params?.slug as string)
+  if (!post) {
+    return { notFound: true }
+  }
 
   return {
-    props: {
-      post: {
-        ...post,
-        content,
-      },
-    },
+    props: { post },
   }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = getAllPosts()
+  const posts = getPosts()
 
   return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      }
-    }),
+    paths: posts.map((post) => ({
+      params: {
+        slug: post.slug,
+      },
+    })),
     fallback: false,
   }
 }

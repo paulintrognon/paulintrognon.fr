@@ -1,5 +1,5 @@
 import { GetStaticProps, NextPage } from 'next'
-import { getAllPosts } from '../../blog/blog'
+import { getPosts } from '../../blog/services/getPosts'
 import { BlogPostType } from '../../blog/types/BlogPostType'
 import BlogPostItems from '../../components/Blogs/BlogPostItems/BlogPostItems'
 
@@ -10,7 +10,7 @@ const IndexPage: NextPage<Props> = ({ posts }) => <BlogPostItems posts={posts} /
 export default IndexPage
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPosts()
+  const posts = getPosts()
   return {
     props: { posts },
   }

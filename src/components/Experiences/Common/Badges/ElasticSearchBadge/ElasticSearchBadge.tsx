@@ -1,5 +1,10 @@
 import Badge from '../Badge/Badge'
 import ElasticSearchIcon from './elasticsearch.svg'
 
-const ElasticSearchBadge: React.FC = () => <Badge icon={<ElasticSearchIcon />}>ElasticSearch</Badge>
+const ElasticSearchBadge: React.FC = () => (
+  <Badge>
+    <ElasticSearchIcon />
+    ElasticSearch
+  </Badge>
+)
 export default ElasticSearchBadge

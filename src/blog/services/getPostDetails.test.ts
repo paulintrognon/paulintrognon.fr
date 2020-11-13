@@ -45,4 +45,16 @@ const foo = "bar";
         '<pre><code class="hljs jsx language-jsx"><span class="hljs-keyword">const</span> foo = <span class="hljs-string">"bar"</span>;\n</code></pre>',
     })
   })
+
+  it('should add <a> tags for url', () => {
+    const post = {
+      content: "Visit https://plouf-plouf.fr it's awesome!",
+    }
+    getPostMock.mockReturnValue(post)
+    const detailedPost = getPostDetails(slug)
+    expect(detailedPost).toEqual({
+      content:
+        '<p>Visit <a href="https://plouf-plouf.fr">https://plouf-plouf.fr</a> it\'s awesome!</p>',
+    })
+  })
 })

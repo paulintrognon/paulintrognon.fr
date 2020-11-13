@@ -11,7 +11,7 @@ In this post, I will show you how to create a clean Next.js app with TypeScript 
 
 Let's do it!
 
-_Note: you can have a look at the end result here: https://github.com/paulintrognon/next-typescript_
+_Note: you can have a look at the end result here: [github.com/paulintrognon/next-typescript](https://github.com/paulintrognon/next-typescript)_
 
 _Note: we will use [yarn](https://yarnpkg.com/) instead of npm throughout this post._
   

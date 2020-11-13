@@ -7,6 +7,7 @@ import showdownHighlight from 'showdown-highlight'
  * MD to HTML converter
  */
 const converter = new Converter({
+  simplifiedAutoLink: true,
   extensions: [showdownHighlight], // showdownHighlight adds code highlighting
 })
 

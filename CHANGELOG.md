@@ -1,3 +1,8 @@
+# v4.0.0
+
+- Complete rewrite in TypeScript
+- Gitlab actions for CI
+
 # v3.0.0
 
 - Add Blog section!

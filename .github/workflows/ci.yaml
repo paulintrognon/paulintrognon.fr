@@ -8,8 +8,8 @@ jobs:
     - name: Install modules
       run: yarn
     - name: Run ESLint
-      run: yarn lint
+      run: yarn lint .
     - name: Run TypeScript Checks
       run: yarn type-check
-    - name: Run Jest tests
-      run: yarn jest
+    - name: Run tests
+      run: yarn test

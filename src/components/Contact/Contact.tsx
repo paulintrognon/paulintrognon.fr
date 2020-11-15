@@ -6,7 +6,7 @@ import LinkedinIcon from './icons/linkedin.svg'
 
 const Contact: React.FC = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-cy="Contact">
       <p>
         <img src="/images/portrait.jpg" alt="Portrait" />
       </p>

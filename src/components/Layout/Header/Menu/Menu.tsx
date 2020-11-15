@@ -12,6 +12,7 @@ const Menu: React.FC = () => {
       {links.map((link) => (
         <Link href={link.href} key={link.label}>
           <a
+            data-cy={`Menu_link_${link.href}`}
             className={classnames(styles.link, {
               [styles.active]: link.href === rootPath,
             })}

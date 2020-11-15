@@ -7,7 +7,7 @@ import LeonPaulExperience from './Experiences/LeonPaulExperience'
 
 const Experiences: React.FC = () => {
   return (
-    <div>
+    <div data-cy="Experiences">
       <BoironExperience />
       <DanoneExperience />
       <EoviExperience />

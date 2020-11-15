@@ -1,5 +1,11 @@
 name: CI
-on: [push]
+on:
+  push:
+    paths:
+      - '**.ts'
+      - '**.tsx'
+      - '**.js'
+      - '**.json'
 jobs:
   lint:
     runs-on: ubuntu-latest

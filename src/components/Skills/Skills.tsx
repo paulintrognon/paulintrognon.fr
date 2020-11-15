@@ -5,7 +5,7 @@ import OtherSkills from './Skills/OtherSkills/OtherSkills'
 
 const Skills: React.FC = () => {
   return (
-    <section>
+    <section data-cy="Skills">
       <Intro />
       <FrontendSkills />
       <BackendSkills />

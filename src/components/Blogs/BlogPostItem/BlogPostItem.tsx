@@ -10,16 +10,18 @@ interface Props {
 const BlogPostItem: React.FC<Props> = ({ post }) => {
   const href = `/blog/${post.slug}`
   return (
-    <div className={styles.post}>
+    <div className={styles.post} data-cy="BlogPostItem">
       <Link href={href}>
-        <a>
+        <a data-cy="BlogPostItem_title">
           <Header3 className={styles.title}>{post.title}</Header3>
         </a>
       </Link>
-      <p className={styles.date}>Last updated: {new Date(post.date).toLocaleDateString()}</p>
-      <p>{post.excerpt}</p>
+      <p className={styles.date}>Last updated: {new Date(post.date).toString()}</p>
+      <p data-cy="BlogPostItem_excerpt">{post.excerpt}</p>
       <p className={styles.more}>
-        <A href={href}>Read more →</A>
+        <A href={href} data-cy="BlogPostItem_link">
+          Read more →
+        </A>
       </p>
     </div>
   )

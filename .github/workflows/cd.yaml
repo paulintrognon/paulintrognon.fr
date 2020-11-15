@@ -3,8 +3,11 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'src/**'
+      - 'public/**'
 jobs:
-  lint:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2

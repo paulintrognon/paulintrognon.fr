@@ -1,3 +1,8 @@
+# v4.1.0
+
+- Add CKCNet & Ozed experiences
+- Update CV
+
 # v4.0.2
 
 - Add Seo metadata (title & description)

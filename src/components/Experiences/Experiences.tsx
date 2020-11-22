@@ -2,8 +2,10 @@ import BoironExperience from './Experiences/BoironExperience'
 import DanoneExperience from './Experiences/DanoneExperience'
 import EoviExperience from './Experiences/JacquetExperience'
 import ReportLinkerExperience from './Experiences/ReportLinkerExperience'
-import DCDLExperience from './Experiences/DCDLExperience'
+import DcdlExperience from './Experiences/DcdlExperience'
 import LeonPaulExperience from './Experiences/LeonPaulExperience'
+import CkcNetExperience from './Experiences/CkcNetExperience'
+import OzedExperience from './Experiences/OzedExperience'
 
 const Experiences: React.FC = () => {
   return (
@@ -11,8 +13,10 @@ const Experiences: React.FC = () => {
       <BoironExperience />
       <DanoneExperience />
       <EoviExperience />
+      <CkcNetExperience />
+      <OzedExperience />
       <ReportLinkerExperience />
-      <DCDLExperience />
+      <DcdlExperience />
       <LeonPaulExperience />
     </div>
   )

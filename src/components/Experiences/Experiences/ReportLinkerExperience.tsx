@@ -16,7 +16,7 @@ const ReportLinkerExperience: React.FC = () => {
     >
       <Badges>
         <NodeJSBadge />
-        <AngularBadge />
+        <AngularBadge isJs={true} />
         <ElasticSearchBadge />
         <RabbitMQBadge />
       </Badges>

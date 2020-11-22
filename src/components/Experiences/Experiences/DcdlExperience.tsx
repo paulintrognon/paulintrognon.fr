@@ -5,7 +5,7 @@ import Html5Badge from '../Common/Badges/Html5Badge/Html5Badge'
 import PhpBadge from '../Common/Badges/PhpBadge/PhpBadge'
 import Experience from '../Common/Experience/Experience'
 
-const DCDLExperience: React.FC = () => {
+const DcdlExperience: React.FC = () => {
   return (
     <Experience
       imageUrl="/images/experiences/dcdl.jpg"
@@ -27,4 +27,4 @@ const DCDLExperience: React.FC = () => {
     </Experience>
   )
 }
-export default DCDLExperience
+export default DcdlExperience

@@ -8,8 +8,12 @@
     "Boiron",
     "DCDL",
     "Eovi",
+    "Gitlab",
     "Prismic",
-    "svgr",
-    "hljs"
+    "hljs",
+    "nextjs",
+    "paulintrognon",
+    "prettierrc",
+    "svgr"
   ]
 }

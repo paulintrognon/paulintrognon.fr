@@ -97,7 +97,7 @@ yarn dev
 
 Next.js will detect that we are now using TypeScript and will automatically create for us a **tsconfig.json** and a **next-env.d.ts** file.
 
-If you are confortable with TypeScript (or if you want the real TypeScript experience, which I highly recommend), change the `strict` field in the `tsconfig.json` file from **false** to **true**. This will prevent you from not specifing types, and from using `any`. [More info here.](https://www.typescriptlang.org/docs/handbook/2/basic-types.html#strictness)
+If you are confortable with TypeScript (or if you want the real TypeScript experience, which I highly recommend), change the `strict` field in the `tsconfig.json` file from **false** to **true**. This will prevent you from not specifying types, and from using `any`. [More info here.](https://www.typescriptlang.org/docs/handbook/2/basic-types.html#strictness)
 
 ```json
 // tsconfig.json => Change "strict" to true 
@@ -162,11 +162,20 @@ module.exports = {
         'plugin:jsx-a11y/recommended', // Accessibility rules
       ],
       rules: {
-        'react/prop-types': 'off', // We will use TypeScript's types for component props instead
-        'react/react-in-jsx-scope': 'off', // No need to import React when using Next.js
-        'jsx-a11y/anchor-is-valid': 'off', // This rule is not compatible with Next.js's <Link /> components
-        '@typescript-eslint/no-unused-vars': ['error'], // Why would you want unused vars?
-        '@typescript-eslint/explicit-function-return-type': [ // I suggest this setting for requiring return types on functions only where usefull
+        // We will use TypeScript's types for component props instead
+        'react/prop-types': 'off',
+
+        // No need to import React when using Next.js
+        'react/react-in-jsx-scope': 'off',
+
+        // This rule is not compatible with Next.js's <Link /> components
+        'jsx-a11y/anchor-is-valid': 'off',
+
+        // Why would you want unused vars?
+        '@typescript-eslint/no-unused-vars': ['error'],
+
+        // I suggest this setting for requiring return types on functions only where useful
+        '@typescript-eslint/explicit-function-return-type': [
           'warn',
           {
             allowExpressions: true,
@@ -183,7 +192,7 @@ If you are using VSCode, I strongly recommend you install [the ESLint plugin for
 
 ## Add Prettier
 
-Prettier is a tool that handles code formating for us, saving us a lot of time.
+Prettier is a tool that handles code formatting for us, saving us a lot of time.
 
 Let's install Prettier:
 
@@ -241,7 +250,7 @@ _**Note**: We could have written the prettier configuration directly in the .esl
 
 &nbsp;
 
-To unleash the true powers of ESLint and Prettier, we can configure VS Code so that it autocorrects ESLint errors.  
+To unleash the true powers of ESLint and Prettier, we can configure VS Code so that it auto-corrects ESLint errors.  
 You should tell VS Code not to formatOnSave, but instead fix ESLint errors on save.
 
 ```js
@@ -278,7 +287,7 @@ First, let's add scripts in our package.json that will check our code:
     // Will look for TypeScript errors
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     // Will look for ESLint errors (if there are fixable errors, it will fix them as well)
-    "lint": "eslint --ext ts --ext tsx --fix"
+    "lint": "eslint --ext js,jsx,ts,tsx --fix"
   },
   // ...
 }
@@ -291,7 +300,7 @@ Next, we need to install Husky
 yarn add --dev husky
 ```
 
-Let's now use the scripts we just created to prevent us from commiting if there are TypeScript or ESLint errors, by adding this configuration in package.json:
+Let's now use the scripts we just created to prevent us from committing if there are TypeScript or ESLint errors, by adding this configuration in package.json:
 
 ```json
 // package.json
@@ -436,11 +445,11 @@ _Note: Even if you don't stage the `pages/test.tsx` file, it will still be check
 
 ### Good job reading this far!
 
-You are now ready to write beautiful TypeScript code without having to worry about commiting wrong code! :)
+You are now ready to write beautiful TypeScript code without having to worry about committing wrong code! :)
 
 ## Bonus - Add unit testing with Jest
 
-A good quality code usually implies unit testing. In this section, we will go a bit further in our bootstraping by adding the bases for Jest tests.
+A good quality code usually implies unit testing. In this section, we will go a bit further in our bootstrapping by adding the bases for Jest tests.
 
 First, we need to install testing-related packages:
 
@@ -515,7 +524,7 @@ In order to run tests, you need to add the following script to your package.json
 
 Now you can run `yarn test` to start your jest tests!
 
-_Note: You can run jest in watch mode by using `yarn test --watch`. Very usefull!_
+_Note: You can run jest in watch mode by using `yarn test --watch`. Very useful!_
 
 ## That's all folks!
 

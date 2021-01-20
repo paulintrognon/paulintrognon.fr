@@ -454,7 +454,7 @@ A good quality code usually implies unit testing. In this section, we will go a 
 First, we need to install testing-related packages:
 
 ```sh
-yarn add --dev jest @types/jest babel-jest jest-watch-typeahead react-test-renderer @types/react-test-renderer identity-obj-proxy
+yarn add --dev jest @types/jest babel-jest @babel/core jest-watch-typeahead react-test-renderer @types/react-test-renderer identity-obj-proxy
 ```
 
 You then need to create the following config files:

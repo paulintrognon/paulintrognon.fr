@@ -1,3 +1,8 @@
+### v4.1.1
+
+- Blog: Add missing dependency
+- Remove Plausible script
+
 # v4.1.0
 
 - Add CKCNet & Ozed experiences

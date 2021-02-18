@@ -102,10 +102,10 @@ If you are confortable with TypeScript (or if you want the real TypeScript exper
 ```json
 // tsconfig.json => Change "strict" to true 
 {
-  // ...
-  "strict": true,
-  // ...
-}
+  "compilerOptions": {
+    // ...
+    "strict": true,
+    // ...
 ```
 
 ## Add ESLint
@@ -292,30 +292,47 @@ First, let's add scripts in our package.json that will check our code:
   // ...
 }
 ```
+
+You can try those scripts by running `yarn type-check && yarn lint .`
   
   
-Next, we need to install Husky
+Next, we need to install Husky. Husky will run those scripts before each commit.
 
 ```sh
 yarn add --dev husky
 ```
+  
+  
+You then need to enable husky by running:
 
-Let's now use the scripts we just created to prevent us from committing if there are TypeScript or ESLint errors, by adding this configuration in package.json:
+```sh
+yarn husky install
+```
+
+To automatically enable husky after `yarn install`, edit package.json like so:
 
 ```json
 // package.json
 {
   // ...
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn type-check && yarn lint ."
-    }
-  },
+  "scripts": {
+    // ...,
+    "postinstall": "husky install"
+  }
   // ...
 }
 ```
 
-From now on, if we commit our changes, our code will be checked. You can try to mess up with the code (for example, replace `React.FC` with `string` in `pages/index.tsx`) and try to commit. This should happen:
+Now we need to add the git hook:   
+
+```sh
+yarn husky add .husky/pre-commit "yarn type-check && yarn lint ."
+```
+  
+This command will create a `.husky/pre-commit` file.  
+If you open it, you will see your `yarn type-check && yarn lint .` script.  
+  
+From now on, on each commit, husky will run the `yarn type-check && yarn lint ."` command. You can try to mess up with the code (for example, replace `React.FC` with `string` in `pages/index.tsx`) and try to commit. This should happen:
 
 ```sh
 $ git commit -m "commit with error"
@@ -333,12 +350,9 @@ info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this comm
 husky > pre-commit hook failed (add --no-verify to bypass)
 ```
 
-If husky did not start on commit, try reinstalling it: `yarn add --dev husky`
-
 _**Note:** If you want to skip the check, you can add a `--no-verify` flag to your commit command. For example: `git commit --no-verify -m "Update README.md"`_
-
-_**Note:** If you just want ESLint check on commit, you can remove `type-check` from the pre-commit hook: `"pre-commit": "yarn lint ."`_
-
+  
+  
 ## Lint staged: only check your code when necessary
 
 Checking your code takes time, even more so when the project gets bigger. Sometimes you change only markdown files or CI files, and you don't need your TypeScript code to be checked.
@@ -372,19 +386,13 @@ For the ESLint command, we pass `filenames` so that we lint only staged files, s
 
 ### Integrate lint-staged with Husky
 
-Now we need to change our Husky command to run lint-staged.
+Now we need to change our pre-commit hook:
 
-```json
-// package.json
-{
-  // ...
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  // ...
-}
+```sh
+# .husky/pre-commit
+
+# ...
+yarn lint-staged # Replace "yarn type-check && yarn lint ."
 ```
 
 To make sur everything is working as intended, you can try the following test:
@@ -393,7 +401,7 @@ To make sur everything is working as intended, you can try the following test:
 
 ```JavaScript
 // pages/index.tsx
-// Add an empty block statement
+// Add an empty block statement to create an error
 {
 }
 const IndexPage: NextPage = () => (
@@ -420,22 +428,17 @@ git commit -m "test"
 Only the `pages/index.tsx` file will be checked for ESLint errors.
 
 ```sh
-husky > pre-commit (node v12.18.3)
 ✔ Preparing...
 ⚠ Running tasks...
   ✔ Running tasks for **/*.ts?(x)
-  ❯ yarn lint /home/paulin/work/paulintrognon.fr/nextjs-typescript/pages/index.tsx [FAILED]
-    ✖ yarn lint /home/paulin/work/paulintrognon.fr/nextjs-typescript/pages/index.tsx [FAILED]
-↓ Skipped because of errors from tasks. [SKIPPED]
-✔ Reverting to original state because of errors...
-✔ Cleaning up...
+  ❯ Running tasks for **/*.(ts|js)?(x)
+    ✖ yarn lint /home/paulin/next-typescript/.eslintrc.js /home/paulin/next-typescript/…
+✔ Applying modifications...
 
-✖ yarn lint /home/paulin/work/paulintrognon.fr/nextjs-typescript/pages/index.tsx:
 error Command failed with exit code 1.
-$ eslint --ext ts --ext tsx /home/paulin/work/paulintrognon.fr/nextjs-typescript/pages/index.tsx
 
-/home/paulin/work/paulintrognon.fr/nextjs-typescript/pages/index.tsx
-  1:1  error  Empty block statement  no-empty
+/home/paulin/next-typescript/pages/index.tsx
+  2:1  error  Empty block statement  no-empty
 
 ✖ 1 problem (1 error, 0 warnings)
 ```

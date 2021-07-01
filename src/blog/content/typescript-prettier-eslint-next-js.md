@@ -1,7 +1,7 @@
 ---
 title: Start a clean Next.js project with TypeScript, ESLint and Prettier
 excerpt: How to create a Next.js app with TypeScript, and how to configure ESLint to make it work with prettier, and finally how to integrate this tooling with Visual Studio Code.
-date: '2020-11-06T23:21:41.123Z'
+date: '2021-07-02T09:00:00.000Z'
 ---
 
 

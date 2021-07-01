@@ -1,13 +1,13 @@
 ---
-title: Start a clean Next.js project with TypeScript, ESLint and Prettier from scratch
-excerpt: How to create a Next.js app with TypeScript from scratch, and how to configure ESLint to make it work with prettier, and finally how to integrate this tooling with Visual Studio Code.
+title: Start a clean Next.js project with TypeScript, ESLint and Prettier
+excerpt: How to create a Next.js app with TypeScript, and how to configure ESLint to make it work with prettier, and finally how to integrate this tooling with Visual Studio Code.
 date: '2020-11-06T23:21:41.123Z'
 ---
 
 
 **TypeScript** is awesome. So is **Prettier**.
 
-In this post, I will show you how to create a clean Next.js app with TypeScript from scratch, and how to configure ESLint to make it work with prettier, and finally how to integrate this tooling with Visual Studio Code.
+In this post, we will learn how to configure ESLint to make it work with Prettier within a Next.js app, and finally how to integrate this tooling with Visual Studio Code.
 
 Let's do it!
 
@@ -17,336 +17,206 @@ _Note: we will use [yarn](https://yarnpkg.com/) instead of npm throughout this p
   
 ## Initiating the project
 
-We will start from scratch with an empty project, this way you will have a perfect knowledge of how your project is built, which means better control.
+The easiest and recommended way to get started is to use create-next-app:
 
-Please first create a new project folder, with the following package.json file:
+```sh
+yarn create next-app --typescript
+```
+
+This will create a bunch of boilerplate files which help you get started, including a basic .eslint config.
+
+Jump to the generated source code and open up VSCode.
+
+```sh
+cd my-app
+code .
+```
+
+## Configure eslint
+
+To make eslint errors visible in VSCode, you need to install [the ESLint plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+
+I also recommend you tell VSCode to auto-fix eslint errors on save. To do so, create a `.vscode/settings.json` file with the following content:
 
 ```json
-// package.json
-{
-  "name": "your-project-name",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  }  
-}
-```
-
-Run `git init` to initiate git, and add a [.gitignore](https://github.com/paulintrognon/next-typescript/blob/master/.gitignore) file.
-
-Then, let's install next.js and its dependencies, alongside with TypeScript.
-
-```sh
-# Install Next.js dependencies
-yarn add next react react-dom
-
-# Install TypeScript
-yarn add typescript @types/react @types/node
-```
-
-Now, let's create a **pages/index.tsx** file. I am using getServerSideProps to fetch next SpaceX launch, which I am displaying on the homepage. [More info on getServerSideProps here](https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering).
-
-```jsx
-// pages/index.tsx
-import { GetServerSideProps, NextPage } from 'next'
-
-interface Props {
-  launch: {
-    mission: string
-    site: string
-    timestamp: number
-    rocket: string
-  }
-}
-const IndexPage: NextPage<Props> = ({ launch }) => {
-  const date = new Date(launch.timestamp)
-  return (
-    <main>
-      <h1>Next SpaceX Launch: {launch.mission}</h1>
-      <p>
-        {launch.rocket} will take off from {launch.site} on {date.toDateString()}
-      </p>
-    </main>
-  )
-}
-export default IndexPage
-
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const response = await fetch('https://api.spacexdata.com/v3/launches/next')
-  const nextLaunch = await response.json()
-  return {
-    props: {
-      launch: {
-        mission: nextLaunch.mission_name,
-        site: nextLaunch.launch_site.site_name_long,
-        timestamp: nextLaunch.launch_date_unix * 1000,
-        rocket: nextLaunch.rocket.rocket_name,
-      },
-    },
-  }
-}
-```
-
-We can now start the server using **yarn dev**.
-
-```sh
-# Start the dev web server
-yarn dev
-```
-
-Next.js will detect that we are now using TypeScript and will automatically create for us a **tsconfig.json** and a **next-env.d.ts** file.
-
-If you are confortable with TypeScript (or if you want the real TypeScript experience, which I highly recommend), change the `strict` field in the `tsconfig.json` file from **false** to **true**. This will prevent you from not specifying types, and from using `any`. [More info here.](https://www.typescriptlang.org/docs/handbook/2/basic-types.html#strictness)
-
-```json
-// tsconfig.json => Change "strict" to true 
-{
-  "compilerOptions": {
-    // ...
-    "strict": true,
-    // ...
-```
-
-## Add ESLint
-
-ESLint will make sure we are following all good practices of TypeScript and React.
-
-Let's install ESLint:
-
-```sh
-# Add ESLint, and a TypeScript parser for Eslint, and a react ESLint plugin
-yarn add --dev eslint @typescript-eslint/parser  @typescript-eslint/eslint-plugin eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y
-```
-
-If we break it down:
-
-  - `eslint` is the main ESLint package.
-  - `@typescript-eslint/parser` will allow ESLint to parse TypeScript files.
-  - `@typescript-eslint/eslint-plugin` will add TypeScript specific lint rules.
-  - `eslint-plugin-react` will add React specific lint rules.
-  - `eslint-plugin-react-hooks` will extend `eslint-plugin-react` to add React Hooks rules.
-  - `eslint-plugin-jsx-a11y` will add accessibility related rules.
-
-
-
-To enable and configure ESLint, we need to create a **.eslintrc.js** file.
-
-```javascript
-// .eslintrc.js
-module.exports = {
-  root: true,
-  env: {
-    node: true,
-    es6: true,
-  },
-  parserOptions: { ecmaVersion: 8 }, // to enable features such as async/await
-  ignorePatterns: ['node_modules/*', '.next/*', '.out/*', '!.prettierrc.js'], // We don't want to lint generated files nor node_modules, but we want to lint .prettierrc.js (ignored by default by eslint)
-  extends: ['eslint:recommended'],
-  overrides: [
-    // This configuration will apply only to TypeScript files
-    {
-      files: ['**/*.ts', '**/*.tsx'],
-      parser: '@typescript-eslint/parser',
-      settings: { react: { version: 'detect' } },
-      env: {
-        browser: true,
-        node: true,
-        es6: true,
-      },
-      extends: [
-        'eslint:recommended',
-        'plugin:@typescript-eslint/recommended', // TypeScript rules
-        'plugin:react/recommended', // React rules
-        'plugin:react-hooks/recommended', // React hooks rules
-        'plugin:jsx-a11y/recommended', // Accessibility rules
-      ],
-      rules: {
-        // We will use TypeScript's types for component props instead
-        'react/prop-types': 'off',
-
-        // No need to import React when using Next.js
-        'react/react-in-jsx-scope': 'off',
-
-        // This rule is not compatible with Next.js's <Link /> components
-        'jsx-a11y/anchor-is-valid': 'off',
-
-        // Why would you want unused vars?
-        '@typescript-eslint/no-unused-vars': ['error'],
-
-        // I suggest this setting for requiring return types on functions only where useful
-        '@typescript-eslint/explicit-function-return-type': [
-          'warn',
-          {
-            allowExpressions: true,
-            allowConciseArrowFunctionExpressionsStartingWithVoid: true,
-          },
-        ],
-      },
-    },
-  ],
-}
-```
-
-If you are using VSCode, I strongly recommend you install [the ESLint plugin for VS Code](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint), which will enable you to view ESLint errors directly in your editor.
-
-## Add Prettier
-
-Prettier is a tool that handles code formatting for us, saving us a lot of time.
-
-Let's install Prettier:
-
-```sh
-# Add Prettier, and the ESLint plugin and config for prettier
-yarn add --dev prettier eslint-plugin-prettier eslint-config-prettier
-```
-
-We now need to configure Prettier by creating a **.prettierrc.js**
-
-```JavaScript
-// .prettierrc.js
-module.exports = {
-  // Change your rules accordingly to your coding style preferences.
-  // https://prettier.io/docs/en/options.html
-  semi: false,
-  trailingComma: 'es5',
-  singleQuote: true,
-  printWidth: 100,
-  tabWidth: 2,
-  useTabs: false,
-}
-
-```
-
-&nbsp;
-
-**You do NOT need to install any Prettier plugin to VSCode to make Prettier work**. A much better option is to include Prettier rules into ESLint.
-
-Let's edit our **.eslintrc.js** file to include Prettier:
-
-```javascript
-// .eslintrc.js
-module.exports = {
-  // ...
-  overrides: [
-    {
-      // ...
-      extends: [
-        // ...
-        'plugin:prettier/recommended', // Prettier plugin
-      ],
-      rules: {
-        // ...
-        'prettier/prettier': ['error', {}, { usePrettierrc: true }], // Includes .prettierrc.js rules
-      },
-    },
-  ],
-}
-
-```
-
-_**Note**: We could have written the prettier configuration directly in the .eslintrc.js file, but by using a separate prettierrc file, we stay compatible with editors configured with the Prettier plugin._
-
-&nbsp;
-
-To unleash the true powers of ESLint and Prettier, we can configure VS Code so that it auto-corrects ESLint errors.  
-You should tell VS Code not to formatOnSave, but instead fix ESLint errors on save.
-
-```js
 // .vscode/settings.json
 {
-  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   }
 }
 ```
+  
 
-If you open **pages/index.tsx**, you may see ESLint errors. Try saving the file: you will see all those errors corrected automatically. **I can't tell you enough how much time this will save.**
-
-See prettier in action:
-
-![Prettier example](/images/blog/prettier-example.gif)
-
-
-## Husky: Linting on commit
-
-On way to make sure  the code will stay clean, is to check for ESLint and TypeScript errors before each commit. One way of achieving this is to use Husky, a little program that will run scripts for a given Git command.
-
-**Note: Make sure you have initiated git with `git init` before you continue.**
-
-First, let's add scripts in our package.json that will check our code:
+Let's try if it worked! Add the `prefer-const` rule to the `.eslintrc` config file:
 
 ```json
-// package.json
+// .eslintrc
 {
-  // ...
-  "scripts": {
-    // ...,
-    // Will look for TypeScript errors
-    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
-    // Will look for ESLint errors (if there are fixable errors, it will fix them as well)
-    "lint": "eslint --ext js,jsx,ts,tsx --fix"
-  },
-  // ...
+  "extends": ["next", "next/core-web-vitals"],
+  "rules": {
+    "prefer-const": "error"
+  }
+}
+```
+  
+
+Now, create a `test.ts` file containing:
+
+```ts
+export let APP_VERSION = "v1.0.0"
+```
+
+VSCode should display an error, like so:
+![prefer-const eslint error example](https://paulintrognon.fr/images/blog/prefer-const-example.jpg)
+
+Try saving the file: VSCode should automatically convert the `let` into a `const`. If it did not work, try closing and reopening VSCode.
+
+To have a nice set of eslint rules, I suggest you install the package `@typescript-eslint/eslint-plugin`:
+
+```sh
+yarn add --dev @typescript-eslint/eslint-plugin
+```
+
+Then add it to your `.eslintrc` config:
+```json
+{
+  "plugins": ["@typescript-eslint"], // Add
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended" // Add
+  ],
+  "rules": {
+    // You can remove the prefer-const rule, as it is already added by @typescript-eslint/recommended
+
+    // I suggest you add at least those two rules:
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error"
+  }
 }
 ```
 
-You can try those scripts by running `yarn type-check && yarn lint .`
-  
-  
-Next, we need to install Husky. Husky will run those scripts before each commit.
+If you don't like a rule added by `@typescript-eslint/recommended`, don't forget you can turn it off in your `.eslintrc`, like so:
+```json
+{
+  // ...
+  "rules": {
+    "prefer-const": "off" // Turn rule off
+  }
+}
+```
+
+If you want more rules, check out other eslint extensions such as [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import), [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest), [etc](https://www.npmjs.com/search?q=eslint-plugin).
+
+## Configure Prettier
+
+Now that we have eslint up and running, let's add auto-formatting with Prettier.
+
+First, add prettier dependencies:
 
 ```sh
+yarn add --dev prettier eslint-config-prettier
+```
+
+- `prettier` is the base package that will format the files
+- `eslint-config-prettier` will prevent conflicts between prettier and eslint rules.
+
+Next, create a `.prettierrc` file, and configure it according to your preferences. See all available options here: [https://prettier.io/docs/en/options.html](https://prettier.io/docs/en/options.html)
+
+```json
+// .prettierrc
+{
+  "semi": false,
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "tabWidth": 2,
+  "useTabs": false
+}
+```
+
+Then, change your `.eslintrc` file like so:
+```json
+// .eslintrc
+{
+  // ...
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "prettier" // Add "prettier" last. This will turn off eslint rules conflicting with prettier. This is not what will format our code.
+  ],
+  // ...
+}
+```
+  
+
+Now let's configure VSCode to actually format our code according to our prettier configuration file. To do so, install [VSCode's prettier plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
+
+Then, you can tell VSCode to format the code on save, by editing our `.vscode/settings.json` file:
+
+```json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // Add those two lines:
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+```
+
+From now on, every time you save a file, it will be formatted using prettier! **You might need to restart VSCode to make that configuration work.**
+
+## Husky: Checking for errors, linting and formatting on commit
+
+I strongly recommend you don't rely only on "format on save" VSCode features, but you also add another layer of safety by running eslint and prettier on each commit. You can also add extra checks on commit, like TypeScript type checking.
+
+One way of achieving this is to use Husky, a little program that will run scripts for a given Git command.
+
+```sh
+# Install Husky
 yarn add --dev husky
 ```
   
   
-You then need to enable husky by running:
+**You then need to enable husky by running:**
 
 ```sh
 yarn husky install
 ```
 
-To automatically enable husky after `yarn install`, edit package.json like so:
-
-```json
-// package.json
-{
-  // ...
-  "scripts": {
-    // ...,
-    "postinstall": "husky install"
-  }
-  // ...
-}
-```
+**⚠️ In the future, after you or someone else clone the project, you will need to run `yarn husky install` to enable husky**
 
 Now we need to add the git hook:   
 
 ```sh
-yarn husky add .husky/pre-commit "yarn type-check && yarn lint ."
+yarn husky add .husky/pre-commit "yarn tsc --noEmit && yarn eslint --fix . && yarn prettier --write ."
 ```
   
-This command will create a `.husky/pre-commit` file.  
-If you open it, you will see your `yarn type-check && yarn lint .` script.  
-  
-From now on, on each commit, husky will run the `yarn type-check && yarn lint ."` command. You can try to mess up with the code (for example, replace `React.FC` with `string` in `pages/index.tsx`) and try to commit. This should happen:
+Let's break down what this command does. On each commit, husky will:
+- Run the `tsc` command to make sure there are no TypeScript errors
+- Run the `lint` command to make sure there are no ESLint errors
+- Format our code using prettier
+
+To try if it works, try messing up with the code (for example, replace `export const APP_VERSION = 'v1.0.0'` with `export const APP_VERSION: number = 'v1.0.0'` in the `test.ts` file we created earlier) and try to commit. This should happen:
 
 ```sh
-$ git commit -m "commit with error"
-husky > pre-commit (node v12.18.3)
-tsc --project tsconfig.json --pretty --noEmit && eslint . --ext ts --ext tsx --fix
-pages/index.tsx:1:7 - error TS2322: Type '() => JSX.Element' is not assignable to type 'string'.
+$ git add -A
+$ git commit -m "test"
+yarn run v1.22.5
+$ /home/paulin/perso/projets/paulintrognon/tests/foobar/node_modules/.bin/tsc --noEmit
+test.ts:1:14 - error TS2322: Type 'string' is not assignable to type 'number'.
 
-1 const IndexPage: string = () => {
-        ~~~~~~~~~
+1 export const APP_VERSION: number = 'v1.0.0'
+               ~~~~~~~~~~~
+
 
 Found 1 error.
 
 error Command failed with exit code 2.
 info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-husky > pre-commit hook failed (add --no-verify to bypass)
+husky - pre-commit hook exited with code 2 (error)
 ```
 
 _**Note:** If you want to skip the check, you can add a `--no-verify` flag to your commit command. For example: `git commit --no-verify -m "Update README.md"`_
@@ -356,7 +226,7 @@ _**Note:** If you want to skip the check, you can add a `--no-verify` flag to yo
 
 Checking your code takes time, even more so when the project gets bigger. Sometimes you change only markdown files or CI files, and you don't need your TypeScript code to be checked.
 
-Enters [Lint staged](https://github.com/okonet/lint-staged), which goal is to only run your lint scripts when necessary.
+Enters [Lint staged](https://github.com/okonet/lint-staged), which goal is to only run your lint scripts when necessary, and only on the necessary files.
 
 ### Install lint-staged
 
@@ -366,174 +236,69 @@ yarn add --dev lint-staged
 
 ### Configure lint-staged
 
-We can then create a configuration `lint-staged.config.js` file for lint-staged. Some prefer to configure it [directly in package.json](https://github.com/okonet/lint-staged#packagejson-example), but we have more options by configuring via a dedicated file.
+Then create a configuration `lint-staged.config.js` file for lint-staged. Some prefer to configure it [directly in package.json](https://github.com/okonet/lint-staged#packagejson-example), but we have more options by configuring via a dedicated file.
 
 ```javascript
 // lint-staged.config.js
 module.exports = {
-  // Run type-check on changes to TypeScript files
-  '**/*.ts?(x)': () => 'yarn type-check',
-  // Run ESLint on changes to JavaScript/TypeScript files
-  '**/*.(ts|js)?(x)': (filenames) => `yarn lint ${filenames.join(' ')}`,
+  // Type check TypeScript files
+  '**/*.(ts|tsx)': () => 'yarn tsc --noEmit',
+
+  // Lint and format TypeScript and JS files
+  '**/*.(ts|tsx|js)': (filenames) => [
+    `yarn eslint --fix ${filenames.join(' ')}`,
+    `yarn prettier --write ${filenames.join(' ')}`,
+  ],
+
+  // Format MarkDown and JSON
+  '**/*.(md|json)': (filenames) =>
+    `yarn prettier --write ${filenames.join(' ')}`,
 }
 ```
 
-As property names, you have the file matchers. As property values, you have the command that will be run against the changed files.
+As property names, you have the file matchers. As property values, you have the command(s) that will be run against the changed files.
 
-For the TypeScript command, we don't pass `filenames` as TypeScript cannot be run on isolated files.  
-For the ESLint command, we pass `filenames` so that we lint only staged files, saving us time.
+Each matcher will be run in parallel, but the array values will be run in sequence. We have separated TypeScript checks and ESLint checks into 2 matchers so that they can be run in parallel. We have to separate prettier format of TS files and other files, **because we don't want ESLint to fix errors in TS files and at the same time having Prettier format the files**: that would results in conflicts.
 
-### Integrate lint-staged with Husky
-
-Now we need to change our pre-commit hook:
-
-```sh
-# .husky/pre-commit
-
-# ...
-yarn lint-staged # Replace "yarn type-check && yarn lint ."
-```
-
-To make sur everything is working as intended, you can try the following test:
-
-1. Add an empty block statement in `pages/index.tsx`
-
-```JavaScript
-// pages/index.tsx
-// Add an empty block statement to create an error
-{
-}
-const IndexPage: NextPage = () => (
-// ...
-```
-  
-2. Create a new file `pages/test.tsx` with another empty block statement
-
-```JavaScript
-// pages/test.tsx
-{
-}
-const TestPage: React.FC = () => <main />
-export default TestPage
-```
-
-3. Stage and commit only the `pages/index.tsx` file
-
-```sh
-git add pages/index.tsx
-git commit -m "test"
-```
-
-Only the `pages/index.tsx` file will be checked for ESLint errors.
-
-```sh
-✔ Preparing...
-⚠ Running tasks...
-  ✔ Running tasks for **/*.ts?(x)
-  ❯ Running tasks for **/*.(ts|js)?(x)
-    ✖ yarn lint /home/paulin/next-typescript/.eslintrc.js /home/paulin/next-typescript/…
-✔ Applying modifications...
-
-error Command failed with exit code 1.
-
-/home/paulin/next-typescript/pages/index.tsx
-  2:1  error  Empty block statement  no-empty
-
-✖ 1 problem (1 error, 0 warnings)
-```
-
-_Note: Even if you don't stage the `pages/test.tsx` file, it will still be checked by TypeScript. This is a limitation with TypeScript: it can only be run on the entire project, not just on a subset of files. If you want to force commit despite TypeScript errors, you can always add the `--no-verify` flag to your `git commit` command._
+For the TypeScript (`tsc`) command, we don't pass `filenames` as TypeScript cannot be run on isolated files.  
   
 
-### Good job reading this far!
-
-You are now ready to write beautiful TypeScript code without having to worry about committing wrong code! :)
-
-## Bonus - Add unit testing with Jest
-
-A good quality code usually implies unit testing. In this section, we will go a bit further in our bootstrapping by adding the bases for Jest tests.
-
-First, we need to install testing-related packages:
+Now we need to change our pre-commit hook (in the `.husky/pre-commit` file):
 
 ```sh
-yarn add --dev jest @types/jest babel-jest @babel/core jest-watch-typeahead react-test-renderer @types/react-test-renderer identity-obj-proxy
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+yarn lint-staged # Replace the last line
 ```
 
-You then need to create the following config files:
+Let's try the new configuration. Try committing the `test.ts` file from earlier. If it contains errors, you won't be able to commit it.  
 
-```json
-// .babelrc
-{
-  "presets": ["next/babel"]
-}
+```sh
+$ git add test.ts # Add a file with TypeScript errors...
+$ git commit -m "add test.ts" # ...and this will fail!
 ```
 
-&nbsp;
+Now try editing and committing the `README.md` file. On commit, you will see that only the prettier will be run, and not the other ones.
 
-```js
-// jest.config.js
-module.exports = {
-  roots: ['<rootDir>'],
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
-  testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
-  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
-  transform: {
-    '^.+\\.(ts|tsx)$': 'babel-jest',
-  },
-  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
-  moduleNameMapper: {
-    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
-    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js',
-  },
-}
+```sh
+$ git reset # un-add files
+$ echo "# My Great App!" >> README.md # Replace README.md content
+$ git add README.md # Stage README.md
+$ git commit -m "update readme" # ...and only prettier will run on commit!
 ```
 
-Let's now add a test file for our `index.tsx` component. I like to add my test files next to my components, but you can also create a dedicated `tests` folder for your tests.
+## Good job reading this far!
 
-```js
-// pages/index.test.tsx
+You are now ready to write beautiful TypeScript code without having to worry about committing anything dirty! :)
 
-import renderer from 'react-test-renderer'
-import IndexPage from '.'
-
-describe('Index page', () => {
-  it('should match the snapshot', () => {
-    const launch = {
-      timestamp: 1605401340000,
-      mission: 'Mission Name',
-      site: 'Kennedy Space Center',
-      rocket: 'Falcon 9',
-    }
-    const tree = renderer.create(<IndexPage launch={launch} />).toJSON()
-    expect(tree).toMatchSnapshot()
-  })
-})
-```
-
-In order to run tests, you need to add the following script to your package.json:
-
-```json
-// package.json
-{
-  // ...
-  "scripts": {
-    // ...,
-    "test": "jest"
-  },
-  // ...
-}
-```
-
-Now you can run `yarn test` to start your jest tests!
-
-_Note: You can run jest in watch mode by using `yarn test --watch`. Very useful!_
+You can have a look at the end result here: https://github.com/paulintrognon/next-typescript  
+If you clone this repository, **don't forget to run `yarn husky install`** to enable husky
 
 ## That's all folks!
 
 You can give me feedback on github: https://github.com/paulintrognon/paulintrognon.fr/issues/8
 
 Official Next.js TypeScript documentation: https://nextjs.org/docs/basic-features/typescript
-
-End result here: https://github.com/paulintrognon/next-typescript
 
 Thanks for reading and happy coding!

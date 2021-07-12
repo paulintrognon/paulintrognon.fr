@@ -122,7 +122,7 @@ yarn add --dev prettier eslint-config-prettier
 - `prettier` is the base package that will format the files
 - `eslint-config-prettier` will prevent conflicts between prettier and eslint rules.
 
-Next, create a `.prettierrc` file, and configure it according to your preferences. See all available options here: [https://prettier.io/docs/en/options.html](https://prettier.io/docs/en/options.html)
+Create a `.prettierrc` file, and configure it according to your preferences. See all available options here: [https://prettier.io/docs/en/options.html](https://prettier.io/docs/en/options.html)
 
 ```json
 // .prettierrc
@@ -151,7 +151,7 @@ Then, change your `.eslintrc` file like so:
 ```
   
 
-Now let's configure VSCode to actually format our code according to our prettier configuration file. To do so, install [VSCode's prettier plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
+Now let's configure VSCode to actually format our code on save according to our prettier configuration file. To do so, install [VSCode's prettier plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
 
 Then, you can tell VSCode to format the code on save, by editing our `.vscode/settings.json` file:
 
@@ -161,18 +161,33 @@ Then, you can tell VSCode to format the code on save, by editing our `.vscode/se
     "source.fixAll.eslint": true
   },
   // Add those two lines:
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.formatOnSave": true, // Tell VSCode to format files on save
+  "editor.defaultFormatter": "esbenp.prettier-vscode" // Tell VSCode to use Prettier as default file formatter
 }
 ```
 
 From now on, every time you save a file, it will be formatted using prettier! **You might need to restart VSCode to make that configuration work.**
 
+_**Note:** If you want only specific file extensions to be formatted on save using prettier, do instead:_
+```json
+{
+  // OR If want only typescript files to be formatted on save
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
+```
+
+
+_**Note:** In a previous version of this blog post, I recommended including Prettier directly as ESLint rules (by using [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier). But I later learned that [this approach is not recommended by prettier](https://prettier.io/docs/en/integrating-with-linters.html#notes), as it is slower than using prettier directly. The package `eslint-config-prettier` that we use here is only to prevent conflicts between prettier and eslint._
+
+
 ## Husky: Checking for errors, linting and formatting on commit
 
-I strongly recommend you don't rely only on "format on save" VSCode features, but you also add another layer of safety by running eslint and prettier on each commit. You can also add extra checks on commit, like TypeScript type checking.
+I strongly recommend you don't only rely on "format on save" VSCode features, but you also add another layer of safety by running eslint and prettier on each commit. That will make sure that every file you commit has no ESLint error and are correctly formatted. Also, you can run additional checks on commit, like TypeScript type-checking.
 
-One way of achieving this is to use Husky, a little program that will run scripts for a given Git command.
+One way of achieving this is by using [Husky](https://typicode.github.io/husky), a little program that will run scripts for a given Git command.
 
 ```sh
 # Install Husky
@@ -196,7 +211,7 @@ yarn husky add .husky/pre-commit "yarn tsc --noEmit && yarn eslint --fix . && ya
   
 Let's break down what this command does. On each commit, husky will:
 - Run the `tsc` command to make sure there are no TypeScript errors
-- Run the `lint` command to make sure there are no ESLint errors
+- Run the `eslint` command to make sure there are no ESLint errors
 - Format our code using prettier
 
 To try if it works, try messing up with the code (for example, replace `export const APP_VERSION = 'v1.0.0'` with `export const APP_VERSION: number = 'v1.0.0'` in the `test.ts` file we created earlier) and try to commit. This should happen:
@@ -224,7 +239,7 @@ _**Note:** If you want to skip the check, you can add a `--no-verify` flag to yo
   
 ## Lint staged: only check your code when necessary
 
-Checking your code takes time, even more so when the project gets bigger. Sometimes you change only markdown files or CI files, and you don't need your TypeScript code to be checked.
+Checking your code takes time, even more so when the project gets bigger. Sometimes you change only markdown files or CI yaml files, and you don't need your TypeScript code to be checked.
 
 Enters [Lint staged](https://github.com/okonet/lint-staged), which goal is to only run your lint scripts when necessary, and only on the necessary files.
 
@@ -236,7 +251,7 @@ yarn add --dev lint-staged
 
 ### Configure lint-staged
 
-Then create a configuration `lint-staged.config.js` file for lint-staged. Some prefer to configure it [directly in package.json](https://github.com/okonet/lint-staged#packagejson-example), but we have more options by configuring via a dedicated file.
+Create a configuration `lint-staged.config.js` file for lint-staged. Some prefer to configure it [directly in package.json](https://github.com/okonet/lint-staged#packagejson-example), but we have more options by configuring via a dedicated file.
 
 ```javascript
 // lint-staged.config.js
@@ -244,7 +259,7 @@ module.exports = {
   // Type check TypeScript files
   '**/*.(ts|tsx)': () => 'yarn tsc --noEmit',
 
-  // Lint and format TypeScript and JS files
+  // Lint then format TypeScript and JavaScript files
   '**/*.(ts|tsx|js)': (filenames) => [
     `yarn eslint --fix ${filenames.join(' ')}`,
     `yarn prettier --write ${filenames.join(' ')}`,
@@ -269,7 +284,7 @@ Now we need to change our pre-commit hook (in the `.husky/pre-commit` file):
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-yarn lint-staged # Replace the last line
+yarn lint-staged # Replace the last line with "yarn lint-staged"
 ```
 
 Let's try the new configuration. Try committing the `test.ts` file from earlier. If it contains errors, you won't be able to commit it.  
@@ -279,11 +294,11 @@ $ git add test.ts # Add a file with TypeScript errors...
 $ git commit -m "add test.ts" # ...and this will fail!
 ```
 
-Now try editing and committing the `README.md` file. On commit, you will see that only the prettier will be run, and not the other ones.
+Now try editing and committing the `README.md` file. On commit, you will see that only the prettier script will be run, and not the other ones.
 
 ```sh
 $ git reset # un-add files
-$ echo "# My Great App!" >> README.md # Replace README.md content
+$ echo "Hello!" >> README.md # Edit README.md
 $ git add README.md # Stage README.md
 $ git commit -m "update readme" # ...and only prettier will run on commit!
 ```

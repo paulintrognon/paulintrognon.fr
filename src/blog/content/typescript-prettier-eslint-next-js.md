@@ -48,12 +48,12 @@ I also recommend you tell VSCode to auto-fix eslint errors on save. To do so, cr
 ```
   
 
-Let's try if it worked! Add the `prefer-const` rule to the `.eslintrc` config file:
+Let's try if it worked! Add the `prefer-const` rule to the `.eslintrc.json` config file:
 
 ```json
-// .eslintrc
+// .eslintrc.json
 {
-  "extends": ["next", "next/core-web-vitals"],
+  "extends": "next/core-web-vitals",
   "rules": {
     "prefer-const": "error"
   }
@@ -70,7 +70,7 @@ export let APP_VERSION = "v1.0.0"
 VSCode should display an error, like so:
 ![prefer-const eslint error example](https://paulintrognon.fr/images/blog/prefer-const-example.jpg)
 
-Try saving the file: VSCode should automatically convert the `let` into a `const`. If it did not work, try closing and reopening VSCode.
+Try saving the file: VSCode should automatically convert the `let` into a `const`. If it did not work, try closing and reopening VSCode. Also double check that you did not forget the leading dot for the folder `.vscode` which contains the `settings.json` file.
 
 To have a nice set of eslint rules, I suggest you install the package `@typescript-eslint/eslint-plugin`:
 
@@ -78,26 +78,23 @@ To have a nice set of eslint rules, I suggest you install the package `@typescri
 yarn add --dev @typescript-eslint/eslint-plugin
 ```
 
-Then add it to your `.eslintrc` config:
+Then replace your `.eslintrc.json` file with:
 ```json
 {
-  "plugins": ["@typescript-eslint"], // Add
+  "plugins": ["@typescript-eslint"],
   "extends": [
-    "next",
     "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended" // Add
+    "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-    // You can remove the prefer-const rule, as it is already added by @typescript-eslint/recommended
-
-    // I suggest you add at least those two rules:
+    // I suggest you add those two rules:
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error"
   }
 }
 ```
 
-If you don't like a rule added by `@typescript-eslint/recommended`, don't forget you can turn it off in your `.eslintrc`, like so:
+If you don't like a rule added by `@typescript-eslint/recommended`, don't forget you can turn it off in your `.eslintrc.json`, like so:
 ```json
 {
   // ...
@@ -122,10 +119,10 @@ yarn add --dev prettier eslint-config-prettier
 - `prettier` is the base package that will format the files
 - `eslint-config-prettier` will prevent conflicts between prettier and eslint rules.
 
-Create a `.prettierrc` file, and configure it according to your preferences. See all available options here: [https://prettier.io/docs/en/options.html](https://prettier.io/docs/en/options.html)
+Create a `.prettierrc.json` file, and configure it according to your preferences. See all available options here: [https://prettier.io/docs/en/options.html](https://prettier.io/docs/en/options.html)
 
 ```json
-// .prettierrc
+// .prettierrc.json
 {
   "semi": false,
   "trailingComma": "es5",
@@ -135,13 +132,12 @@ Create a `.prettierrc` file, and configure it according to your preferences. See
 }
 ```
 
-Then, change your `.eslintrc` file like so:
+Then, change your `.eslintrc.json` file like so:
 ```json
-// .eslintrc
+// .eslintrc.json
 {
   // ...
   "extends": [
-    "next",
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "prettier" // Add "prettier" last. This will turn off eslint rules conflicting with prettier. This is not what will format our code.
@@ -290,17 +286,17 @@ yarn lint-staged # Replace the last line with "yarn lint-staged"
 Let's try the new configuration. Try committing the `test.ts` file from earlier. If it contains errors, you won't be able to commit it.  
 
 ```sh
-$ git add test.ts # Add a file with TypeScript errors...
-$ git commit -m "add test.ts" # ...and this will fail!
+git add test.ts # Add a file with TypeScript errors...
+git commit -m "add test.ts" # ...and this will fail!
 ```
 
 Now try editing and committing the `README.md` file. On commit, you will see that only the prettier script will be run, and not the other ones.
 
 ```sh
-$ git reset # un-add files
-$ echo "Hello!" >> README.md # Edit README.md
-$ git add README.md # Stage README.md
-$ git commit -m "update readme" # ...and only prettier will run on commit!
+git reset # un-add files
+echo "Hello!" >> README.md # Edit README.md
+git add README.md # Stage README.md
+git commit -m "update readme" # ...and only prettier will run on commit!
 ```
 
 ## Good job reading this far!

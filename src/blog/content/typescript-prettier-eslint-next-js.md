@@ -1,7 +1,7 @@
 ---
 title: Start a clean Next.js project with TypeScript, ESLint and Prettier
 excerpt: How to create a Next.js app with TypeScript, and how to configure ESLint to make it work with prettier, and finally how to integrate this tooling with Visual Studio Code.
-date: '2021-07-02T09:00:00.000Z'
+date: '2021-10-20T12:00:00.000Z'
 ---
 
 
@@ -32,7 +32,19 @@ cd my-app
 code .
 ```
 
-## Configure eslint
+## Install and Configure eslint
+
+First, install eslint:
+
+```sh
+# Install eslint v7
+yarn add eslint@^7.32.0 --dev
+
+# Check if it worked
+yarn lint
+```
+
+_**Note: [Next.js is not yet compatible with ESLint v8](https://github.com/vercel/next.js/issues/29961), that is why we have to specify v7.**_
 
 To make eslint errors visible in VSCode, you need to install [the ESLint plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 

@@ -1,7 +1,7 @@
 ---
 title: Start a clean Next.js project with TypeScript, ESLint and Prettier
 excerpt: How to create a Next.js app with TypeScript, and how to configure ESLint to make it work with prettier, and finally how to integrate this tooling with Visual Studio Code.
-date: '2021-10-20T12:00:00.000Z'
+date: '2021-12-13T11:00:00.000Z'
 ---
 
 
@@ -32,19 +32,15 @@ cd my-app
 code .
 ```
 
-## Install and Configure eslint
+## Configure eslint
 
-First, install eslint:
+Eslint is installed by default (you should see the dependency in package.json).
+
+You can run eslint with the following command:
 
 ```sh
-# Install eslint v7
-yarn add eslint@^7.32.0 --dev
-
-# Check if it worked
-yarn lint
+yarn eslint .
 ```
-
-_**Note: [Next.js is not yet compatible with ESLint v8](https://github.com/vercel/next.js/issues/29961), that is why we have to specify v7.**_
 
 To make eslint errors visible in VSCode, you need to install [the ESLint plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
@@ -90,7 +86,7 @@ To have a nice set of eslint rules, I suggest you install the package `@typescri
 yarn add --dev @typescript-eslint/eslint-plugin
 ```
 
-Then replace your `.eslintrc.json` file with:
+Then you can replace your `.eslintrc.json` file with:
 ```json
 {
   "plugins": ["@typescript-eslint"],
@@ -214,7 +210,7 @@ yarn husky install
 Now we need to add the git hook:   
 
 ```sh
-yarn husky add .husky/pre-commit "yarn tsc --noEmit && yarn eslint --fix . && yarn prettier --write ."
+yarn husky add .husky/pre-commit "yarn tsc --noEmit && yarn eslint . && yarn prettier --write ."
 ```
   
 Let's break down what this command does. On each commit, husky will:

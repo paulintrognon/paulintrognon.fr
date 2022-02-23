@@ -1,6 +1,6 @@
 import { useRouter } from 'next/dist/client/router'
 import { useState } from 'react'
-import { Spring } from 'react-spring/renderprops.cjs'
+import { animated, Spring } from 'react-spring'
 import { links } from '../menuLinks.service'
 
 /**
@@ -50,7 +50,7 @@ const LayoutTransition: React.FC = ({ children }) => {
   }
   return (
     <Spring key={newPath} from={from} to={to}>
-      {(props) => <div style={props}>{children}</div>}
+      {(styles) => <animated.div style={styles}>{children}</animated.div>}
     </Spring>
   )
 }

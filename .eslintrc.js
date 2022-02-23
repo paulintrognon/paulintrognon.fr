@@ -5,11 +5,8 @@ module.exports = {
     es6: true,
   },
   parserOptions: { ecmaVersion: 8 },
-  ignorePatterns: ['node_modules/*', '.next/*', '.out/*', '!.prettierrc.js'],
+  ignorePatterns: ['node_modules/*', '.next/*', '.out/*'],
   extends: ['eslint:recommended'],
-  rules: {
-    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
-  },
   overrides: [
     {
       files: ['**/*.ts', '**/*.tsx'],
@@ -26,8 +23,6 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
         'plugin:jsx-a11y/recommended',
-        'prettier/@typescript-eslint',
-        'plugin:prettier/recommended',
       ],
       rules: {
         'react/prop-types': 'off',
@@ -41,19 +36,15 @@ module.exports = {
             allowConciseArrowFunctionExpressionsStartingWithVoid: true,
           },
         ],
-        'prettier/prettier': ['error', {}, { usePrettierrc: true }],
       },
     },
     {
       files: 'cypress/**/*',
       plugins: ['cypress'],
-      extends: ['eslint:recommended', 'plugin:prettier/recommended', 'plugin:cypress/recommended'],
+      extends: ['eslint:recommended', 'plugin:cypress/recommended'],
       env: {
         es6: true,
         node: true,
-      },
-      rules: {
-        'prettier/prettier': ['error', {}, { usePrettierrc: true }],
       },
     },
   ],

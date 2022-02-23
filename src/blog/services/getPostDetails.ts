@@ -8,7 +8,7 @@ import showdownHighlight from 'showdown-highlight'
  */
 const converter = new Converter({
   simplifiedAutoLink: true,
-  extensions: [showdownHighlight], // showdownHighlight adds code highlighting
+  extensions: [showdownHighlight({})], // showdownHighlight adds code highlighting
 })
 
 /**

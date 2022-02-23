@@ -42,7 +42,7 @@ const foo = "bar";
     const detailedPost = getPostDetails(slug)
     expect(detailedPost).toEqual({
       content:
-        '<pre><code class="hljs jsx language-jsx"><span class="hljs-keyword">const</span> foo = <span class="hljs-string">"bar"</span>;\n</code></pre>',
+        '<pre><code class="hljs jsx language-jsx"><span class="hljs-keyword">const</span> foo = <span class="hljs-string">&quot;bar&quot;</span>;\n</code></pre>',
     })
   })
 

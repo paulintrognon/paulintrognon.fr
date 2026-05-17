@@ -11,7 +11,7 @@
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     "lint": "eslint --ext ts --ext tsx",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run --headless -b chrome",
+    "cypress:run": "cypress run --headless -b electron",
     "cypress:start-and-run": "pnpm build && start-server-and-test http://localhost:3000 cypress:run",
     "pretest": "rm coverage/test-results/* || true",
     "test": "jest && pnpm cypress:start-and-run",

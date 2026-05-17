@@ -63,7 +63,7 @@ jobs:
         uses: cypress-io/github-action@v7
         with:
           install-command: pnpm install --frozen-lockfile
-          browser: chrome
+          browser: electron
           build: pnpm build
           start: pnpm start
           wait-on: http://localhost:3000

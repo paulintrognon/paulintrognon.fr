@@ -1,21 +1,69 @@
 name: CI
 on:
-  push:
-    paths:
-      - '**.ts'
-      - '**.tsx'
-      - '**.js'
-      - '**.json'
+  pull_request:
+  workflow_call:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
+  # Lint and TypeScript checks
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: yarn
-    - name: Run ESLint
-      run: yarn lint .
-    - name: Run TypeScript Checks
-      run: yarn type-check
-    - name: Run tests
-      run: yarn test
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: 'pnpm'
+      - name: Install modules
+        run: pnpm install --frozen-lockfile
+      - name: Run ESLint
+        run: pnpm lint .
+      - name: Run TypeScript Checks
+        run: pnpm type-check
+
+  # Jest unit tests
+  jest:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: 'pnpm'
+      - name: Install modules
+        run: pnpm install --frozen-lockfile
+      - name: Run Jest
+        run: pnpm jest
+
+  # Cypress Integration tests
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: 'pnpm'
+      - name: Cypress run
+        uses: cypress-io/github-action@v7
+        with:
+          install-command: pnpm install --frozen-lockfile
+          browser: electron
+          build: pnpm build
+          start: pnpm start
+          wait-on: http://localhost:3000

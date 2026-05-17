@@ -2,58 +2,63 @@
 
 # Développement local
 
-  ```shell
- yarn
- yarn dev
-  ```
-
-Ou, si vous préférez docker&nbsp;:
-
 ```shell
-docker-compose up dev
+pnpm install
+pnpm dev
 ```
 
 # Code Quality
 
 ## Eslint
 
-Avant chaque commit est lancé un audit de code avec `husky`. Si l'audit ne passe pas, le commit ne pourra se faire.  
+Avant chaque commit est lancé un audit de code avec `husky`. Si l'audit ne passe pas, le commit ne pourra se faire.
 
 Pour lancer un audit manuellement :
 
 ```shell
-yarn lint
+pnpm lint .
 ```
 
 Vous pouvez tenter de réparer automatiquement les erreurs avec :
 
 ```shell
-yarn lint --fix
+pnpm lint . --fix
 ```
 
-## Tests E2E
+## Tests
 
-Lancer les tests E2E avec la commande suivante :
+Lancer les tests unitaires (Jest) :
 
+```shell
+pnpm jest
 ```
-yarn test
+
+Lancer les tests E2E (Cypress) :
+
+```shell
+pnpm test
 ```
 
 # Prod
 
-## Avec Node.js
-
-```
-yarn build
-yarn start
+```shell
+pnpm build
+pnpm start
 ```
 
-## Avec Docker
+# CI/CD
 
+Deux workflows GitHub Actions :
+
+- **CI** (`.github/workflows/ci.yaml`) — lint, type-check, jest et tests Cypress. Tourne sur chaque pull request.
+- **Publish** (`.github/workflows/publish.yaml`) — construit et pousse l'image Docker sur `ghcr.io`. Déclenché par un push de tag `v*`.
+
+Publish rejoue la CI en premier (`workflow_call`) : l'image n'est publiée que si la CI passe.
+
+Pour publier une nouvelle version :
+
+```shell
+# bump version dans package.json, merge la PR, puis :
+git tag v5.1.0
+git push origin v5.1.0
 ```
-docker-compose up prod
-```
-
-# Configuration
-
-Vous pouvez changer les ports pour le dev et pour la prod directement dans le `.env` ou en créant un nouveau fichier `.env.local`

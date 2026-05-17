@@ -16,3 +16,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+
+# misc
+tsconfig.tsbuildinfo
+
+# cypress
+cypress/videos
+cypress/screenshots
+cypress/downloads

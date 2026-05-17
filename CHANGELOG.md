@@ -1,3 +1,13 @@
+# v5.0.0
+
+- Replace yarn with pnpm
+- Rewrite Dockerfile as a multi-stage pnpm build
+- Remove docker-compose dev setup
+- Replace SSH-based CD with a Docker image publish workflow on `ghcr.io` (triggered by `v*` tags)
+- Gate publish on CI, dedup PR runs via concurrency
+- Add `/api/health` endpoint for k8s liveness probes
+- Upgrade husky to v9
+
 ### v4.1.1
 
 - Blog: Add missing dependency

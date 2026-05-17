@@ -1,6 +1,6 @@
 {
   "name": "paulintrognon.fr",
-  "version": "4.1.1",
+  "version": "5.0.0",
   "private": false,
   "license": "MPL-2.0",
   "scripts": {
@@ -12,9 +12,10 @@
     "lint": "eslint --ext ts --ext tsx",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --headless -b chrome",
-    "cypress:start-and-run": "yarn build && start-server-and-test http://localhost:3000 cypress:run",
+    "cypress:start-and-run": "pnpm build && start-server-and-test http://localhost:3000 cypress:run",
     "pretest": "rm coverage/test-results/* || true",
-    "test": "jest && yarn cypress:start-and-run"
+    "test": "jest && pnpm cypress:start-and-run",
+    "prepare": "husky"
   },
   "dependencies": {
     "@types/classnames": "^2.3.1",
@@ -30,7 +31,7 @@
     "npm": "^6.14.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-spring": "^9.4.3",
+    "react-spring": "9.4.3",
     "remove": "^0.1.5",
     "showdown": "^2.0.0",
     "showdown-highlight": "^2.1.8",
@@ -48,7 +49,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "husky": "^7.0.4",
+    "husky": "^9.1.6",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "jest-watch-typeahead": "^1.0.0",
@@ -56,5 +57,6 @@
     "prettier": "^2.5.1",
     "react-test-renderer": "^17.0.2",
     "start-server-and-test": "^1.14.0"
-  }
+  },
+  "packageManager": "pnpm@11.0.9"
 }

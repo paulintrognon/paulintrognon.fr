@@ -1,0 +1,20 @@
+.container {
+  margin-bottom: 6.4rem;
+}
+
+.container > section:first-child {
+  margin-bottom: 4rem;
+}
+
+.missions > section {
+  margin-bottom: 4.8rem;
+}
+
+.missions > section:last-child {
+  margin-bottom: 0;
+}
+
+.missions h3 {
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+}

@@ -9,7 +9,7 @@ const BoironExperience: React.FC = () => {
   return (
     <Experience
       imageUrl="/images/experiences/boiron.jpg"
-      title="Lead Dev Front"
+      title="Lead front du projet"
       mission="Développement d’un portail pro (application web B2B)"
       timePeriod="05.2020 - 12.2020"
     >

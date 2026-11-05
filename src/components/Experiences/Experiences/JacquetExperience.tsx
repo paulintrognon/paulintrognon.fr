@@ -8,7 +8,7 @@ const JacquetExperience: React.FC = () => {
   return (
     <Experience
       imageUrl="/images/experiences/jacquet.jpg"
-      title="Dévelopeur JavaScript FullStack"
+      title="Développeur JavaScript Fullstack"
       mission="Développement d’un site jeu concours"
       timePeriod="01.2018 - 04.2018"
     >

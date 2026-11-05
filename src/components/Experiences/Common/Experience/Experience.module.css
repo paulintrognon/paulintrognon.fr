@@ -23,6 +23,10 @@
     margin: auto;
     margin-bottom: 4rem;
   }
+
+  .left:empty {
+    display: none;
+  }
 }
 
 

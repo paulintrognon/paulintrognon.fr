@@ -1,0 +1,8 @@
+.line {
+  width: 25%;
+  height: 0.4rem;
+  margin: 0;
+  border: none;
+  border-radius: 0.2rem;
+  background-color: var(--color-secondary);
+}

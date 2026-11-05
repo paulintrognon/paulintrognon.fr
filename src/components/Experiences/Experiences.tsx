@@ -1,27 +1,41 @@
+import ExperienceGroup from './Common/ExperienceGroup/ExperienceGroup'
+import PeriodSeparator from './Common/PeriodSeparator/PeriodSeparator'
 import BoironExperience from './Experiences/BoironExperience'
-import DanoneExperience from './Experiences/DanoneExperience'
-import EoviExperience from './Experiences/JacquetExperience'
-import ReportLinkerExperience from './Experiences/ReportLinkerExperience'
-import DcdlExperience from './Experiences/DcdlExperience'
-import LeonPaulExperience from './Experiences/LeonPaulExperience'
 import CkcNetExperience from './Experiences/CkcNetExperience'
-import OzedExperience from './Experiences/OzedExperience'
+import DanoneExperience from './Experiences/DanoneExperience'
+import DcdlExperience from './Experiences/DcdlExperience'
+import JacquetExperience from './Experiences/JacquetExperience'
+import LeonPaulExperience from './Experiences/LeonPaulExperience'
 import NexteneoExperience from './Experiences/NexteneoExperience'
+import OzedExperience from './Experiences/OzedExperience'
+import ReportLinkerExperience from './Experiences/ReportLinkerExperience'
 import SwileExperience from './Experiences/SwileExperience'
 
 const Experiences: React.FC = () => {
   return (
     <div data-cy="Experiences">
       <NexteneoExperience />
+      <PeriodSeparator />
       <SwileExperience />
-      <BoironExperience />
-      <DanoneExperience />
-      <EoviExperience />
-      <CkcNetExperience />
-      <OzedExperience />
+      <PeriodSeparator />
+      <ExperienceGroup
+        title="Développeur Freelance"
+        mission="Missions en prestation chez mes clients"
+        timePeriod="01.2017 - 12.2020"
+      >
+        <BoironExperience />
+        <DanoneExperience />
+        <JacquetExperience />
+        <CkcNetExperience />
+        <OzedExperience />
+      </ExperienceGroup>
+      <PeriodSeparator />
       <ReportLinkerExperience />
-      <DcdlExperience />
-      <LeonPaulExperience />
+      <PeriodSeparator />
+      <ExperienceGroup title="Développeur Stagiaire" mission="Stages pendant mes études">
+        <DcdlExperience />
+        <LeonPaulExperience />
+      </ExperienceGroup>
     </div>
   )
 }

@@ -6,7 +6,7 @@ const IndexPage: NextPage = () => (
   <>
     <Seo
       title="Éxperiences"
-      description="Experiences pro de Paulin Trognon: Lead Dev Front Boiron, Danone ; Dev FullStack Eovi, ReportLinker"
+      description="Expériences pro de Paulin Trognon : Founding Engineer chez Nexteneo, Swile, missions freelance (Boiron, Danone), ReportLinker"
     />
     <Experiences />
   </>

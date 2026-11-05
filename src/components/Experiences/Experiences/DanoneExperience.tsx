@@ -9,7 +9,7 @@ const DanoneExperience: React.FC = () => {
   return (
     <Experience
       imageUrl="/images/experiences/danone.jpg"
-      title="Lead Dev Front"
+      title="Lead front du projet"
       mission="Développement d’une appli mobile B2B"
       timePeriod="05.2018 - 11.2018"
     >

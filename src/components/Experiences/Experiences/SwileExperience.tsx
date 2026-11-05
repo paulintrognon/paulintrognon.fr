@@ -2,7 +2,6 @@ import BulletLine from '../../Common/BulletLine/BulletLine'
 import Badges from '../Common/Badges/Badges/Badges'
 import MaterialUiBadge from '../Common/Badges/MaterialUiBadge/MaterialUiBadge'
 import NextJsBadge from '../Common/Badges/NextJsBadge/NextJsBadge'
-import ReactBadge from '../Common/Badges/ReactBadge/ReactBadge'
 import TypeScriptBadge from '../Common/Badges/TypeScriptBadge/TypeScriptBadge'
 import Experience from '../Common/Experience/Experience'
 
@@ -12,11 +11,10 @@ const SwileExperience: React.FC = () => {
       imageUrl="/images/experiences/swile.png"
       title="Senior Software Engineer"
       mission="Développement d'outils internes et backend"
-      timePeriod="01.2021 - 06.2021"
+      timePeriod="01.2021 - 05.2021"
     >
       <Badges>
         <TypeScriptBadge />
-        <ReactBadge />
         <NextJsBadge />
         <MaterialUiBadge />
       </Badges>

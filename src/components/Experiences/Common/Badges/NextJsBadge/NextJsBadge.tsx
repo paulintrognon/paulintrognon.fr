@@ -4,7 +4,7 @@ import NextJsIcon from './nextjs.svg'
 const NextJsBadge: React.FC = () => (
   <Badge>
     <NextJsIcon />
-    Material UI
+    Next.js
   </Badge>
 )
 export default NextJsBadge
